@@ -1,3 +1,31 @@
+#OS
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+	# zplug settings
+	export ZPLUG_HOME=/usr/local/opt/zplug
+	source $ZPLUG_HOME/init.zsh
+#PATH
+  export PATH=~/ShellScript:$PATH
+  export PATH=:~/ShellScript/zos:$PATH
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+				;;
+    linux*)
+# zplug settings
+export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
+export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/linuxbrew/.linuxbrew/lib"
+        ;;
+esac
+
+
+#PATH
+  export PATH=~/dotfiles/shell:$PATH
+  export XDG_CONFIG_HOME=~/.config
+  export XDG_CACHE_HOME=~/.cache
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
@@ -124,13 +152,6 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
-#PATH
-export XDG_CONFIG_HOME=~/.config
-export XDG_CACHE_HOME=~/.cache
-export PATH=~/ShellScript:$PATH
-export PATH=:~/ShellScript/zos:$PATH
-export PATH=~/dotfiles/shell:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 #解凍
 function extract() {
     case $1 in
@@ -235,22 +256,3 @@ function precmd() {
 autoload -U promptinit; promptinit
 # プロンプトを変更
 prompt pure
-case ${OSTYPE} in
-    darwin*)
-        #ここにMac向けの設定
-	# zplug settings
-	export ZPLUG_HOME=/usr/local/opt/zplug
-	source $ZPLUG_HOME/init.zsh
-
-				;;
-    linux*)
-# zplug settings
-export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
-export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/linuxbrew/.linuxbrew/lib"
-export XDG_CONFIG_HOME="$HOME/.config"
-        ;;
-esac
