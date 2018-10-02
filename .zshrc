@@ -1,6 +1,3 @@
-# zplug settings
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
@@ -241,9 +238,15 @@ prompt pure
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
-        ;;
-    linux*)
+	# zplug settings
+	export ZPLUG_HOME=/usr/local/opt/zplug
+	source $ZPLUG_HOME/init.zsh
 
+				;;
+    linux*)
+# zplug settings
+export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
 export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
