@@ -22,3 +22,4 @@ brew install neovim
 brew install python3
 pip3 install -U neovim
 chsh -s /bin/bash
+zsh
