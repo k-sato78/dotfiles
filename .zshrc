@@ -67,10 +67,43 @@ fi
 # autoload -Uz compinit && compinit -u
 # 大文字小文字区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
+### 補完
+autoload -U compinit; compinit -C
 # 補完メニューをカーソルで選択可能にする
-zstyle ':completion:*:default' menu select=1
+# zstyle ':completion:*:default' menu select=1
+### 補完方法毎にグループ化する。
+zstyle ':completion:*' format '%B%F{blue}%d%f%b'
+zstyle ':completion:*' group-name ''
+### 補完侯補をメニューから選択する。
+### select=2: 補完候補を一覧から選択する。補完候補が2つ以上なければすぐに補完する。
+zstyle ':completion:*:default' menu select=2
+### 補完候補に色を付ける。
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+### 補完候補がなければより曖昧に候補を探す。
+### m:{a-z}={A-Z}: 小文字を大文字に変えたものでも補完する。
+### r:|[._-]=*: 「.」「_」「-」の前にワイルドカード「*」があるものとして補完する。
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' recent-dirs-insert both
+
+### 補完候補
+### _oldlist 前回の補完結果を再利用する。
+### _complete: 補完する。
+### _match: globを展開しないで候補の一覧から補完する。
+### _history: ヒストリのコマンドも補完候補とする。
+### _ignored: 補完候補にださないと指定したものも補完候補とする。
+### _approximate: 似ている補完候補も補完候補とする。
+### _prefix: カーソル以降を無視してカーソル位置までで補完する。
+#zstyle ':completion:*' completer _oldlist _complete _match _history _ignored _approximate _prefix
+zstyle ':completion:*' completer _complete _ignored
+
+## 補完候補をキャッシュする。
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' cache-path ~/.zsh/cache
+## 詳細な情報を使わない
+zstyle ':completion:*' verbose no
 # LS_COLORS
 eval $(gdircolors ~/dotfiles/.dircolors/dircolors.256dark)
 
@@ -205,4 +238,16 @@ function precmd() {
 autoload -U promptinit; promptinit
 # プロンプトを変更
 prompt pure
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+        ;;
+    linux*)
 
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
+export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/linuxbrew/.linuxbrew/lib"
+export XDG_CONFIG_HOME="$HOME/.config"
+        ;;
+esac
