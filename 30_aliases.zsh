@@ -1,12 +1,26 @@
+alias ks='ls'
+alias tg='git browse tcazlabo/RESULTS'
+alias mn='memo n'
+alias m='memo'
+alias me='memo e'
+alias md='memo d'
+alias ml='memo l'
+alias mg='memo d'
+alias sz='source ~/.zshrc'
+alias c3270="TERM=xterm c3270 -defaultfgbg"
 alias sed='gsed'
+alias soz='source ~/.zshrc'
+alias pwdc='pwd|pbcopy;pwd'
+# alias pwd='pwd |pbcopy'
 alias bfs='sh ~/ShellScript/BFSAuth.sh %% sh ~/ShellScript/BFSAuth.sh'
+alias mkr='sh ~/ShellScript/mkrep.sh'
 #alias epa='c3270 9.188.216.204'
 # alias epb='c3270 9.188.216.205'
 alias mqm1='ssh -l mqm 192.168.56.101'
 alias mqm2='ssh -l mqm 192.168.56.102'
 alias mqm3='ssh -l mqm 192.168.58.101'
 alias -g G='| grep'
-alias mqm4='vagrant ssh'
+alias mqm4='ssh -l mqm 192.168.60.101'
 alias -g G='| grep'
 alias -g L='| less'
 alias -g H='| head'
@@ -14,6 +28,7 @@ alias -g T='| tail'
 alias -g S='| sed'
 alias -g C='| cat'
 alias vi='nvim'
+alias so='source'
 #alias vim='nvim'
 alias mk='mkdir -p'
 alias to='touch'
@@ -22,7 +37,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias lst='gls --color=auto -ltr'
 alias ls='gls --color=auto'
-alias l='gls --color=auto -ltr'
+alias l='gls --color=auto -ltra'
 alias la='gls --color=auto -a'
 alias ll='gls --color=auto -l'
 alias o='open'
@@ -45,7 +60,7 @@ function mkc() {
   fi
 }
 alias t="tmuximum"
-
+alias tmux='tmux -u'
 
 #shhpass
 #
