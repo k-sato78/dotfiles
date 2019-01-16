@@ -9,7 +9,13 @@ case ${OSTYPE} in
   export PATH=~/ShellScript:$PATH
   export PATH=:~/ShellScript/zos:$PATH
   export PATH=$HOME/.nodebrew/current/bin:$PATH
-				;;
+  export PYTHONPATH=python3:pip3
+
+  export PATH=~/go/bin:$PATH
+  export PATH=/usr/local/Cellar/git/2.19.1/bin/:$PATH
+#tmuximum
+zplug "arks22/tmuximum", as:command
+	;;
     linux*)
 # zplug settings
 export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
@@ -17,13 +23,15 @@ source $ZPLUG_HOME/init.zsh
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
 export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/linuxbrew/.linuxbrew/lib"
-        ;;
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+;;
 esac
-
-
+#stty バックスペース有効化
+stty erase "^?"
 #PATH
   export PATH=~/dotfiles/shell:$PATH
+  export PATH=/Users/k.sato/git/toolsmac:$PATH
+  export XDG_CONFIG_HOME=~/.config
   export XDG_CONFIG_HOME=~/.config
   export XDG_CACHE_HOME=~/.cache
 # fzf
@@ -31,12 +39,14 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_CTRL_R_OPTS="--bind=tab:down,shift-tab:up"
+export EDITOR=nvim
 
 # zplug
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # plugins
 zplug "plugins/git", from:oh-my-zsh, lazy:true
 zplug "zsh-users/zsh-autosuggestions", lazy:true
+zplug "rupa/z", use:z.sh
 #zplug "mafredri/zsh-async", from:github
 #zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -44,8 +54,6 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "agnoster/agnoster-zsh-theme", from:github, as:theme
 #zplug "yous/lime"
 zplug 'zsh-users/zsh-completions', use:'src/_*', lazy:true
-#tmuximum
-zplug "arks22/tmuximum", as:command
 # Theme
 #if:"source ~/.powerlevel9k"
 # Install plugins if there are plugins that have not been installed
@@ -207,6 +215,9 @@ autoload -U zmv
 # 	zle -N peco-cdr
 # bindkey '^E' peco-cdr
 # # }}}
+case ${OSTYPE} in
+    darwin*)
+
 #always tmux
 if [[ ! -n $TMUX && $- == *l* ]]; then
   # get the IDs
@@ -253,6 +264,48 @@ function precmd() {
     fi
   fi
 }
+        ;;
+esac
 autoload -U promptinit; promptinit
 # プロンプトを変更
 prompt pure
+#{{{cdr &peco
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+function peco-cdr() {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-cdr
+bindkey '^Z' peco-cdr
+#}}}
+#
+#{{{ hub
+ eval "$(hub alias -s)"
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+#}}}
+#{{{
+# zplugなどでzをインストールしとく
+
+fzf-z-search() {
+    local res=$(z | sort -rn | cut -c 12- | fzf)
+    if [ -n "$res" ]; then
+        BUFFER+="cd $res"
+        zle accept-line
+    else
+        return 1
+    fi
+}
+
+zle -N fzf-z-search
+bindkey '^f' fzf-z-search
+#}}}
+#{{{
+#ls同時
+function chpwd() { ls }
+#}}}

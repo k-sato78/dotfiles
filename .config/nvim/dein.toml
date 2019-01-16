@@ -2,6 +2,8 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 hook_post_update = '''
   if dein#util#_is_windows()
@@ -17,9 +19,19 @@ hook_post_update = '''
 '''
 
 [[plugins]]
+repo =  'simeji/winresizer'
+[[plugins]]
+repo =  'Shougo/neomru.vim'
+[[plugins]]
+repo =  'Shougo/denite.nvim'
+[[plugins]]
 repo =  'edkolev/tmuxline.vim'
-
-
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]]
+repo = 'kannokanno/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 [[plugins]]
