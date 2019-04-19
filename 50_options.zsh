@@ -12,6 +12,7 @@ cdpath=(
 /Users/k.sato/.config/nvim
 ~
 ~/BOX
+~/git
 )
 # コマンドラインの引数でも補完を有効にする（--prefix=/userなど）
 setopt magic_equal_subst

@@ -1,5 +1,15 @@
+alias zmv='noglob zmv -W'
+alias regdoc='cd ~/Box/TCAZ\ z2/z2\ リグレッションテスト/テスト記述書'
+alias ghe='GITHUB_HOST=github.ibm.com git'
+alias cr='eval `~/ShellScript/tcaz/CdTodaysRep.sh`'
+alias workday='o https://wd5.myworkday.com/ibm/d/home.htmld'
+alias g='hub'
+alias c='c3270'
 alias ks='ls'
-alias tg='git browse tcazlabo/RESULTS'
+alias gpom='git push origin master'
+alias gp='git pull'
+alias gcn='git commit --allow-empty-message'
+alias ga='git add'
 alias mn='memo n'
 alias m='memo'
 alias me='memo e'
@@ -13,7 +23,8 @@ alias soz='source ~/.zshrc'
 alias pwdc='pwd|pbcopy;pwd'
 # alias pwd='pwd |pbcopy'
 alias bfs='sh ~/ShellScript/BFSAuth.sh %% sh ~/ShellScript/BFSAuth.sh'
-alias mkr='sh ~/ShellScript/mkrep.sh'
+alias mkr='sh ~/ShellScript/tcaz/mkrep.sh'
+alias t='sh ~/ShellScript/tcaz/tel.sh'
 #alias epa='c3270 9.188.216.204'
 # alias epb='c3270 9.188.216.205'
 alias mqm1='ssh -l mqm 192.168.56.101'
@@ -59,7 +70,7 @@ function mkc() {
   mkdir -p $1 && cd $1
   fi
 }
-alias t="tmuximum"
+alias tm="tmuximum"
 alias tmux='tmux -u'
 
 #shhpass
@@ -79,3 +90,40 @@ alias sdsf='sdsf.sh'
 alias tsocmd='tsocmd.sh'
 alias pepa='pepa.sh'
 alias ssh='~/ShellScript/ssh-change-profile.sh'
+function tg() {
+export GITHUB_HOST=github.ibm.com
+hub browse tcazlabo/RESULTS
+unset GITHUB_HOST
+}
+
+# tr() {
+# YearMonth=$(date +%y%m)
+# Day1="$(date +%d)-z2"
+# Day2="$(date +%d)-j3"
+#
+#
+#
+# if [ -d ~/git/RESULTS/$YearMonth/$Day1/ ]; then
+#
+# 	source CdTodaysRep1.sh
+#
+# elif [ -d "~/git/RESULTS/$YearMonth/$Day2/" ]; then
+#
+#
+# 	source CdTodaysRep2.sh
+#
+# else
+# 	cd ~/git/RESULTS/
+# 	git pull
+#
+# if [ -d "~/git/RESULTS/$YearMonth/$Day1/" ]; then
+#
+# 	source CdTodaysRep1.sh
+#
+# elif [ -d "~/git/RESULTS/$YearMonth/$Day2/" ]; then
+#
+#
+# 	source CdTodaysRep2.sh
+# fi
+# fi
+# }

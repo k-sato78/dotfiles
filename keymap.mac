@@ -1,0 +1,8 @@
+Ctrl<Key>a <Key>i: ToggleInsert
+<Key>BTAB:BackTab
+# Ctrl<<Key>a Key>H: Home
+Ctrl<Key>d: EraseEOF
+<Key>0x7f: Erase()
+Ctrl<Key>a <Key>l: String("LOGON APPLID(TSO) LOGMODE(D4C32XX3)")
+Ctrl<Key>a <Key>f: String("LOGOFF")
+
