@@ -1,3 +1,14 @@
+" エスケープで英数字の入力にする
+if has('mac')
+  set ttimeoutlen=1
+  let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
+  augroup MyIMEGroup
+    autocmd!
+    autocmd InsertLeave * :call system(g:imeoff)
+  augroup END
+  noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
+endif
+
 "LeaderLeader init.vim
 if !&compatible
 	set nocompatible
@@ -18,7 +29,7 @@ if !isdirectory(s:dein_repo_dir)
 	call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 """{{{ NERDTree
-map <C-e> :NERDTreeToggle<CR>
+map <Leader>e NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 "}}}
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
@@ -39,11 +50,17 @@ endif
 nnoremap cp ve"8d"0p
 "jjでinsertからぬける
 inoremap <silent> jj <ESC>
+"バッファ移動
+" nnoremap <silent> <C-j> :bprev<CR>
+" nnoremap <silent> <C-k> :bnext<CR>
+
+
 "その他
 "leaderをスペースキーに割り当て
 let mapleader = "\<Space>"
 "色
-"colorscheme iceberg
+autocmd ColorScheme * highlight Visual   ctermbg=52 guifg=#8b0000 guibg=#00ffff
+colorscheme iceberg
 "syntax on
 " 256色¬
 set t_Co=256
@@ -87,7 +104,25 @@ nnoremap Y y$
 set clipboard+=unnamed
 
 "Quick run 下画面で起動
-let g:quickrun_config={'*': {'split': ''}}
+" let g:quickrun_config={'*': {'split': ''}}
+" vimprocで非同期実行
+" 成功時にバッファ、失敗時にQuickFixで表示
+" 結果表示のサイズ調整など
+let g:quickrun_config = {
+    \ '_' : {
+        \ 'runner' : 'vimproc',
+        \ 'runner/vimproc/updatetime' : 40,
+        \ 'outputter' : 'error',
+        \ 'outputter/error/success' : 'buffer',
+        \ 'outputter/error/error'   : 'quickfix',
+        \ 'outputter/buffer/split' : ':botright 8sp',
+    \ }
+\}
+
+" 実行時に前回の表示内容をクローズ&保存してから実行
+let g:quickrun_no_default_key_mappings = 1
+nmap <Leader>r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
+
 "文末の空白消す
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -155,11 +190,41 @@ if has('syntax')
 endif
 """ {{{ md
 au BufRead,BufNewFile *.md set filetype=markdown
-nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー
+" nnoremap <silent> <C-p> :PrevimOpen<CR> " Ctrl-pでプレビュー 
+" プレビューと同時にフォーカスをiTerm2に戻したければ､以下を参考にします """{{{
+" ただし、注意として､「command -bar PrevimOpen...」のように「-bar」オプションを付ける必要があります。
+" http://mba-hack.blogspot.jp/2013/09/mac.html
+
+"""}}}
 " 自動で折りたたまないようにする
+let g:instant_markdown_autostart = 0
 let g:vim_markdown_folding_disabled=1
-let g:previm_enable_realtime = 1
+let g:previm_enable_realtime = 0
 let g:vim_markdown_conceal = 0
+let g:previm_disable_default_css = 1
+let g:previm_custom_css_path = '~/dotfiles/templates/previm/markdown.css'
+" Markdown プレビュー {{{
+nnoremap <silent> <C-p> :InstantMarkdownPreview |:silent !open -a it2_f<CR>
+" nnoremap <silent> <F7> :PrevimOpen \|:Silent open -a it2_f &<CR>
+"nmap <silent> <Leader>j <Plug>(ChromeScrollDown)
+"nmap <silent> <Leader>k <Plug>(ChromeScrollUp)
+nmap <silent> <Leader>q <Plug>(ChromeTabClose)
+nmap <buffer> <Leader>f <Plug>(ChromeKey)
+
+"call submode#enter_with('cscroll', 'n', '', '<Leader>j', ':ChromeScrollDown<CR>')
+"call submode#enter_with('cscroll', 'n', '', '<Leader>k', ':ChromeScrollUp<CR>')
+"call submode#leave_with('cscroll', 'n', '', 'n')
+"call submode#map('cscroll', 'n', '', 'j', ':ChromeScrollDown<CR>')
+"call submode#map('cscroll', 'n', '', 'k', ':ChromeScrollUp<CR>')
+
+"" Auto Scroll
+nmap <silent> <Leader>j <Plug>(ChromeAutoScrollDown)
+nmap <Leader>js <Plug>(ChromeAutoScrollDownStop)
+nmap <silent> <Leader>k <Plug>(ChromeAutoScrollUp)
+nmap <Leader>ks <Plug>(ChromeAutoScrollUpStop)
+" }}
+
+
 "}}}
 "
 "{{{
@@ -204,10 +269,10 @@ endfunction
 inoremap <expr> <C-x>  <SID>hint_i_ctrl_x()
 "}}}
 "{{{ denite
-noremap <Leader>u :Denite -mode=normal buffer file_mru file<CR>
-noremap <Leader>f :Denite -mode=normal file<CR>
-noremap <Leader>r :Denite -mode=normal file_mru<CR>
-noremap <Leader>b :Denite -mode=normal buffer<CR>
+" noremap <Leader>u :Denite -mode=normal buffer file_mru file<CR>
+" noremap <Leader>f :Denite -mode=normal file<CR>
+" noremap <Leader>r :Denite -mode=normal file_mru<CR>
+" noremap <Leader>b :Denite -mode=normal buffer<CR>
 "}}}
 "{{{ 画面移動
 nnoremap <C-h> <C-w>h
@@ -224,3 +289,196 @@ let g:table_mode_corner = '|'
 "{{{
 nmap <F6> <ESC>i<C-R>=strftime("%y/%m/%d %H:%M")<CR>
 "}}}
+" Vim終了時に現在のセッションを保存する
+au VimLeave * mks!  ~/vimsession
+
+"引数なし起動の時、前回のsessionを復元
+autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | source ~/vimsession | endif
+function! s:GetBufByte()
+    let byte = line2byte(line('$') + 1)
+    if byte == -1
+        return 0
+    else
+        return byte - 1
+    endif
+endfunction
+
+
+nnoremap <CR> G
+nnoremap <BS> gg
+
+" FZF
+" fun! FzfOmniFiles()
+"   let is_git = system('git status')
+"   if v:shell_error
+"     :Files
+"   else
+"     :GitFiles
+"   endif
+" endfun
+" nnoremap <C-g> :Rg<Space>
+" nnoremap <leader><leader> :Commands<CR>
+" "nnoremap <C-p> :call FzfOmniFiles()<CR>
+" vmap v <Plug>(expand_region_expand)
+" vmap <C-v> <Plug>(expand_region_shrink)
+" " vp doesn't replace paste buffer
+"  function! RestoreRegister()
+"    let @" = s:restore_reg
+"      return ''
+"      endfunction
+"      function! s:Repl()
+"        let s:restore_reg = @"
+"          return "p@=RestoreRegister()\<cr>"
+"          endfunction
+"          vmap <silent> <expr> p <sid>Repl()
+" CheatSheet
+let g:cheatsheet#cheat_file = '~/dotfiles/vimCheatSheet.md'
+" vim-operator-replace
+map R <Plug>(operator-replace)
+set hidden
+" FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+nmap <Leader>; :Buffers<CR>
+" nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>a :Rg!<CR>
+nmap <Leader>s :Colors<CR>
+let $FZF_DEFAULT_COMMAND = 'rg --files --follow -g "!{.git,node_modules}/*" 2>/dev/null'
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -g "!{*.lock,*-lock.json}" '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:40%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" FZF color scheme updater from https://github.com/junegunn/fzf.vim/issues/59
+function! s:update_fzf_colors()
+  let rules =
+  \ { 'fg':      [['Normal',       'fg']],
+    \ 'bg':      [['Normal',       'bg']],
+    \ 'hl':      [['String',       'fg']],
+    \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
+    \ 'bg+':     [['CursorColumn', 'bg']],
+    \ 'hl+':     [['String',       'fg']],
+    \ 'info':    [['PreProc',      'fg']],
+    \ 'prompt':  [['Conditional',  'fg']],
+    \ 'pointer': [['Exception',    'fg']],
+    \ 'marker':  [['Keyword',      'fg']],
+    \ 'spinner': [['Label',        'fg']],
+    \ 'header':  [['Comment',      'fg']] }
+  let cols = []
+  for [name, pairs] in items(rules)
+    for pair in pairs
+      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
+      if !empty(name) && code != ''
+        call add(cols, name.':'.code)
+        break
+      endif
+    endfor
+  endfor
+  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
+  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
+        \ (empty(cols) ? '' : (' --color='.join(cols, ',')))
+endfunction
+
+augroup _fzf
+  autocmd!
+  autocmd VimEnter,ColorScheme * call <sid>update_fzf_colors()
+augroup END
+" Alt-W to delete a buffer and remove it from the list but keep the window via bufkill.vim
+nmap <M-w>  :BD<CR>
+" =======================================
+" Boost your productivity with EasyMotion
+" =======================================
+" Disable default mappings
+" If you are true vimmer, you should explicitly map keys by yourself.
+" Do not rely on default bidings.
+let g:EasyMotion_do_mapping = 0
+
+" Or map prefix key at least(Default: <Leader><Leader>)
+" map <Leader> <Plug>(easymotion-prefix)
+
+" =======================================
+" Find Motions
+" =======================================
+" Jump to anywhere you want by just `4` or `3` key strokes without thinking!
+" `s{char}{char}{target}`
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+" Of course, you can map to any key you want such as `<Space>`
+" map <Space>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" =======================================
+" Line Motions
+" =======================================
+" `JK` Motions: Extend line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" keep cursor column with `JK` motions
+let g:EasyMotion_startofline = 0
+
+" =======================================
+" General Configuration
+" =======================================
+let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
+" Show target key with upper case to improve readability
+let g:EasyMotion_use_upper = 1
+" Jump to first match with enter & space
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+
+
+" =======================================
+" Search Motions
+" =======================================
+" Extend search motions with vital-over command line interface
+" Incremental highlight of all the matches
+" Now, you don't need to repetitively press `n` or `N` with EasyMotion
+"feature
+" `<Tab>` & `<S-Tab>` to scroll up/down a page with next match
+" :h easymotion-command-line
+nmap g/ <Plug>(easymotion-sn)
+xmap g/ <Plug>(easymotion-sn)
+omap g/ <Plug>(easymotion-tn)
+" ALE
+" エラー行に表示するマーク
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+" エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" エラー表示の列を常時表示
+let g:ale_sign_column_always = 1
+
+" ファイルを開いたときにlint実行
+let g:ale_lint_on_enter = 1
+" ファイルを保存したときにlint実行
+let g:ale_lint_on_save = 1
+" 編集中のlintはしない
+let g:ale_lint_on_text_changed = 'never'
+
+" lint結果をロケーションリストとQuickFixには表示しない
+" 出てると結構うざいしQuickFixを書き換えられるのは困る
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+
+" 有効にするlinter
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
+
+" ALE用プレフィックス
+nmap [ale] <Nop>
+map <Leader>a [ale]
+" エラー行にジャンプ
+nmap <silent> [ale]<C-P> <Plug>(ale_previous)
+nmap <silent> [ale]<C-N> <Plug>(ale_next)<Paste>
+nnoremap Q <Nop>
+noremap <Space>h  ^
+noremap <Space>l  $

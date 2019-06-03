@@ -1,36 +1,86 @@
+# INTERNAL UTILITY FUNCTIONS {{{1
+
+# Returns whether the given command is executable or aliased.
+_has() {
+  return $( whence $1 >/dev/null )
+}
+
+# Returns whether the given statement executed cleanly. Try to avoid this
+# because this slows down shell loading.
+_try() {
+  return $( eval $* >/dev/null 2>&1 )
+}
+
+# Returns whether the current host type is what we think it is. (HOSTTYPE is
+# set later.)
+_is() {
+  return $( [ "$HOSTTYPE" = "$1" ] )
+}
+
+# Returns whether out terminal supports color.
+_color() {
+  return $( [ -z "$INSIDE_EMACS" ] )
+}
+# PATH MODIFICATIONS {{{1
+
+# Functions which modify the path given a directory, but only if the directory
+# exists and is not already in the path. (Super useful in ~/.zshlocal)
+
+_prepend_to_path() {
+  if [ -d $1 -a -z ${path[(r)$1]} ]; then
+    path=($1 $path);
+  fi
+}
+
+_append_to_path() {
+  if [ -d $1 -a -z ${path[(r)$1]} ]; then
+    path=($path $1);
+  fi
+}
+
+_force_prepend_to_path() {
+  path=($1 ${(@)path:#$1})
+}
+
 #OS
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
 	# zplug settings
-	export ZPLUG_HOME=/usr/local/opt/zplug
-	source $ZPLUG_HOME/init.zsh
-#PATH
+	# export ZPLUG_HOME=/usr/local/opt/zplug
+	# source $ZPLUG_HOME/init.zsh
+	#PATH
   export PATH=~/ShellScript:$PATH
-  export PATH=:~/ShellScript/zos:$PATH
+  export PATH=~/ShellScript/zos:$PATH
+  export PATH=~/ShellScript/tcaz:$PATH
   export PATH=$HOME/.nodebrew/current/bin:$PATH
   export PYTHONPATH=python3:pip3
-
-  export PATH=~/go/bin:$PATH
+  export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+	export PATH=~/go/bin:$PATH
   export PATH=/usr/local/Cellar/git/2.19.1/bin/:$PATH
-#tmuximum
-zplug "arks22/tmuximum", as:command
+  export PATH=~/git/toolsmac/:$PATH
+	export HOMEBREW_PREFIX='/usr/local'
+	#tmuximum
+
+# zplug "arks22/tmuximum", as:command
+
 	;;
     linux*)
 # zplug settings
-export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
-export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-;;
+# export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+# source $ZPLUG_HOME/init.zsh
+ export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+ export MANPATH="$MANPATH:/home/linuxbrew/.linuxbrew/share/man"
+ export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
+ export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+ export HOMEBREW_PREFIX="${HOME}/.linuxbrew"
+ ;;
 esac
 #stty バックスペース有効化
 stty erase "^?"
 #PATH
   export PATH=~/dotfiles/shell:$PATH
-  export PATH=/Users/k.sato/git/toolsmac:$PATH
+  # export PATH=/Users/k.sato/git/toolsmac:$PATH
   export XDG_CONFIG_HOME=~/.config
   export XDG_CONFIG_HOME=~/.config
   export XDG_CACHE_HOME=~/.cache
@@ -40,34 +90,147 @@ export FZF_ALT_C_OPTS="--select-1 --exit-0"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_CTRL_R_OPTS="--bind=tab:down,shift-tab:up"
 export EDITOR=nvim
+# FZF {{{1
 
-# zplug
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# plugins
-zplug "plugins/git", from:oh-my-zsh, lazy:true
-zplug "zsh-users/zsh-autosuggestions", lazy:true
-zplug "rupa/z", use:z.sh
-#zplug "mafredri/zsh-async", from:github
-#zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "zsh-users/zsh-syntax-highlighting"
-# zplug "powerline/powerline"
-zplug "agnoster/agnoster-zsh-theme", from:github, as:theme
-#zplug "yous/lime"
-zplug 'zsh-users/zsh-completions', use:'src/_*', lazy:true
-# Theme
-#if:"source ~/.powerlevel9k"
-# Install plugins if there are plugins that have not been installed
-#if ! zplug check --verbose; then
-#    printf "Install? [y/N]: "
-#    if read -q; then
-#        echo; zplug install
-#    fi
-#fi
+# fzf via Homebrew
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
+
+# fzf via local installation
+if [ -e ~/.fzf ]; then
+  _append_to_path ~/.fzf/bin
+  source ~/.fzf/shell/key-bindings.zsh
+  source ~/.fzf/shell/completion.zsh
+fi
+
+if _has rg; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+fi
+
+# SOURCE LOCAL CONFIG {{{1
+
+if [ -e ~/.zshlocal ]; then
+  . ~/.zshlocal
+fi
+
+# }}} Done.
+zmodload zsh/zpty
+# zplugin をロードします。
+autoload -Uz compinit -C
+. "${HOME}/.zplugin/bin/zplugin.zsh"
+# zplugin のコマンド補完をロードします。
+autoload -Uz _zplugin
+
+# プラグインが使うコマンドをこのタイミングで autoload しておきます。
+autoload -Uz add-zsh-hook
+autoload -Uz cdr
+autoload -Uz chpwd_recent_dirs
+
+if [[ "${+_comps}" == 1 ]]
+then
+  _comps[zplugin]=_zplugin
+fi
+# zplugin: Utilities {{{
+# OS間のクリップボードの差異を吸収するコマンドを定義する oh-my-zsh のスニペットをロードします。
+zplugin snippet 'OMZ::lib/clipboard.zsh'
+# zplugin snippet "${HOME}/.zsh/rc/10_utilities.zsh"
+# fzf を利用した補完のキーバインドを設定するスニペットをロードします。
+# Homebrew で fzf がインストールされている、かつ HOMEBREW_PREFIX に Homebrew のプリフィックスが格納されていることが前提です。
+zplugin snippet "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
+# zplugin: Plugins {{{
+
+# djui/alias-tips {{{
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT='alias-tips: '
+# }}}
+
+# fzf で絵文字を検索&入力ためのプラグインです。
+zplugin light 'b4b4r07/emoji-cli'
+# 利用可能なエイリアスを使わずにコマンドを実行した際に通知するプラグインです。
+zplugin light 'djui/alias-tips'
+# fzf を使ったウィジェットが複数バンドルされたプラグインです。
+zplugin light 'mollifier/anyframe'
+# 作業中のGitのルートディレクトリまでジャンプするコマンドを定義するプラグインです。
+# cd-gitroot コマンドをエイリアスで U に割り当てています。
+zplugin light 'mollifier/cd-gitroot'
+# tmux のウィンドウを作業中のGitレポジトリ名に応じて自動的にリネームしてくれるプラグインです。(自分で作った)
+zplugin light 'sei40kr/zsh-tmux-rename'
+# ls よりも使いやすく見やすいディレクトリの一覧表示のコマンドを定義するプラグインです。
+zplugin ice pick'k.sh'
+zplugin light 'supercrabtree/k'
+
+# 作業ディレクトリに .env ファイルがあった場合に自動的にロードしてくれます。
+zplugin snippet 'OMZ::plugins/dotenv/dotenv.plugin.zsh'
+# コマンド入力待ち状態から control-Z で suspend したプロセスに復帰するキーバインドを設定するプラグインです。
+zplugin snippet 'OMZ::plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh'
+# Gitの補完と大量のエイリアスを定義するプラグインです。
+# エイリアスは重宝するものが多く、Gitを使うユーザーには必ずオススメしたいプラグインです。
+zplugin snippet 'OMZ::plugins/git/git.plugin.zsh'
+# GitHub のレポジトリを管理するためのコマンドを定義するプラグインです。
+zplugin snippet 'OMZ::plugins/github/github.plugin.zsh'
+# 非GNU系OSにインストールしたGNU系ツールをプリフィックスなしで使えるようにするプラグインです。
+zplugin snippet 'OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh'
+# .zshrc を zcompile してロードしてくれる src コマンドを定義するプラグインです。
+zplugin snippet 'OMZ::plugins/zsh_reload/zsh_reload.plugin.zsh'
+# }}}
+
+# zplugin: Commands {{{
+# Go で書かれたツール群を並列ダウンロード&ビルド&インストールしてくれます。
+zplugin ice from'gh-r' as'command' mv'gotcha_* -> gotcha'
+zplugin light 'b4b4r07/gotcha'
+
+# (省略)
+
+# mosh や ssh でリモートのシェルに自分の rc ファイルをロードします。
+zplugin snippet --command \
+    'https://raw.githubusercontent.com/Russell91/sshrc/master/moshrc'
+zplugin snippet --command \
+    'https://raw.githubusercontent.com/Russell91/sshrc/master/sshrc'
+# git diif や tig の可読性をより良くします。(要設定)
+# Homebrew で git をインストールしていること、 `HOMEBREW_PREFIX` に Homebrew のプリフィックスが格納されている前提です。
+# zplugin snippet --command \
+    # "${HOMEBREW_PREFIX}/share/git-core/contrib/diff-highlight/diff-highlight"
+# }}}
+
+# zplugin: Completions {{{
+# プラグインの中に含まれているコマンド補完のみを zplugin で管理します。
+# 想定された zplugin の使い方ではないかもしれません。
+zplugin ice pick''
+zplugin light 'jsforce/jsforce-zsh-completions'
+zplugin ice pick''
+zplugin light 'zsh-users/zsh-completions'
+# }}}
+
+compinit
+zplugin cdreplay -q
+
+# zplugin: Plugins loaded after compinit {{{
+# コマンドをハイライトするプラグインを遅延ロードします。
+zplugin ice wait'1' atload'_zsh_highlight'
+zplugin light 'zdharma/fast-syntax-highlighting'
+# コマンドをサジェストするプラグインを遅延ロードします。
+zplugin ice wait'1' atload'_zsh_autosuggest_start'
+zplugin light 'zsh-users/zsh-autosuggestions'
+
+# プロンプトのテーマを遅延ロードします。このプラグインのみロード完了後にプロンプトを再描画しています。
+zplugin ice pick'spaceship.zsh' wait'!0'
+zplugin light 'denysdovhan/spaceship-zsh-theme'
+# }}}
+
+# zplugin: Plugins loaded after compinit {{{
+# コマンドをハイライトするプラグインを遅延ロードします。
+zplugin ice wait'1' atload'_zsh_highlight'
+zplugin light 'zdharma/fast-syntax-highlighting'
+# コマンドをサジェストするプラグインを遅延ロードします。
+zplugin ice wait'1' atload'_zsh_autosuggest_start'
+zplugin light 'zsh-users/zsh-autosuggestions'
+# プロンプトのテーマを遅延ロードします。このプラグインのみロード完了後にプロンプトを再描画しています。
+zplugin ice pick'spaceship.zsh' wait'!0'
+zplugin light 'agnoster/agnoster-zsh-theme'
+# }}}
 
 # Then, source plugins and add commands to $PATH
-
-zplug check --verbose || zplug install
-zplug load
 #history{{{
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
@@ -101,7 +264,7 @@ fi
 # 大文字小文字区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ### 補完
-autoload -U compinit; compinit -C
+# autoload -U compinit; compinit -C
 # 補完メニューをカーソルで選択可能にする
 # zstyle ':completion:*:default' menu select=1
 ### 補完方法毎にグループ化する。
@@ -287,7 +450,7 @@ bindkey '^Z' peco-cdr
 #{{{ hub
  eval "$(hub alias -s)"
 fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
+# autoload -U compinit && compinit
 #}}}
 #{{{
 # zplugなどでzをインストールしとく
@@ -309,3 +472,12 @@ bindkey '^f' fzf-z-search
 #ls同時
 function chpwd() { ls }
 #}}}
+
+### Added by Zplugin's installer
+source '/Users/k.sato/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+# if (which zprof > /dev/null) ;then
+#   zprof | less
+# fi
