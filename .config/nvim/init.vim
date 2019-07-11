@@ -1,3 +1,4 @@
+"
 " エスケープで英数字の入力にする
 if has('mac')
   set ttimeoutlen=1
@@ -59,7 +60,7 @@ inoremap <silent> jj <ESC>
 "leaderをスペースキーに割り当て
 let mapleader = "\<Space>"
 "色
-autocmd ColorScheme * highlight Visual   ctermbg=52 guifg=#8b0000 guibg=#00ffff
+autocmd ColorScheme * highlight Visual   gui=bold  guifg=#bce2e8 guibg=#00a1e9
 colorscheme iceberg
 "syntax on
 " 256色¬
@@ -73,6 +74,7 @@ set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
+set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
@@ -343,7 +345,7 @@ nmap <Leader>; :Buffers<CR>
 " nmap <Leader>r :Tags<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>a :Rg!<CR>
-nmap <Leader>s :Colors<CR>
+" nmap <Leader>s :Colors<CR>
 let $FZF_DEFAULT_COMMAND = 'rg --files --follow -g "!{.git,node_modules}/*" 2>/dev/null'
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -471,6 +473,9 @@ let g:ale_keep_list_window_open = 0
 " 有効にするlinter
 let g:ale_linters = {
 \   'python': ['flake8'],
+\   'markdown': [
+\   {buffer, lines -> {'command': 'markdownlint -c ~/.config/markdownlint/markdownlint.json -o /dev/null %t', 'read_temporary_file': 1}}
+\   ],
 \}
 
 " ALE用プレフィックス
@@ -482,3 +487,12 @@ nmap <silent> [ale]<C-N> <Plug>(ale_next)<Paste>
 nnoremap Q <Nop>
 noremap <Space>h  ^
 noremap <Space>l  $
+map <Leader>s <Plug>(operator-surround-append)
+nnoremap /  /\v
+" python syntax
+let g:syntastic_python_checkers = ['pydocstyle', 'pycodestyle', 'pyflakes']
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let $BASH_ENV = "~/dotfiles/31_aliases_for_vim.zsh"
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)

@@ -1,4 +1,10 @@
+alias ll='ls -l'
 alias zmv='noglob zmv -W'
+alias mdt='pbpaste | mdt| pbcopy'
+alias SL1032='py ~/ShellScript/python/SL1032.py'
+alias SL103S='py ~/ShellScript/python/SL103S.py'
+alias SL1K32='py ~/ShellScript/python/SL1K32.py'
+alias python="python3"
 alias py='python'
 alias regdoc='cd ~/Box/TCAZ\ z2/z2\ リグレッションテスト/テスト記述書'
 alias ghe='GITHUB_HOST=github.ibm.com git'

@@ -152,3 +152,15 @@ if &filetype == ""  |
  repo = 'Vimjas/vim-python-pep8-indent'
 [[plugins]] 
  repo = 'cocopon/iceberg.vim'
+[[plugins]] 
+ repo = 'rhysd/vim-operator-surround'
+[[plugins]] 
+ repo = 'neovim/pynvim'
+[[plugins]] 
+ repo = 'msgpack-rpc/msgpack-rpc'
+[[plugins]] 
+ repo = 'scrooloose/syntastic'
+[[plugins]] 
+ repo = 'Shougo/deoplete.nvim'
+[[plugins]] 
+ repo = 'bfredl/nvim-miniyank'

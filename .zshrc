@@ -317,6 +317,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([%0-9]#)*=0=01;31
 #コマンドにsudoを付けても補完
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
+bindkey -e
+
 # 補完候補のメニュー選択で、矢印キーの代わりにhjklで移動出来るようにする。
 zmodload zsh/complist
 bindkey -M menuselect 'h' vi-backward-char
@@ -329,6 +331,7 @@ function extract() {
         *.tar.gz|*.tgz) tar xzvf $1 ;;
         *.tar.xz) tar Jxvf $1 ;;
         *.zip) unzip $1 ;;
+        *.ZIP) unzip $1 ;;
         *.lzh) lha e $1 ;;
         *.tar.bz2|*.tbz) tar xjvf $1 ;;
         *.tar.Z) tar zxvf $1 ;;
