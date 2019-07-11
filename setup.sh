@@ -19,13 +19,11 @@ export INFOPATH="$INFOPATH:/home/linuxbrew/.linuxbrew/share/info"
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 brew install zsh
-brew install zplug
 brew install neovim
 brew install python3
 pip3 install -U neovim
 command -v zsh | sudo tee -a /etc/shells
 sudo chsh -s "$(command -v zsh)" "${USER}"
-
 mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
 git clone https://github.com/Shougo/dein.vim.git \
 	~/.vim/dein/repos/github.com/Shougo/dein.vim
