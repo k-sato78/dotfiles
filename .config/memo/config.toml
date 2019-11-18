@@ -1,0 +1,11 @@
+memodir = "/Users/k.sato/.config/memo/_posts"
+editor = "nvim"
+column = 20
+width = 0
+selectcmd = "peco"
+grepcmd = "grep -nH ${PATTERN} ${FILES}"
+memotemplate = ""
+assetsdir = "."
+pluginsdir = "/Users/k.sato/.config/memo/plugins"
+templatedirfile = ""
+templatebodyfile = ""

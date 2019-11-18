@@ -1,4 +1,3 @@
-[[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'tpope/vim-surround'
@@ -64,9 +63,8 @@ repo =  'Shougo/denite.nvim'
 repo =  'edkolev/tmuxline.vim'
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
-[[plugins]]
 # repo = 'kannokanno/previm'
-repo = 'suan/vim-instant-markdown'
+# repo = 'suan/vim-instant-markdown'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 [[plugins]]
@@ -148,19 +146,23 @@ if &filetype == ""  |
  repo = 'zchee/deoplete-jedi'
 [[plugins]]
  repo = 'w0rp/ale'
-[[plugins]] 
+[[plugins]]
  repo = 'Vimjas/vim-python-pep8-indent'
-[[plugins]] 
+[[plugins]]
  repo = 'cocopon/iceberg.vim'
-[[plugins]] 
+[[plugins]]
  repo = 'rhysd/vim-operator-surround'
-[[plugins]] 
+[[plugins]]
  repo = 'neovim/pynvim'
-[[plugins]] 
+[[plugins]]
  repo = 'msgpack-rpc/msgpack-rpc'
-[[plugins]] 
+[[plugins]]
  repo = 'scrooloose/syntastic'
-[[plugins]] 
+[[plugins]]
  repo = 'Shougo/deoplete.nvim'
-[[plugins]] 
+[[plugins]]
  repo = 'bfredl/nvim-miniyank'
+[[plugins]]
+ repo = 'iamcco/markdown-preview.nvim'
+ on_ft = [ 'markdown', 'pandoc.markdown', 'rmd']
+ build =  'cd app & yarn install'

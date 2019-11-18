@@ -1,0 +1,3 @@
+# tcazTsoLogon
+logon applid(tso)
+
