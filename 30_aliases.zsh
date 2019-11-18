@@ -6,7 +6,7 @@ alias SL103S='py ~/ShellScript/python/SL103S.py'
 alias SL1K32='py ~/ShellScript/python/SL1K32.py'
 alias python="python3"
 alias py='python'
-alias regdoc='cd ~/Box/TCAZ\ z2/z2\ リグレッションテスト/テスト記述書'
+alias regd='cd ~/Box/TCAZ\ z2/z2\ リグレッションテスト/テスト記述書'
 alias ghe='GITHUB_HOST=github.ibm.com git'
 alias cr='eval `~/ShellScript/tcaz/CdTodaysRep.sh`'
 alias workday='o https://wd5.myworkday.com/ibm/d/home.htmld'
@@ -66,6 +66,8 @@ alias -s {gz,tgz,zip,lzh,bz2,tbz,Z,tar,arj,xz}=extract
 alias al='vi ~/dotfiles/30_aliases.zsh'
 alias zshrc='vi ~/.zshrc'
 alias epa='ssh epa'
+alias r2='ssh r2'
+
 alias -g G='| grep'
 # mkdirとcdを同時実行
 function mkc() {
