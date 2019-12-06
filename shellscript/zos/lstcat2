@@ -1,0 +1,6 @@
+//LSTCAT  JOB  MSGLEVEL=(1,1),CLASS=A,MSGCLASS=X,NOTIFY=&SYSUID
+//IDCAMS   EXEC PGM=IDCAMS                                     
+//SYSPRINT DD SYSOUT=*                                         
+//SYSIN    DD *                                                
+ LISTCAT CATALOG(CATALOG.Z21.MASTER)                           
+//                                                             

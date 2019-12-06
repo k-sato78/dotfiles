@@ -1,0 +1,402 @@
+Seq #  Date     End Time    Member Appl     Class 1  Class 2  Class 3  Main reason #1       Main reason #2       Main reason #3      
+--- -- -------- ----------- ------ -------- -------- -------- -------- -------------------- -------------------- --------------------
+004 22 19/04/25 17:39:03.03 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+003 23 19/04/25 17:39:12.70 DBH2   OLTP03      0.414    0.130    0.126 IRLM LOCK+LATCH                                               
+003 27 19/04/25 17:39:12.72 DBH2   OLTP03      0.136    0.128    0.125 IRLM LOCK+LATCH                                               
+003 22 19/04/25 17:39:17.71 DBH2   OLTP03      0.922    0.130    0.124 IRLM LOCK+LATCH                                               
+003 07 19/04/25 17:39:17.74 DBH2   OLTP03      0.950    0.159    0.155 IRLM LOCK+LATCH                                               
+002 05 19/04/25 17:39:37.34 DBH1   MBEG201     4.937    2.293    1.663 LOG WRITE I/O        DATABASE I/O                             
+004 02 19/04/25 17:39:40.05 DBH1   ANS112S     1.007    0.007    0.002 UPDATE COMMIT                                                 
+004 21 19/04/25 17:39:42.04 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+004 08 19/04/25 17:39:45.04 DBH1   ANS112S     1.003    0.005    0.002 UPDATE COMMIT                                                 
+004 32 19/04/25 17:39:46.04 DBH1   ANS112S     0.999    0.004    0.002 UPDATE COMMIT                                                 
+003 40 19/04/25 17:39:49.76 DBH2   OLTP61      0.149    0.122    0.117 GLOBAL CONTENTION                                             
+003 32 19/04/25 17:39:52.76 DBH1   OLTP61      0.325    0.136    0.132 GLOBAL CONTENTION                                             
+004 44 19/04/25 17:40:02.04 DBH1   ANS112S     1.000    0.004    0.001 UPDATE COMMIT                                                 
+004 16 19/04/25 17:40:12.04 DBH1   ANS112S     1.001    0.005    0.002 UPDATE COMMIT                                                 
+004 43 19/04/25 17:40:20.05 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+004 30 19/04/25 17:40:28.05 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+004 41 19/04/25 17:40:28.58 DBH2   ANS122S     1.032    0.047    0.002 UPDATE COMMIT                                                 
+004 43 19/04/25 17:40:28.58 DBH2   ANS122S     1.032    0.046    0.002 UPDATE COMMIT                                                 
+004 16 19/04/25 17:40:35.63 DBH2   ANS122S     1.037    0.088    0.002 UPDATE COMMIT                                                 
+004 17 19/04/25 17:40:35.63 DBH2   ANS122S     1.020    0.088    0.002 UPDATE COMMIT                                                 
+002 04 19/04/25 17:40:37.83 DBH2   MBEG201     5.431    2.543    1.906 LOG WRITE I/O        DATABASE I/O                             
+004 18 19/04/25 17:40:38.05 DBH1   ANS112S     1.000    0.004    0.003 UPDATE COMMIT                                                 
+003 26 19/04/25 17:40:38.79 DBH1   OLTP61      0.402    0.140    0.136 PAGE LATCH           IRLM LOCK+LATCH      GLOBAL CONTENTION   
+004 13 19/04/25 17:40:41.05 DBH1   ANS112S     1.002    0.005    0.002 UPDATE COMMIT                                                 
+004 04 19/04/25 17:40:42.05 DBH1   ANS112S     1.004    0.006    0.001 UPDATE COMMIT                                                 
+004 19 19/04/25 17:40:42.05 DBH1   ANS112S     1.003    0.004    0.001 UPDATE COMMIT                                                 
+004 47 19/04/25 17:40:44.05 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+004 26 19/04/25 17:40:45.05 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+003 47 19/04/25 17:40:48.89 DBH1   OLTP03      0.410    0.131    0.127 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+004 33 19/04/25 17:40:51.05 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+003 45 19/04/25 17:40:53.67 DBH2   OLTP03      0.305    0.121    0.117 IRLM LOCK+LATCH                                               
+004 39 19/04/25 17:40:56.05 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+004 29 19/04/25 17:41:00.05 DBH1   ANS112S     1.002    0.004    0.002 UPDATE COMMIT                                                 
+004 47 19/04/25 17:41:07.60 DBH2   ANS122S     1.035    0.041    0.001 UPDATE COMMIT                                                 
+004 48 19/04/25 17:41:07.60 DBH2   ANS122S     1.034    0.041    0.001 UPDATE COMMIT                                                 
+004 03 19/04/25 17:41:08.06 DBH1   ANS112S     1.004    0.006    0.005 UPDATE COMMIT                                                 
+004 06 19/04/25 17:41:08.06 DBH1   ANS112S     1.004    0.006    0.005 UPDATE COMMIT                                                 
+004 38 19/04/25 17:41:12.62 DBH2   ANS122S     1.061    0.052    0.002 UPDATE COMMIT                                                 
+004 33 19/04/25 17:41:13.63 DBH2   ANS122S     1.012    0.060    0.002 UPDATE COMMIT                                                 
+003 09 19/04/25 17:41:15.75 DBH1   OLTP03      0.451    0.178    0.174 PAGE LATCH           GLOBAL CONTENTION                        
+003 10 19/04/25 17:41:15.75 DBH1   OLTP03      0.371    0.178    0.172 GLOBAL CONTENTION    PAGE LATCH                               
+003 11 19/04/25 17:41:15.75 DBH1   OLTP03      0.373    0.178    0.173 PAGE LATCH                                                    
+004 01 19/04/25 17:41:15.76 DBH2   ANS122S     1.198    0.191    0.001 UPDATE COMMIT                                                 
+004 40 19/04/25 17:41:16.05 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+003 47 19/04/25 17:41:20.78 DBH2   OLTP03      0.304    0.121    0.117 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+004 10 19/04/25 17:41:21.68 DBH2   ANS122S     1.121    0.109    0.002 UPDATE COMMIT                                                 
+004 20 19/04/25 17:41:25.65 DBH2   ANS122S     1.079    0.082    0.001 UPDATE COMMIT                                                 
+004 23 19/04/25 17:41:25.65 DBH2   ANS122S     1.080    0.075    0.001 UPDATE COMMIT                                                 
+003 37 19/04/25 17:41:26.61 DBH1   OLTP02      0.803    0.134    0.130 PAGE LATCH                                                    
+003 43 19/04/25 17:41:26.61 DBH1   OLTP02      0.802    0.132    0.128 PAGE LATCH                                                    
+003 45 19/04/25 17:41:26.61 DBH1   OLTP02      0.751    0.132    0.127 PAGE LATCH                                                    
+003 48 19/04/25 17:41:26.61 DBH1   OLTP02      0.793    0.130    0.127 PAGE LATCH                                                    
+003 49 19/04/25 17:41:26.61 DBH1   OLTP02      0.812    0.130    0.126 PAGE LATCH                                                    
+003 50 19/04/25 17:41:26.61 DBH1   OLTP02      0.798    0.129    0.123 PAGE LATCH                                                    
+003 18 19/04/25 17:41:26.62 DBH1   OLTP02      0.800    0.145    0.142 PAGE LATCH                                                    
+003 28 19/04/25 17:41:26.62 DBH1   OLTP02      0.820    0.138    0.132 PAGE LATCH                                                    
+003 31 19/04/25 17:41:26.62 DBH1   OLTP02      0.795    0.137    0.132 PAGE LATCH                                                    
+003 40 19/04/25 17:41:26.62 DBH1   OLTP02      0.791    0.133    0.130 PAGE LATCH                                                    
+003 16 19/04/25 17:41:26.63 DBH1   OLTP02      0.819    0.149    0.145 PAGE LATCH           GLOBAL CONTENTION                        
+003 21 19/04/25 17:41:26.63 DBH1   OLTP02      0.811    0.142    0.138 PAGE LATCH           GLOBAL CONTENTION                        
+003 12 19/04/25 17:41:26.63 DBH2   OLTP01      0.153    0.150    0.147 GLOBAL CONTENTION                                             
+003 13 19/04/25 17:41:26.63 DBH2   OLTP01      0.149    0.145    0.143 GLOBAL CONTENTION                                             
+003 14 19/04/25 17:41:26.64 DBH2   OLTP02      0.147    0.143    0.139 GLOBAL CONTENTION                                             
+004 11 19/04/25 17:41:32.67 DBH2   ANS122S     1.101    0.097    0.002 UPDATE COMMIT                                                 
+004 12 19/04/25 17:41:32.67 DBH2   ANS122S     1.101    0.097    0.001 UPDATE COMMIT                                                 
+004 10 19/04/25 17:41:35.06 DBH1   ANS112S     1.002    0.005    0.002 UPDATE COMMIT                                                 
+003 27 19/04/25 17:41:35.83 DBH1   OLTP03      0.401    0.139    0.134 IRLM LOCK+LATCH                                               
+002 04 19/04/25 17:41:37.33 DBH1   MBEG201     5.017    2.293    1.638 LOG WRITE I/O        DATABASE I/O                             
+004 50 19/04/25 17:41:39.62 DBH2   ANS122S     1.048    0.039    0.002 UPDATE COMMIT                                                 
+004 24 19/04/25 17:41:40.06 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+004 11 19/04/25 17:41:46.06 DBH1   ANS112S     1.006    0.005    0.003 UPDATE COMMIT                                                 
+004 15 19/04/25 17:41:47.06 DBH1   ANS112S     0.999    0.005    0.001 UPDATE COMMIT                                                 
+004 07 19/04/25 17:41:47.73 DBH2   ANS122S     1.127    0.126    0.002 UPDATE COMMIT                                                 
+004 31 19/04/25 17:41:50.06 DBH1   ANS112S     1.002    0.004    0.001 UPDATE COMMIT                                                 
+004 36 19/04/25 17:41:52.66 DBH2   ANS122S     0.977    0.059    0.001 UPDATE COMMIT                                                 
+004 37 19/04/25 17:41:52.66 DBH2   ANS122S     0.975    0.057    0.002 UPDATE COMMIT                                                 
+004 41 19/04/25 17:41:53.06 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+004 01 19/04/25 17:41:54.70 DBH1   ANS112S     0.644    0.099    0.052 OPEN/CLOSE           DATABASE I/O                             
+004 49 19/04/25 17:41:55.65 DBH2   ANS122S     1.053    0.039    0.002 UPDATE COMMIT                                                 
+004 35 19/04/25 17:41:56.06 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+004 07 19/04/25 17:42:00.06 DBH1   ANS112S     1.004    0.005    0.002 UPDATE COMMIT                                                 
+004 21 19/04/25 17:42:00.68 DBH2   ANS122S     1.083    0.076    0.001 UPDATE COMMIT                                                 
+004 36 19/04/25 17:42:01.06 DBH1   ANS112S     0.997    0.004    0.001 UPDATE COMMIT                                                 
+004 27 19/04/25 17:42:05.06 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+004 09 19/04/25 17:42:05.73 DBH2   ANS122S     1.131    0.119    0.004 UPDATE COMMIT                                                 
+004 04 19/04/25 17:42:05.74 DBH2   ANS122S     1.136    0.132    0.001 UPDATE COMMIT                                                 
+004 08 19/04/25 17:42:13.77 DBH2   ANS122S     1.161    0.126    0.002 UPDATE COMMIT                                                 
+004 15 19/04/25 17:42:18.71 DBH2   ANS122S     1.097    0.088    0.001 UPDATE COMMIT                                                 
+003 06 19/04/25 17:42:19.69 DBH1   OLTP02      0.968    0.187    0.184 PAGE LATCH                                                    
+003 07 19/04/25 17:42:19.69 DBH1   OLTP02      0.848    0.186    0.183 PAGE LATCH                                                    
+003 08 19/04/25 17:42:19.69 DBH1   OLTP02      0.867    0.186    0.182 GLOBAL CONTENTION                                             
+003 04 19/04/25 17:42:19.70 DBH1   OLTP01      0.867    0.193    0.190 PAGE LATCH                                                    
+003 05 19/04/25 17:42:19.70 DBH1   OLTP01      0.873    0.190    0.186 PAGE LATCH                                                    
+001 49 19/04/25 17:42:19.71 DBH1   MBEG101     0.189    0.168    0.165 PAGE LATCH                                                    
+001 50 19/04/25 17:42:19.71 DBH1   MBEG101     0.188    0.166    0.164 PAGE LATCH                                                    
+001 45 19/04/25 17:42:19.72 DBH1   MBEG101     0.192    0.171    0.168 PAGE LATCH                                                    
+004 27 19/04/25 17:42:22.69 DBH2   ANS122S     1.079    0.072    0.001 UPDATE COMMIT                                                 
+004 44 19/04/25 17:42:23.67 DBH2   ANS122S     0.972    0.045    0.002 UPDATE COMMIT                                                 
+004 14 19/04/25 17:42:25.71 DBH2   ANS122S     1.095    0.089    0.001 UPDATE COMMIT                                                 
+004 19 19/04/25 17:42:25.71 DBH2   ANS122S     1.095    0.086    0.001 UPDATE COMMIT                                                 
+004 31 19/04/25 17:42:27.69 DBH2   ANS122S     1.072    0.065    0.001 UPDATE COMMIT                                                 
+004 18 19/04/25 17:42:28.71 DBH2   ANS122S     1.025    0.087    0.002 UPDATE COMMIT                                                 
+004 28 19/04/25 17:42:30.69 DBH2   ANS122S     1.073    0.071    0.001 UPDATE COMMIT                                                 
+004 39 19/04/25 17:42:31.68 DBH2   ANS122S     1.034    0.051    0.001 UPDATE COMMIT                                                 
+004 25 19/04/25 17:42:31.74 DBH2   ANS122S     1.051    0.074    0.001 UPDATE COMMIT                                                 
+002 39 19/04/25 17:42:32.81 DBH1   MBEG201     0.956    0.136    0.119 PAGE LATCH           DB2 LATCH                                
+002 37 19/04/25 17:42:32.82 DBH1   MBEG201     0.950    0.141    0.115 PAGE LATCH           DB2 LATCH                                
+002 38 19/04/25 17:42:32.82 DBH1   MBEG201     0.964    0.137    0.120 DB2 LATCH            GLOBAL CONTENTION                        
+004 24 19/04/25 17:42:33.70 DBH2   ANS122S     1.042    0.074    0.002 UPDATE COMMIT                                                 
+002 06 19/04/25 17:42:37.28 DBH1   MBEG201     4.921    2.292    1.667 LOG WRITE I/O        DATABASE I/O                             
+004 34 19/04/25 17:42:40.69 DBH2   ANS122S     1.033    0.060    0.001 UPDATE COMMIT                                                 
+004 13 19/04/25 17:42:45.73 DBH2   ANS122S     1.069    0.094    0.001 UPDATE COMMIT                                                 
+004 35 19/04/25 17:42:50.70 DBH2   ANS122S     1.045    0.059    0.002 UPDATE COMMIT                                                 
+004 09 19/04/25 17:43:00.07 DBH1   ANS112S     1.002    0.005    0.002 UPDATE COMMIT                                                 
+004 22 19/04/25 17:43:02.73 DBH2   ANS122S     1.073    0.076    0.002 UPDATE COMMIT                                                 
+003 37 19/04/25 17:43:03.78 DBH2   OLTP02      0.130    0.123    0.117 IRLM LOCK+LATCH                                               
+004 02 19/04/25 17:43:03.83 DBH2   ANS122S     1.096    0.158    0.002 UPDATE COMMIT                                                 
+003 39 19/04/25 17:43:13.67 DBH2   OLTP02      0.958    0.122    0.117 PAGE LATCH           GLOBAL CONTENTION                        
+003 46 19/04/25 17:43:13.67 DBH2   OLTP02      0.977    0.121    0.113 PAGE LATCH           IRLM LOCK+LATCH                          
+004 23 19/04/25 17:43:16.08 DBH1   ANS112S     1.008    0.004    0.002 UPDATE COMMIT                                                 
+004 42 19/04/25 17:43:20.79 DBH2   ANS122S     1.121    0.047    0.002 UPDATE COMMIT                                                 
+004 48 19/04/25 17:43:32.08 DBH1   ANS112S     1.000    0.004    0.002 UPDATE COMMIT                                                 
+003 25 19/04/25 17:43:33.79 DBH2   OLTP03      0.362    0.129    0.125 IRLM LOCK+LATCH                                               
+003 09 19/04/25 17:43:33.82 DBH2   OLTP03      0.393    0.156    0.152 IRLM LOCK+LATCH                                               
+004 05 19/04/25 17:43:34.80 DBH2   ANS122S     1.123    0.129    0.011 IRLM LOCK+LATCH      UPDATE COMMIT                            
+004 03 19/04/25 17:43:35.81 DBH2   ANS122S     1.008    0.136    0.002 UPDATE COMMIT                                                 
+002 02 19/04/25 17:43:37.32 DBH1   MBEG201     5.039    2.371    1.748 LOG WRITE I/O        DATABASE I/O                             
+003 41 19/04/25 17:43:40.63 DBH1   OLTP02      0.855    0.133    0.130 PAGE LATCH           GLOBAL CONTENTION                        
+003 42 19/04/25 17:43:40.63 DBH1   OLTP02      0.845    0.133    0.129 PAGE LATCH           GLOBAL CONTENTION                        
+003 12 19/04/25 17:43:40.67 DBH1   OLTP02      0.923    0.171    0.166 IRLM LOCK+LATCH      PAGE LATCH                               
+003 05 19/04/25 17:43:40.69 DBH2   OLTP01      0.183    0.179    0.176 GLOBAL CONTENTION    PAGE LATCH                               
+003 24 19/04/25 17:43:40.69 DBH2   OLTP02      0.146    0.129    0.125 PAGE LATCH           GLOBAL CONTENTION                        
+003 50 19/04/25 17:43:40.69 DBH2   OLTP02      0.139    0.119    0.115 PAGE LATCH                                                    
+004 12 19/04/25 17:43:43.08 DBH1   ANS112S     1.001    0.005    0.002 UPDATE COMMIT                                                 
+004 06 19/04/25 17:43:44.81 DBH2   ANS122S     1.126    0.126    0.002 UPDATE COMMIT                                                 
+004 40 19/04/25 17:43:48.74 DBH2   ANS122S     1.048    0.050    0.001 UPDATE COMMIT                                                 
+003 33 19/04/25 17:43:53.06 DBH2   OLTP02      0.132    0.124    0.119 GLOBAL CONTENTION                                             
+004 05 19/04/25 17:43:53.08 DBH1   ANS112S     1.005    0.006    0.001 UPDATE COMMIT                                                 
+003 02 19/04/25 17:43:53.15 DBH1   OLTP03      0.216    0.210    0.204 GLOBAL CONTENTION                                             
+004 46 19/04/25 17:43:59.08 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+004 46 19/04/25 17:44:06.85 DBH2   ANS122S     1.030    0.041    0.001 UPDATE COMMIT                                                 
+004 45 19/04/25 17:44:06.86 DBH2   ANS122S     1.032    0.044    0.002 UPDATE COMMIT                                                 
+003 33 19/04/25 17:44:12.65 DBH1   OLTP02      0.716    0.136    0.131 PAGE LATCH                                                    
+003 36 19/04/25 17:44:12.65 DBH1   OLTP02      0.718    0.135    0.129 GLOBAL CONTENTION                                             
+003 20 19/04/25 17:44:12.66 DBH1   OLTP02      0.723    0.143    0.137 PAGE LATCH           GLOBAL CONTENTION                        
+003 34 19/04/25 17:44:12.66 DBH1   OLTP02      0.725    0.136    0.133 PAGE LATCH                                                    
+003 38 19/04/25 17:44:12.66 DBH1   OLTP02      0.727    0.134    0.130 PAGE LATCH                                                    
+003 34 19/04/25 17:44:14.71 DBH2   OLTP03      0.380    0.123    0.118 IRLM LOCK+LATCH      PAGE LATCH                               
+004 29 19/04/25 17:44:15.91 DBH2   ANS122S     1.090    0.069    0.001 UPDATE COMMIT                                                 
+004 30 19/04/25 17:44:15.91 DBH2   ANS122S     1.094    0.068    0.001 UPDATE COMMIT                                                 
+004 32 19/04/25 17:44:22.92 DBH2   ANS122S     1.073    0.064    0.002 UPDATE COMMIT                                                 
+001 17 19/04/25 17:44:29.71 DBH1   MBEG101     0.235    0.201    0.199 GLOBAL CONTENTION                                             
+001 18 19/04/25 17:44:29.71 DBH1   MBEG101     0.234    0.201    0.200 PAGE LATCH                                                    
+001 23 19/04/25 17:44:29.71 DBH1   MBEG101     0.229    0.193    0.191 PAGE LATCH                                                    
+003 29 19/04/25 17:44:31.73 DBH2   OLTP03      0.373    0.127    0.121 IRLM LOCK+LATCH                                               
+003 26 19/04/25 17:44:31.75 DBH2   OLTP02      0.132    0.129    0.125 IRLM LOCK+LATCH                                               
+002 03 19/04/25 17:44:37.25 DBH1   MBEG201     4.995    2.360    1.686 LOG WRITE I/O        DATABASE I/O                             
+003 41 19/04/25 17:44:37.83 DBH2   OLTP03      1.189    0.122    0.118 IRLM LOCK+LATCH                                               
+003 18 19/04/25 17:44:37.84 DBH2   OLTP03      1.227    0.136    0.132 IRLM LOCK+LATCH                                               
+004 26 19/04/25 17:44:38.93 DBH2   ANS122S     1.085    0.072    0.002 UPDATE COMMIT                                                 
+004 34 19/04/25 17:44:45.09 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+003 24 19/04/25 17:45:01.89 DBH1   OLTP03      0.277    0.141    0.137 GLOBAL CONTENTION                                             
+003 19 19/04/25 17:45:03.76 DBH2   OLTP03      0.386    0.136    0.132 IRLM LOCK+LATCH                                               
+001 31 19/04/25 17:45:12.45 DBH1   MBEG101     0.191    0.187    0.186 IRLM LOCK+LATCH      EXT/DEL/DEF                              
+003 15 19/04/25 17:45:27.71 DBH1   OLTP03      0.415    0.149    0.142 PAGE LATCH                                                    
+003 17 19/04/25 17:45:27.71 DBH1   OLTP03      0.412    0.149    0.143 PAGE LATCH                                                    
+001 44 19/04/25 17:45:27.73 DBH1   MBEG101     0.183    0.171    0.169 GLOBAL CONTENTION                                             
+003 43 19/04/25 17:45:28.77 DBH2   OLTP03      0.365    0.122    0.116 IRLM LOCK+LATCH                                               
+001 24 19/04/25 17:45:31.44 DBH1   MBEG101     0.198    0.193    0.192 GLOBAL CONTENTION                                             
+001 26 19/04/25 17:45:31.44 DBH1   MBEG101     0.194    0.190    0.189 GLOBAL CONTENTION                                             
+001 15 19/04/25 17:45:31.45 DBH1   MBEG101     0.634    0.205    0.203 GLOBAL CONTENTION                                             
+001 16 19/04/25 17:45:31.45 DBH1   MBEG101     0.624    0.203    0.201 GLOBAL CONTENTION    EXT/DEL/DEF                              
+001 27 19/04/25 17:45:31.45 DBH1   MBEG101     0.194    0.189    0.188 GLOBAL CONTENTION                                             
+001 18 19/04/25 17:45:31.45 DBH2   MBEG101     0.643    0.204    0.202 GLOBAL CONTENTION                                             
+001 20 19/04/25 17:45:31.45 DBH2   MBEG101     0.643    0.203    0.202 GLOBAL CONTENTION                                             
+001 21 19/04/25 17:45:31.45 DBH2   MBEG101     0.632    0.203    0.201 GLOBAL CONTENTION                                             
+001 24 19/04/25 17:45:31.45 DBH2   MBEG101     0.195    0.190    0.188 GLOBAL CONTENTION                                             
+001 25 19/04/25 17:45:31.45 DBH2   MBEG101     0.194    0.189    0.188 IRLM LOCK+LATCH                                               
+001 27 19/04/25 17:45:31.45 DBH2   MBEG101     0.192    0.188    0.187 IRLM LOCK+LATCH                                               
+001 37 19/04/25 17:45:31.74 DBH1   MBEG101     0.198    0.174    0.171 GLOBAL CONTENTION                                             
+001 41 19/04/25 17:45:31.74 DBH1   MBEG101     0.197    0.171    0.169 PAGE LATCH                                                    
+001 42 19/04/25 17:45:31.74 DBH1   MBEG101     0.194    0.171    0.169 PAGE LATCH                                                    
+001 43 19/04/25 17:45:31.74 DBH1   MBEG101     0.196    0.171    0.167 PAGE LATCH                                                    
+002 02 19/04/25 17:45:37.71 DBH2   MBEG201     5.446    2.768    2.141 LOG WRITE I/O        DATABASE I/O                             
+002 07 19/04/25 17:45:39.22 DBH2   MBEG201     1.259    0.348    0.344 PAGE LATCH                                                    
+002 15 19/04/25 17:45:39.22 DBH2   MBEG201     1.257    0.343    0.244 OTHER WRTE I/O                                                
+002 16 19/04/25 17:45:39.22 DBH2   MBEG201     1.253    0.342    0.340 OTHER READ I/O                                                
+002 17 19/04/25 17:45:39.22 DBH2   MBEG201     1.251    0.342    0.340 DATABASE I/O                                                  
+002 18 19/04/25 17:45:39.22 DBH2   MBEG201     0.608    0.341    0.339 PAGE LATCH                                                    
+002 05 19/04/25 17:45:39.23 DBH2   MBEG201     1.273    0.351    0.347 PAGE LATCH                                                    
+002 06 19/04/25 17:45:39.23 DBH2   MBEG201     1.273    0.349    0.344 PAGE LATCH                                                    
+002 08 19/04/25 17:45:39.23 DBH2   MBEG201     1.271    0.348    0.345 PAGE LATCH                                                    
+002 09 19/04/25 17:45:39.23 DBH2   MBEG201     1.267    0.348    0.344 PAGE LATCH                                                    
+002 10 19/04/25 17:45:39.23 DBH2   MBEG201     1.272    0.347    0.343 PAGE LATCH                                                    
+002 11 19/04/25 17:45:39.23 DBH2   MBEG201     1.272    0.347    0.343 PAGE LATCH                                                    
+002 12 19/04/25 17:45:39.23 DBH2   MBEG201     0.614    0.347    0.343 PAGE LATCH                                                    
+002 13 19/04/25 17:45:39.23 DBH2   MBEG201     1.269    0.345    0.342 PAGE LATCH                                                    
+002 14 19/04/25 17:45:39.23 DBH2   MBEG201     1.267    0.345    0.340 PAGE LATCH                                                    
+002 19 19/04/25 17:45:39.23 DBH2   MBEG201     0.340    0.334    0.332 PAGE LATCH                                                    
+002 20 19/04/25 17:45:39.23 DBH2   MBEG201     0.341    0.332    0.331 PAGE LATCH                                                    
+002 30 19/04/25 17:45:39.23 DBH2   MBEG201     0.339    0.323    0.322 PAGE LATCH                                                    
+002 21 19/04/25 17:45:39.24 DBH2   MBEG201     0.342    0.331    0.330 PAGE LATCH                                                    
+002 22 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.326    0.325 PAGE LATCH                                                    
+002 24 19/04/25 17:45:39.24 DBH2   MBEG201     0.342    0.325    0.324 PAGE LATCH                                                    
+002 25 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.325    0.323 PAGE LATCH                                                    
+002 26 19/04/25 17:45:39.24 DBH2   MBEG201     0.339    0.325    0.323 PAGE LATCH                                                    
+002 27 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.324    0.323 PAGE LATCH                                                    
+002 28 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.324    0.322 PAGE LATCH                                                    
+002 29 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.324    0.323 PAGE LATCH                                                    
+002 31 19/04/25 17:45:39.24 DBH2   MBEG201     0.342    0.322    0.321 PAGE LATCH                                                    
+002 32 19/04/25 17:45:39.24 DBH2   MBEG201     0.337    0.322    0.321 PAGE LATCH                                                    
+002 33 19/04/25 17:45:39.24 DBH2   MBEG201     0.340    0.321    0.320 PAGE LATCH                                                    
+002 34 19/04/25 17:45:39.24 DBH2   MBEG201     0.341    0.321    0.320 PAGE LATCH                                                    
+002 10 19/04/25 17:45:39.25 DBH1   MBEG201     0.402    0.363    0.361 GLOBAL CONTENTION                                             
+002 13 19/04/25 17:45:39.25 DBH1   MBEG201     0.401    0.361    0.360 PAGE LATCH                                                    
+002 15 19/04/25 17:45:39.25 DBH1   MBEG201     0.400    0.361    0.360 PAGE LATCH                                                    
+002 27 19/04/25 17:45:39.25 DBH1   MBEG201     0.398    0.357    0.356 PAGE LATCH                                                    
+002 29 19/04/25 17:45:39.25 DBH1   MBEG201     0.400    0.357    0.356 PAGE LATCH                                                    
+002 30 19/04/25 17:45:39.25 DBH1   MBEG201     0.399    0.357    0.355 PAGE LATCH                                                    
+002 31 19/04/25 17:45:39.25 DBH1   MBEG201     0.397    0.356    0.355 PAGE LATCH                                                    
+002 23 19/04/25 17:45:39.25 DBH2   MBEG201     0.340    0.326    0.324 PAGE LATCH                                                    
+002 16 19/04/25 17:45:39.26 DBH1   MBEG201     0.400    0.361    0.360 PAGE LATCH                                                    
+002 17 19/04/25 17:45:39.26 DBH1   MBEG201     0.403    0.361    0.359 PAGE LATCH                                                    
+002 18 19/04/25 17:45:39.26 DBH1   MBEG201     0.402    0.361    0.359 PAGE LATCH                                                    
+002 19 19/04/25 17:45:39.26 DBH1   MBEG201     0.401    0.360    0.360 PAGE LATCH                                                    
+002 20 19/04/25 17:45:39.26 DBH1   MBEG201     0.401    0.360    0.359 PAGE LATCH                                                    
+002 34 19/04/25 17:45:39.26 DBH1   MBEG201     0.388    0.353    0.351 PAGE LATCH                                                    
+002 35 19/04/25 17:45:39.26 DBH1   MBEG201     0.388    0.352    0.350 PAGE LATCH                                                    
+002 36 19/04/25 17:45:39.26 DBH1   MBEG201     0.386    0.350    0.348 PAGE LATCH                                                    
+002 08 19/04/25 17:45:39.27 DBH1   MBEG201     0.389    0.365    0.363 PAGE LATCH                                                    
+002 09 19/04/25 17:45:39.27 DBH1   MBEG201     0.389    0.363    0.362 PAGE LATCH                                                    
+002 14 19/04/25 17:45:39.27 DBH1   MBEG201     0.396    0.361    0.359 PAGE LATCH                                                    
+002 21 19/04/25 17:45:39.27 DBH1   MBEG201     0.385    0.359    0.358 PAGE LATCH                                                    
+002 22 19/04/25 17:45:39.27 DBH1   MBEG201     0.389    0.359    0.358 PAGE LATCH                                                    
+002 23 19/04/25 17:45:39.27 DBH1   MBEG201     0.395    0.359    0.358 PAGE LATCH                                                    
+002 24 19/04/25 17:45:39.27 DBH1   MBEG201     0.388    0.359    0.357 PAGE LATCH                                                    
+002 25 19/04/25 17:45:39.27 DBH1   MBEG201     0.389    0.358    0.357 PAGE LATCH                                                    
+002 26 19/04/25 17:45:39.27 DBH1   MBEG201     0.385    0.358    0.357 PAGE LATCH                                                    
+002 28 19/04/25 17:45:39.27 DBH1   MBEG201     0.393    0.357    0.355 PAGE LATCH                                                    
+002 32 19/04/25 17:45:39.27 DBH1   MBEG201     0.388    0.356    0.354 PAGE LATCH                                                    
+002 33 19/04/25 17:45:39.27 DBH1   MBEG201     0.388    0.355    0.353 PAGE LATCH                                                    
+002 07 19/04/25 17:45:39.28 DBH1   MBEG201     0.390    0.366    0.365 PAGE LATCH                                                    
+002 11 19/04/25 17:45:39.28 DBH1   MBEG201     0.387    0.363    0.362 PAGE LATCH                                                    
+002 12 19/04/25 17:45:39.28 DBH1   MBEG201     0.387    0.361    0.360 PAGE LATCH                                                    
+004 37 19/04/25 17:45:40.10 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+003 06 19/04/25 17:45:44.72 DBH2   OLTP03      1.059    0.162    0.157 GLOBAL CONTENTION                                             
+001 19 19/04/25 17:45:50.05 DBH2   MBEG101     0.208    0.204    0.203 EXT/DEL/DEF          GLOBAL CONTENTION                        
+001 17 19/04/25 17:45:50.06 DBH2   MBEG101     0.213    0.204    0.203 GLOBAL CONTENTION                                             
+003 25 19/04/25 17:45:51.62 DBH1   OLTP02      1.002    0.141    0.132 IRLM LOCK+LATCH      PAGE LATCH                               
+003 35 19/04/25 17:45:51.62 DBH1   OLTP02      0.992    0.136    0.126 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+003 03 19/04/25 17:45:51.69 DBH1   OLTP02      1.071    0.209    0.204 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+002 45 19/04/25 17:45:52.76 DBH1   MBEG201     0.799    0.125    0.122 DB2 LATCH            PAGE LATCH                               
+002 48 19/04/25 17:45:52.76 DBH1   MBEG201     0.796    0.122    0.119 OTHER WRTE I/O       DB2 LATCH            PAGE LATCH          
+003 20 19/04/25 17:45:59.79 DBH2   OLTP61      0.322    0.136    0.129 IRLM LOCK+LATCH      PAGE LATCH           GLOBAL CONTENTION   
+003 10 19/04/25 17:45:59.82 DBH2   OLTP61      0.400    0.156    0.153 IRLM LOCK+LATCH                                               
+004 45 19/04/25 17:46:06.10 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+004 49 19/04/25 17:46:10.10 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+001 46 19/04/25 17:46:11.68 DBH2   MBEG101     0.210    0.170    0.167 GLOBAL CONTENTION                                             
+001 29 19/04/25 17:46:11.69 DBH2   MBEG101     0.220    0.183    0.180 PAGE LATCH                                                    
+002 40 19/04/25 17:46:19.97 DBH1   MBEG201     0.156    0.133    0.131 GLOBAL CONTENTION                                             
+002 41 19/04/25 17:46:19.97 DBH1   MBEG201     0.154    0.132    0.130 PAGE LATCH                                                    
+002 42 19/04/25 17:46:19.97 DBH1   MBEG201     0.150    0.127    0.125 PAGE LATCH                                                    
+002 43 19/04/25 17:46:19.97 DBH1   MBEG201     0.149    0.126    0.124 PAGE LATCH                                                    
+002 44 19/04/25 17:46:19.97 DBH1   MBEG201     0.148    0.125    0.124 PAGE LATCH                                                    
+002 47 19/04/25 17:46:19.97 DBH1   MBEG201     0.148    0.124    0.122 PAGE LATCH                                                    
+002 49 19/04/25 17:46:19.98 DBH1   MBEG201     0.140    0.121    0.120 PAGE LATCH                                                    
+002 50 19/04/25 17:46:19.98 DBH1   MBEG201     0.141    0.120    0.119 PAGE LATCH                                                    
+001 28 19/04/25 17:46:27.97 DBH1   MBEG101     0.224    0.189    0.187 GLOBAL CONTENTION                                             
+001 34 19/04/25 17:46:27.97 DBH1   MBEG101     0.212    0.184    0.183 GLOBAL CONTENTION    EXT/DEL/DEF                              
+001 29 19/04/25 17:46:27.98 DBH1   MBEG101     0.203    0.188    0.186 GLOBAL CONTENTION                                             
+001 33 19/04/25 17:46:27.98 DBH1   MBEG101     0.373    0.186    0.184 GLOBAL CONTENTION                                             
+001 35 19/04/25 17:46:27.98 DBH1   MBEG101     0.194    0.182    0.181 GLOBAL CONTENTION                                             
+001 26 19/04/25 17:46:27.98 DBH2   MBEG101     0.370    0.188    0.185 GLOBAL CONTENTION                                             
+001 28 19/04/25 17:46:27.98 DBH2   MBEG101     0.368    0.184    0.182 GLOBAL CONTENTION                                             
+001 31 19/04/25 17:46:27.98 DBH2   MBEG101     0.196    0.182    0.181 GLOBAL CONTENTION                                             
+001 32 19/04/25 17:46:27.98 DBH2   MBEG101     0.207    0.182    0.180 GLOBAL CONTENTION                                             
+001 35 19/04/25 17:46:27.98 DBH2   MBEG101     0.192    0.181    0.179 GLOBAL CONTENTION                                             
+001 38 19/04/25 17:46:27.98 DBH2   MBEG101     0.187    0.179    0.177 GLOBAL CONTENTION                                             
+001 39 19/04/25 17:46:27.98 DBH2   MBEG101     0.194    0.179    0.177 GLOBAL CONTENTION                                             
+001 40 19/04/25 17:46:27.98 DBH2   MBEG101     0.187    0.179    0.177 GLOBAL CONTENTION                                             
+001 43 19/04/25 17:46:27.98 DBH2   MBEG101     0.191    0.175    0.173 GLOBAL CONTENTION                                             
+001 22 19/04/25 17:46:27.99 DBH1   MBEG101     0.240    0.197    0.185 GLOBAL CONTENTION                                             
+001 25 19/04/25 17:46:27.99 DBH1   MBEG101     0.209    0.193    0.181 GLOBAL CONTENTION                                             
+001 22 19/04/25 17:46:27.99 DBH2   MBEG101     0.384    0.197    0.193 IRLM LOCK+LATCH                                               
+003 44 19/04/25 17:46:32.81 DBH2   OLTP03      0.291    0.121    0.116 IRLM LOCK+LATCH                                               
+003 17 19/04/25 17:46:32.83 DBH2   OLTP03      0.335    0.140    0.137 IRLM LOCK+LATCH                                               
+002 46 19/04/25 17:46:34.01 DBH2   MBEG201     1.001    0.193    0.188 PAGE LATCH                                                    
+002 35 19/04/25 17:46:34.02 DBH2   MBEG201     1.060    0.206    0.193 PAGE LATCH                                                    
+002 36 19/04/25 17:46:34.02 DBH2   MBEG201     1.031    0.206    0.189 PAGE LATCH                                                    
+002 37 19/04/25 17:46:34.02 DBH2   MBEG201     1.017    0.206    0.193 PAGE LATCH                                                    
+002 38 19/04/25 17:46:34.02 DBH2   MBEG201     1.032    0.206    0.190 PAGE LATCH                                                    
+002 41 19/04/25 17:46:34.02 DBH2   MBEG201     1.024    0.197    0.189 PAGE LATCH                                                    
+002 44 19/04/25 17:46:34.02 DBH2   MBEG201     1.019    0.194    0.192 PAGE LATCH                                                    
+002 45 19/04/25 17:46:34.02 DBH2   MBEG201     1.062    0.193    0.191 PAGE LATCH                                                    
+002 47 19/04/25 17:46:34.02 DBH2   MBEG201     1.058    0.193    0.189 PAGE LATCH                                                    
+002 48 19/04/25 17:46:34.02 DBH2   MBEG201     1.010    0.192    0.189 PAGE LATCH                                                    
+002 49 19/04/25 17:46:34.02 DBH2   MBEG201     1.004    0.192    0.189 GLOBAL CONTENTION                                             
+002 50 19/04/25 17:46:34.02 DBH2   MBEG201     1.057    0.192    0.189 PAGE LATCH                                                    
+002 39 19/04/25 17:46:34.03 DBH2   MBEG201     1.029    0.202    0.199 PAGE LATCH                                                    
+002 40 19/04/25 17:46:34.03 DBH2   MBEG201     1.009    0.201    0.199 PAGE LATCH                                                    
+002 42 19/04/25 17:46:34.03 DBH2   MBEG201     1.020    0.196    0.193 PAGE LATCH                                                    
+002 43 19/04/25 17:46:34.03 DBH2   MBEG201     1.000    0.195    0.193 PAGE LATCH                                                    
+003 22 19/04/25 17:46:36.76 DBH1   OLTP03      1.002    0.142    0.138 IRLM LOCK+LATCH                                               
+002 01 19/04/25 17:46:38.63 DBH1   MBEG201     6.129    3.386    2.784 LOG WRITE I/O        DATABASE I/O                             
+004 25 19/04/25 17:46:39.11 DBH1   ANS112S     1.001    0.004    0.003 UPDATE COMMIT                                                 
+004 28 19/04/25 17:46:42.11 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+001 45 19/04/25 17:46:46.85 DBH2   MBEG101     0.181    0.172    0.170 EXT/DEL/DEF                                                   
+001 01 19/04/25 17:46:46.94 DBH2   MBEG101     0.299    0.285    0.283 GLOBAL CONTENTION                                             
+001 02 19/04/25 17:46:46.94 DBH2   MBEG101     0.298    0.252    0.251 GLOBAL CONTENTION    EXT/DEL/DEF                              
+001 03 19/04/25 17:46:46.94 DBH2   MBEG101     0.258    0.250    0.249 GLOBAL CONTENTION                                             
+001 04 19/04/25 17:46:46.94 DBH2   MBEG101     1.264    0.250    0.244 GLOBAL CONTENTION                                             
+001 05 19/04/25 17:46:46.94 DBH2   MBEG101     0.290    0.250    0.248 GLOBAL CONTENTION                                             
+001 06 19/04/25 17:46:46.94 DBH2   MBEG101     0.293    0.248    0.246 GLOBAL CONTENTION                                             
+001 09 19/04/25 17:46:46.94 DBH2   MBEG101     0.392    0.244    0.242 GLOBAL CONTENTION                                             
+001 10 19/04/25 17:46:46.94 DBH2   MBEG101     0.392    0.242    0.241 GLOBAL CONTENTION                                             
+001 11 19/04/25 17:46:46.94 DBH2   MBEG101     0.367    0.240    0.238 GLOBAL CONTENTION                                             
+001 08 19/04/25 17:46:46.95 DBH2   MBEG101     0.354    0.244    0.243 GLOBAL CONTENTION                                             
+003 44 19/04/25 17:46:58.75 DBH1   OLTP61      1.043    0.132    0.126 PAGE LATCH           IRLM LOCK+LATCH                          
+001 16 19/04/25 17:47:00.59 DBH2   MBEG101     0.308    0.228    0.226 EXT/DEL/DEF          GLOBAL CONTENTION                        
+001 12 19/04/25 17:47:00.60 DBH2   MBEG101     0.312    0.236    0.234 GLOBAL CONTENTION                                             
+001 13 19/04/25 17:47:00.60 DBH2   MBEG101     0.326    0.235    0.233 GLOBAL CONTENTION                                             
+001 14 19/04/25 17:47:00.60 DBH2   MBEG101     0.312    0.235    0.233 GLOBAL CONTENTION                                             
+001 15 19/04/25 17:47:00.60 DBH2   MBEG101     0.310    0.233    0.232 GLOBAL CONTENTION                                             
+001 05 19/04/25 17:47:05.78 DBH1   MBEG101     0.272    0.244    0.242 GLOBAL CONTENTION    PAGE LATCH                               
+001 06 19/04/25 17:47:05.78 DBH1   MBEG101     0.272    0.242    0.240 GLOBAL CONTENTION    PAGE LATCH                               
+001 20 19/04/25 17:47:05.78 DBH1   MBEG101     0.258    0.198    0.197 GLOBAL CONTENTION                                             
+001 21 19/04/25 17:47:05.78 DBH1   MBEG101     0.219    0.198    0.196 GLOBAL CONTENTION    EXT/DEL/DEF                              
+001 37 19/04/25 17:47:05.78 DBH2   MBEG101     0.223    0.179    0.176 GLOBAL CONTENTION                                             
+001 44 19/04/25 17:47:05.78 DBH2   MBEG101     0.181    0.175    0.173 GLOBAL CONTENTION                                             
+001 48 19/04/25 17:47:05.78 DBH2   MBEG101     0.170    0.164    0.163 GLOBAL CONTENTION                                             
+001 49 19/04/25 17:47:05.78 DBH2   MBEG101     0.169    0.164    0.163 GLOBAL CONTENTION                                             
+001 19 19/04/25 17:47:05.79 DBH1   MBEG101     0.262    0.199    0.198 GLOBAL CONTENTION                                             
+001 47 19/04/25 17:47:05.79 DBH1   MBEG101     0.696    0.169    0.167 GLOBAL CONTENTION                                             
+004 14 19/04/25 17:47:17.11 DBH1   ANS112S     1.002    0.005    0.001 UPDATE COMMIT                                                 
+003 19 19/04/25 17:47:20.88 DBH1   OLTP03      0.348    0.144    0.140 GLOBAL CONTENTION                                             
+003 14 19/04/25 17:47:20.89 DBH1   OLTP03      0.381    0.156    0.154 IRLM LOCK+LATCH                                               
+001 04 19/04/25 17:47:24.71 DBH1   MBEG101     0.336    0.252    0.250 EXT/DEL/DEF          PAGE LATCH                               
+001 01 19/04/25 17:47:24.79 DBH1   MBEG101     0.423    0.338    0.335 GLOBAL CONTENTION    PAGE LATCH                               
+001 02 19/04/25 17:47:24.79 DBH1   MBEG101     0.414    0.330    0.328 GLOBAL CONTENTION    PAGE LATCH           EXT/DEL/DEF         
+001 03 19/04/25 17:47:24.79 DBH1   MBEG101     0.412    0.328    0.327 GLOBAL CONTENTION    PAGE LATCH                               
+001 30 19/04/25 17:47:24.79 DBH1   MBEG101     0.198    0.187    0.185 GLOBAL CONTENTION                                             
+001 32 19/04/25 17:47:24.79 DBH1   MBEG101     0.198    0.187    0.185 GLOBAL CONTENTION                                             
+001 23 19/04/25 17:47:24.79 DBH2   MBEG101     0.200    0.194    0.193 GLOBAL CONTENTION                                             
+001 41 19/04/25 17:47:24.79 DBH2   MBEG101     0.184    0.179    0.178 GLOBAL CONTENTION                                             
+001 30 19/04/25 17:47:24.80 DBH2   MBEG101     0.188    0.183    0.182 GLOBAL CONTENTION                                             
+001 33 19/04/25 17:47:24.80 DBH2   MBEG101     0.194    0.181    0.179 GLOBAL CONTENTION                                             
+001 34 19/04/25 17:47:24.80 DBH2   MBEG101     0.192    0.181    0.178 GLOBAL CONTENTION                                             
+001 42 19/04/25 17:47:24.80 DBH2   MBEG101     0.181    0.177    0.176 GLOBAL CONTENTION                                             
+004 38 19/04/25 17:47:27.11 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+002 03 19/04/25 17:47:37.59 DBH2   MBEG201     5.333    2.636    2.014 LOG WRITE I/O        DATABASE I/O                             
+003 42 19/04/25 17:47:39.68 DBH2   OLTP02      0.126    0.122    0.118 GLOBAL CONTENTION    PAGE LATCH                               
+003 29 19/04/25 17:47:44.58 DBH1   OLTP02      0.695    0.138    0.134 IRLM LOCK+LATCH                                               
+003 28 19/04/25 17:47:44.66 DBH2   OLTP02      0.148    0.127    0.122 EXT/DEL/DEF                                                   
+003 11 19/04/25 17:47:50.72 DBH2   OLTP01      0.156    0.154    0.151 GLOBAL CONTENTION    PAGE LATCH                               
+003 30 19/04/25 17:47:57.79 DBH1   OLTP03      0.303    0.137    0.131 IRLM LOCK+LATCH                                               
+001 10 19/04/25 17:48:02.57 DBH1   MBEG101     0.275    0.219    0.218 GLOBAL CONTENTION    PAGE LATCH                               
+001 11 19/04/25 17:48:02.57 DBH1   MBEG101     0.270    0.218    0.217 GLOBAL CONTENTION    PAGE LATCH                               
+001 12 19/04/25 17:48:02.57 DBH1   MBEG101     0.268    0.216    0.214 GLOBAL CONTENTION                                             
+001 13 19/04/25 17:48:02.57 DBH1   MBEG101     0.267    0.215    0.214 GLOBAL CONTENTION    PAGE LATCH                               
+001 40 19/04/25 17:48:02.57 DBH1   MBEG101     0.191    0.172    0.170 GLOBAL CONTENTION                                             
+001 09 19/04/25 17:48:02.58 DBH1   MBEG101     0.274    0.222    0.220 GLOBAL CONTENTION    PAGE LATCH                               
+001 14 19/04/25 17:48:02.58 DBH1   MBEG101     0.213    0.207    0.205 GLOBAL CONTENTION    PAGE LATCH                               
+001 36 19/04/25 17:48:02.58 DBH1   MBEG101     0.201    0.178    0.177 GLOBAL CONTENTION                                             
+001 38 19/04/25 17:48:02.58 DBH1   MBEG101     0.194    0.173    0.171 GLOBAL CONTENTION                                             
+001 39 19/04/25 17:48:02.58 DBH1   MBEG101     0.196    0.172    0.171 GLOBAL CONTENTION                                             
+001 46 19/04/25 17:48:02.58 DBH1   MBEG101     0.190    0.170    0.168 GLOBAL CONTENTION                                             
+001 48 19/04/25 17:48:02.58 DBH1   MBEG101     0.196    0.169    0.168 GLOBAL CONTENTION                                             
+001 36 19/04/25 17:48:02.58 DBH2   MBEG101     1.193    0.181    0.179 EXT/DEL/DEF          GLOBAL CONTENTION                        
+001 47 19/04/25 17:48:02.58 DBH2   MBEG101     1.182    0.167    0.166 GLOBAL CONTENTION                                             
+001 50 19/04/25 17:48:02.58 DBH2   MBEG101     1.171    0.160    0.158 GLOBAL CONTENTION                                             
+003 46 19/04/25 17:48:04.79 DBH1   OLTP03      0.996    0.131    0.122 IRLM LOCK+LATCH      GLOBAL CONTENTION                        
+003 15 19/04/25 17:48:04.80 DBH2   OLTP61      0.146    0.142    0.136 GLOBAL CONTENTION                                             
+003 08 19/04/25 17:48:06.81 DBH2   OLTP03      0.340    0.158    0.152 EXT/DEL/DEF                                                   
+003 03 19/04/25 17:48:06.89 DBH2   OLTP03      0.424    0.240    0.234 GLOBAL CONTENTION                                             
+003 04 19/04/25 17:48:06.89 DBH2   OLTP03      0.429    0.239    0.232 GLOBAL CONTENTION    EXT/DEL/DEF                              
+003 01 19/04/25 17:48:06.92 DBH1   OLTP02      0.245    0.240    0.237 GLOBAL CONTENTION                                             
+003 02 19/04/25 17:48:06.92 DBH2   OLTP03      0.444    0.269    0.265 IRLM LOCK+LATCH                                               
+003 01 19/04/25 17:48:06.94 DBH2   OLTP03      0.464    0.287    0.283 IRLM LOCK+LATCH                                               
+003 35 19/04/25 17:48:10.58 DBH2   OLTP02      1.001    0.123    0.119 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+004 42 19/04/25 17:48:17.12 DBH1   ANS112S     1.001    0.004    0.001 UPDATE COMMIT                                                 
+003 13 19/04/25 17:48:18.83 DBH1   OLTP02      0.400    0.165    0.150 GLOBAL CONTENTION                                             
+003 21 19/04/25 17:48:25.59 DBH2   OLTP02      0.868    0.131    0.127 PAGE LATCH                                                    
+003 48 19/04/25 17:48:25.59 DBH2   OLTP02      0.866    0.121    0.118 PAGE LATCH                                                    
+003 49 19/04/25 17:48:25.59 DBH2   OLTP02      0.870    0.120    0.116 GLOBAL CONTENTION    PAGE LATCH                               
+003 23 19/04/25 17:48:25.60 DBH1   OLTP01      0.961    0.142    0.137 GLOBAL CONTENTION                                             
+001 07 19/04/25 17:48:29.03 DBH1   MBEG101     0.433    0.241    0.238 IRLM LOCK+LATCH                                               
+001 08 19/04/25 17:48:29.03 DBH1   MBEG101     0.433    0.240    0.237 GLOBAL CONTENTION                                             
+001 07 19/04/25 17:48:29.04 DBH2   MBEG101     0.429    0.246    0.242 GLOBAL CONTENTION    EXT/DEL/DEF                              
+003 32 19/04/25 17:48:31.81 DBH2   OLTP03      0.327    0.125    0.121 IRLM LOCK+LATCH                                               
+003 16 19/04/25 17:48:31.82 DBH2   OLTP03      0.327    0.141    0.137 IRLM LOCK+LATCH                                               
+002 01 19/04/25 17:48:38.02 DBH2   MBEG201     5.579    2.854    2.238 LOG WRITE I/O        PAGE LATCH           DATABASE I/O        
+004 20 19/04/25 17:48:39.13 DBH1   ANS112S     1.003    0.004    0.001 UPDATE COMMIT                                                 
+002 46 19/04/25 17:48:42.01 DBH1   MBEG201     1.017    0.125    0.051 PAGE LATCH                                                    
+004 17 19/04/25 17:48:45.13 DBH1   ANS112S     1.001    0.005    0.002 UPDATE COMMIT                                                 
+003 30 19/04/25 17:48:46.60 DBH2   OLTP01      0.681    0.126    0.122 GLOBAL CONTENTION    PAGE LATCH                               
+003 31 19/04/25 17:48:46.60 DBH2   OLTP01      0.681    0.125    0.120 GLOBAL CONTENTION    PAGE LATCH                               
+003 38 19/04/25 17:48:46.60 DBH2   OLTP01      0.674    0.123    0.120 GLOBAL CONTENTION    IRLM LOCK+LATCH                          
+004 50 19/04/25 17:48:48.13 DBH1   ANS112S     1.001    0.004    0.002 UPDATE COMMIT                                                 
+003 36 19/04/25 17:48:51.01 DBH2   OLTP03      0.482    0.123    0.120 IRLM LOCK+LATCH                                               
+003 39 19/04/25 17:48:57.73 DBH1   OLTP03      1.110    0.133    0.130 GLOBAL CONTENTION                                             

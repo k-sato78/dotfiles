@@ -1,0 +1,36 @@
+ AVERAGE       APPL(CL.1)  DB2 (CL.2)    CLASS 3 SUSPENSIONS   AVERAGE TIME  AV.EVENT  TIME/EVENT    HIGHLIGHTS
+ ------------  ----------  ----------    --------------------  ------------  --------  ----------    --------------------------
+ ELAPSED TIME    0.260613    0.013526    LOCK/LATCH(DB2+IRLM)      0.000116      0.54    0.000216    #OCCURRENCES    :   168340
+  NONNESTED      0.260613    0.013526     IRLM LOCK+LATCH          0.000030      0.21    0.000142    #ALLIEDS        :   168340
+  STORED PROC    0.000000    0.000000     DB2 LATCH                0.000086      0.32    0.000264    #ALLIEDS DISTRIB:        0
+  UDF            0.000000    0.000000    SYNCHRON. I/O             0.004167      4.16    0.001001    #DBATS          :        0
+  TRIGGER        0.000000    0.000000     DATABASE I/O             0.000996      1.53    0.000651    #DBATS DISTRIB. :        0
+                                          LOG WRITE I/O            0.003171      2.63    0.001205    #NO PROGRAM DATA:       30
+ CP CPU TIME     0.001955    0.000530    OTHER READ I/O            0.000682      0.85    0.000804    #NORMAL TERMINAT:   168340
+  AGENT          0.001955    0.000530    OTHER WRTE I/O            0.000636      1.28    0.000499      #ROLLUP TRAN  :        0
+   NONNESTED     0.001955    0.000530    SER.TASK SWTCH            0.001119      1.00    0.001120    #DDFRRSAF ROLLUP:        0
+   STORED PRC    0.000000    0.000000     UPDATE COMMIT            0.001098      1.00    0.001100    #ABNORMAL TERMIN:        0
+   UDF           0.000000    0.000000     OPEN/CLOSE               0.000000      0.00         N/C    #CP/X PARALLEL. :        0
+   TRIGGER       0.000000    0.000000     SYSLGRNG REC             0.000000      0.00         N/C    #UTIL PARALLEL. :        0
+  PAR.TASKS      0.000000    0.000000     EXT/DEL/DEF              0.000021      0.00    0.069100    #IO PARALLELISM :        0
+                                          OTHER SERVICE            0.000000      0.00    0.000312    #PCA RUP COUNT  :        0
+ SE CPU TIME     0.002097    0.000843    ARC.LOG(QUIES)            0.000000      0.00         N/C    #RUP AUTONOM. PR:        0
+  NONNESTED      0.002097    0.000843    LOG READ                  0.000000      0.00         N/C    #AUTONOMOUS PR  :        0
+  STORED PROC    0.000000    0.000000    DRAIN LOCK                0.000000      0.00         N/C    #INCREMENT. BIND:        0
+  UDF            0.000000    0.000000    CLAIM RELEASE             0.000000      0.00         N/C    #COMMITS        :   168310
+  TRIGGER        0.000000    0.000000    PAGE LATCH                0.002768      2.60    0.001065    #ROLLBACKS      :        0
+                                         NOTIFY MSGS               0.000000      0.00    0.000167    #SVPT REQUESTS  :        0
+  PAR.TASKS      0.000000    0.000000    GLOBAL CONTENTION         0.002296      2.34    0.000982    #SVPT RELEASE   :        0
+                                         COMMIT PH1 WRITE I/O      0.000000      0.00         N/C    #SVPT ROLLBACK  :        0
+ SUSPEND TIME    0.000000    0.011941    ASYNCH CF REQUESTS        0.000157      4.99    0.000031    MAX SQL CASC LVL:        0
+  AGENT               N/A    0.011941    TCP/IP LOB XML            0.000000      0.00         N/C    UPDATE/COMMIT   :     3.00
+  PAR.TASKS           N/A    0.000000    ACCELERATOR               0.000000      0.00         N/C    SYNCH I/O AVG.  : 0.001001
+  STORED PROC    0.000000         N/A    AUTONOMOUS PROCEDURE      0.000000      0.00         N/C
+  UDF            0.000000         N/A    PQ SYNCHRONIZATION        0.000000      0.00         N/C
+                                         TOTAL CLASS 3             0.011941     17.75    0.000673
+ NOT ACCOUNT.         N/A    0.000212
+ DB2 ENT/EXIT         N/A       38.31
+ EN/EX-STPROC         N/A        0.00
+ EN/EX-UDF            N/A        0.00
+ DCAPT.DESCR.         N/A         N/A
+ LOG EXTRACT.         N/A         N/A

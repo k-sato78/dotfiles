@@ -1,0 +1,7 @@
+[[plugins]] \n repo = 'vim-scripts/vim-auto-save'
+[[plugins]] \r repo = 'vim-scripts/vim-auto-save'
+[[plugins]]  repo = 'vim-scripts/vim-auto-save'
+[[plugins]] 
+ repo = 'vim-scripts/vim-auto-save'
+[[plugins]] 
+ repo = 'vim-scripts/vim-auto-save'

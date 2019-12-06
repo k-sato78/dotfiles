@@ -1,0 +1,29 @@
+1
+ ERB486I PPS: CROSS SYSTEM REPORTS OPTIONS IN EFFECT
+ ERB486I PPS:   SYSRPTS(CF) -- SYSIN
+ ERB486I PPS:   SYSRPTS(SDEVICE(DASD,TAPE)) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(POLICY))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(WGROUP))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(SCLASS))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(SCPER))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(RCLASS))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(RCPER))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(RTD))) -- SYSIN
+ ERB486I PPS:   SYSRPTS(WLMGL(SYSNAM))) -- SYSIN
+ ERB103I PPS: OPTIONS IN EFFECT                                                                                          
+ ERB103I PPS:   NODELTA  -- DEFAULT                                                                                      
+ ERB103I PPS:   NOEXITS  -- DEFAULT                                                                                      
+ ERB103I PPS:   ETOD(0000,2400)  -- DEFAULT                                                                              
+ ERB103I PPS:   SYSOUT(X)  -- SYSIN                                                                                      
+ ERB103I PPS:   REPORTS(VSTOR(D))  -- SYSIN                                                                              
+ ERB103I PPS:   REPORTS(ALL)  -- SYSIN                                                                                   
+ ERB103I PPS:   SUMMARY(TOT)  -- SYSIN                                                                                   
+ ERB103I PPS:   SUMMARY(INT)  -- SYSIN                                                                                   
+ ERB103I PPS:   DINTV(0010)  -- SYSIN                                                                                    
+ ERB103I PPS:   RTOD(1739,1749)  -- SYSIN                                                                                
+ ERB103I PPS:   STOD(1739,1749)  -- SYSIN                                                                                
+ ERB479I PPS: FOR TEXT REPORTING, PCIE OPTION IS IGNORED.                                                                
+ ERB479I PPS: FOR TEXT REPORTING, SCM OPTION IS IGNORED.                                                                 
+ ERB466I PPS: FOR DURATION PROCESSING, ENQ, TRACE AND/OR SDELAY                                                          
+ ERB466I PPS:     OPTIONS ARE IGNORED.                                                                                   
+ ERB103I  PPS:   DATE(01011969,12312068) -- DEFAULT

@@ -1,0 +1,45 @@
+1                                              R M F   O V E R V I E W   R E P O R T                                                 
+                                                                                                                            PAGE  001
+             z/OS  V2R2               SYSTEM ID A1               START 04/25/2019-17.39.00  INTERVAL 00.10.00                        
+                                      RPT VERSION V2R2 RMF       END   04/25/2019-17.49.00  CYCLE 0.000 SECONDS                      
+0                                                                                                                                    
+ NUMBER OF INTERVALS 1             TOTAL LENGTH OF INTERVALS 00.10.00                                                                
+-DATE    TIME     INT         ONLHI    ONLMED    ENCMED    ONLLOW    ENCLOW    MDBTPS    MDBACT    MDBEXE    BATTPS    BATEXE        
+ MM/DD HH.MM.SS HH.MM.SS                                                                                                             
+ 04/25 17.39.00 00.10.00      81.0      49.6      55.8      17.6       100     56.14     0.054     0.038      2.00     0.006         
+1                                              R M F   O V E R V I E W   R E P O R T                                                 
+                                                                                                                            PAGE  001
+             z/OS  V2R2               SYSTEM ID A2               START 04/25/2019-17.39.00  INTERVAL 00.10.00                        
+                                      RPT VERSION V2R2 RMF       END   04/25/2019-17.49.00  CYCLE 0.000 SECONDS                      
+0                                                                                                                                    
+ NUMBER OF INTERVALS 1             TOTAL LENGTH OF INTERVALS 00.10.00                                                                
+-DATE    TIME     INT         ONLHI    ONLMED    ENCMED    ONLLOW    ENCLOW    MDBTPS    MDBACT    MDBEXE    BATTPS    BATEXE        
+ MM/DD HH.MM.SS HH.MM.SS                                                                                                             
+ 04/25 17.39.00 00.10.00      80.3      39.8      54.7      16.0      40.5     83.89     0.059     0.038      2.00     0.017         
+1                                              R M F   O V E R V I E W   R E P O R T                                                 
+                                                                                                                            PAGE  001
+             z/OS  V2R2               SYSTEM ID F1               START 04/25/2019-17.39.00  INTERVAL 00.10.00                        
+                                      RPT VERSION V2R2 RMF       END   04/25/2019-17.49.00  CYCLE 0.000 SECONDS                      
+0                                                                                                                                    
+ NUMBER OF INTERVALS 1             TOTAL LENGTH OF INTERVALS 00.10.00                                                                
+-DATE    TIME     INT         ONLHI    ONLMED    ENCMED    ONLLOW    ENCLOW    MDBTPS    MDBACT    MDBEXE    BATTPS    BATEXE        
+ MM/DD HH.MM.SS HH.MM.SS                                                                                                             
+    NO EXCEPTIONS FOUND                                                                                                              
+1                                              R M F   O V E R V I E W   R E P O R T                                                 
+                                                                                                                            PAGE  001
+             z/OS  V2R2               SYSTEM ID F2               START 04/25/2019-17.39.00  INTERVAL 00.10.00                        
+                                      RPT VERSION V2R2 RMF       END   04/25/2019-17.49.00  CYCLE 0.000 SECONDS                      
+0                                                                                                                                    
+ NUMBER OF INTERVALS 1             TOTAL LENGTH OF INTERVALS 00.10.00                                                                
+-DATE    TIME     INT         ONLHI    ONLMED    ENCMED    ONLLOW    ENCLOW    MDBTPS    MDBACT    MDBEXE    BATTPS    BATEXE        
+ MM/DD HH.MM.SS HH.MM.SS                                                                                                             
+    NO EXCEPTIONS FOUND                                                                                                              
+1                                              R M F   O V E R V I E W   R E P O R T                                                 
+                                                                                                                            PAGE  001
+             z/OS  V2R2               SYSPLEX ID PLEXZ           START 04/25/2019-17.39.00  INTERVAL 00.10.00                        
+                                      RPT VERSION V2R2 RMF       END   04/25/2019-17.49.00                                           
+0                                                                                                                                    
+ NUMBER OF INTERVALS 1             TOTAL LENGTH OF INTERVALS 00.10.00                                                                
+-DATE    TIME     INT         ONLHI    ONLMED    ENCMED    ONLLOW    ENCLOW    MDBTPS    MDBACT    MDBEXE    BATTPS    BATEXE        
+ MM/DD HH.MM.SS HH.MM.SS                                                                                                             
+ 04/25 17.39.00 00.10.00      80.7      44.4      55.2      16.8      58.5    140.03     0.057     0.038      4.00     0.011         

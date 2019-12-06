@@ -1,0 +1,77 @@
+ IFA010I SMF DUMP PARAMETERS                                           
+ IFA010I NOSIGVALIDATE -- DEFAULT                                      
+ IFA010I SIGSTRIP -- DEFAULT                                           
+ IFA010I DATE(1900000,2099366) -- DEFAULT                              
+ IFA010I ABEND(NORETRY) -- SYSIN                                       
+ IFA010I END(1751) -- SYSIN                                            
+ IFA010I START(1739) -- SYSIN                                          
+ IFA010I OUTDD(SMF119,TYPE(119)) -- SYSIN                              
+ IFA010I OUTDD(SMFWMB,TYPE(117)) -- SYSIN                              
+ IFA010I OUTDD(SMFWMQ,TYPE(115,116)) -- SYSIN                          
+ IFA010I OUTDD(SMFWAS,TYPE(120)) -- SYSIN                              
+ IFA010I OUTDD(SMFDB2S,TYPE(100,102)) -- SYSIN                         
+ IFA010I OUTDD(SMFDB2A,TYPE(101)) -- SYSIN                             
+ IFA010I OUTDD(SMFZOS,TYPE(30,42,60:66,70:79,88,99,113)) -- SYSIN      
+ IFA010I INDD(DUMPIN,OPTIONS(DUMP)) -- SYSIN                           
+ IFA020I SMF119   -- NULLFILE                                          
+ IFA020I SMFWMB   -- TMP.DC2.Z190425.SL1032.V1.SMF@WMB                 
+ IFA020I SMFWMQ   -- TMP.DC2.Z190425.SL1032.V1.SMF@WMQ                 
+ IFA020I SMFWAS   -- TMP.DC2.Z190425.SL1032.V1.SMF@WAS                 
+ IFA020I SMFDB2S  -- TMP.DC2.Z190425.SL1032.V1.SMF@DB2S                
+ IFA020I SMFDB2A  -- TMP.DC2.Z190425.SL1032.V1.SMF@DB2A                
+ IFA020I SMFZOS   -- TMP.DC2.Z190425.SL1032.V1.SMF@ZOS                 
+ IFA020I DUMPIN   -- TMP.DC2.Z190425.SL1032.V1.A1.T175142.SMF          
+1                                           SUMMARY ACTIVITY REPORT                                                      
+0      START DATE-TIME  04/25/2019-17:19:35                         END DATE-TIME  04/25/2019-17:51:41                   
+0      RECORD       RECORDS         PERCENT      AVG. RECORD   MIN. RECORD   MAX. RECORD       RECORDS                   
+         TYPE          READ        OF TOTAL           LENGTH        LENGTH        LENGTH       WRITTEN                   
+0           2             4           .00 %            18.00            18            18             7                   
+            3             4           .00 %            18.00            18            18             7                   
+            4         1,502           .08 %           238.64           215           495             0                   
+            5           993           .05 %           145.04           145           153             0                   
+0          14         9,435           .49 %           446.64           432           960             0                   
+           15         4,439           .23 %           433.75           432           460             0                   
+0          17           742           .04 %           100.00           100           100             0                   
+0          19           284           .01 %           132.00           132           132             0                   
+           20         1,481           .08 %            91.12            91            99             0                   
+0          23             1           .00 %         7,774.00         7,774         7,774             0                   
+0          26           802           .04 %           514.00           514           514             0                   
+0          30         5,233           .27 %         1,187.22           480        20,810            48                   
+0          32             1           .00 %           272.00           272           272             0                   
+0          34             1           .00 %         1,135.00         1,135         1,135             0                   
+           35             1           .00 %           151.00           151           151             0                   
+0          40         6,214           .32 %            74.53            74           114             0                   
+           41             9           .00 %           332.00           332           332             0                   
+           42        19,181          1.00 %           504.13           176        32,540         6,841                   
+0          60         2,464           .13 %           786.72           339           913         1,077                   
+           61           421           .02 %           339.00           302           406            43                   
+           62            31           .00 %           254.00           254           254             0                   
+0          64            53           .00 %           474.00           474           474             0                   
+           65           463           .02 %           346.33           299           404             1                   
+0          70           256           .01 %        10,941.00           816        21,436            96                   
+           71           128           .01 %         2,316.00         2,316         2,316            48                   
+           72         6,016           .31 %         1,650.72         1,248        12,644         2,256                   
+           73           128           .01 %        30,296.00        30,296        30,296            48                   
+           74         2,048           .11 %        10,319.00           316        32,560           768                   
+           75           768           .04 %           272.00           272           272           288                   
+0          78           256           .01 %         8,835.71         4,544        20,672            96                   
+0          80             4           .00 %           319.25           317           320             0                   
+0          88           642           .03 %           234.27           161           308           260                   
+0          90            26           .00 %           201.23           164           208             0                   
+0          92       319,736         16.70 %           206.05           160           348             0                   
+1                                           SUMMARY ACTIVITY REPORT                                                      
+0      START DATE-TIME  04/25/2019-17:19:35                         END DATE-TIME  04/25/2019-17:51:41                   
+0      RECORD       RECORDS         PERCENT      AVG. RECORD   MIN. RECORD   MAX. RECORD       RECORDS                   
+         TYPE          READ        OF TOTAL           LENGTH        LENGTH        LENGTH       WRITTEN                   
+0          99        38,865          2.03 %         1,138.89           196        18,874        15,177                   
+          100           340           .02 %         1,170.86           128         3,199           120                   
+          101     1,335,476         69.77 %           780.26           346         1,696       949,345                   
+          102         1,300           .07 %           439.68           149         2,145           464                   
+0         113         1,408           .07 %         1,057.00         1,054         1,060           572                   
+0         115           385           .02 %         2,476.54           512         5,868           156                   
+          116        18,742           .98 %         5,489.12           420        32,496         9,874                   
+          117         2,062           .11 %           980.43           762         3,498         1,440                   
+0         119            64           .00 %           762.00           762           762            26                   
+          120       131,626          6.88 %         2,187.35         1,372         2,200        92,691                   
+0      TOTAL      1,914,035           100 %           843.78            18        32,560     1,081,749                   
+-      NUMBER OF RECORDS IN ERROR               0                                                                        

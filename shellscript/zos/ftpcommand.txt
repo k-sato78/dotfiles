@@ -1,0 +1,10 @@
+open 9.188.216.204 　
+user mqm009 sldkfj
+bin　　　　　　
+prompt 
+
+cd /u/mqm009/jcllib/
+put ++path++
+
+bye　　　
+

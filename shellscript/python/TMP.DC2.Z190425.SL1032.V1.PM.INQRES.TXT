@@ -1,0 +1,1639 @@
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-1
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ ELAPSED TIME DISTRIBUTION                                           CLASS 2 TIME DISTRIBUTION
+ ----------------------------------------------------------------    ----------------------------------------------------------------
+ APPL   |===============================================> 95%        CPU    |==> 4%
+ DB2    |> 1%                                                        SECPU  |===> 6%
+ SUSP   |==> 5%                                                      NOTACC |=> 2%
+                                                                     SUSP   |============================================> 89%
+
+ AVERAGE       APPL(CL.1)  DB2 (CL.2)    CLASS 3 SUSPENSIONS   AVERAGE TIME  AV.EVENT  TIME/EVENT    HIGHLIGHTS
+ ------------  ----------  ----------    --------------------  ------------  --------  ----------    --------------------------
+ ELAPSED TIME    0.255091    0.013701    LOCK/LATCH(DB2+IRLM)      0.000109      0.51    0.000211    #OCCURRENCES    :    85498
+  NONNESTED      0.255091    0.013701     IRLM LOCK+LATCH          0.000021      0.21    0.000104    #ALLIEDS        :    85498
+  STORED PROC    0.000000    0.000000     DB2 LATCH                0.000087      0.31    0.000282    #ALLIEDS DISTRIB:        0
+  UDF            0.000000    0.000000    SYNCHRON. I/O             0.004165      4.19    0.000994    #DBATS          :        0
+  TRIGGER        0.000000    0.000000     DATABASE I/O             0.001001      1.56    0.000641    #DBATS DISTRIB. :        0
+                                          LOG WRITE I/O            0.003164      2.63    0.001204    #NO PROGRAM DATA:        9
+ CP CPU TIME     0.001917    0.000525    OTHER READ I/O            0.000684      0.88    0.000779    #NORMAL TERMINAT:    85498
+  AGENT          0.001917    0.000525    OTHER WRTE I/O            0.000641      1.25    0.000511      #ROLLUP TRAN  :        0
+   NONNESTED     0.001917    0.000525    SER.TASK SWTCH            0.001119      1.00    0.001120    #DDFRRSAF ROLLUP:        0
+   STORED PRC    0.000000    0.000000     UPDATE COMMIT            0.001093      1.00    0.001095    #ABNORMAL TERMIN:        0
+   UDF           0.000000    0.000000     OPEN/CLOSE               0.000000      0.00         N/C    #CP/X PARALLEL. :        0
+   TRIGGER       0.000000    0.000000     SYSLGRNG REC             0.000000      0.00         N/C    #UTIL PARALLEL. :        0
+  PAR.TASKS      0.000000    0.000000     EXT/DEL/DEF              0.000026      0.00    0.071080    #IO PARALLELISM :        0
+                                          OTHER SERVICE            0.000000      0.00    0.000325    #PCA RUP COUNT  :        0
+ SE CPU TIME     0.002084    0.000835    ARC.LOG(QUIES)            0.000000      0.00         N/C    #RUP AUTONOM. PR:        0
+  NONNESTED      0.002084    0.000835    LOG READ                  0.000000      0.00         N/C    #AUTONOMOUS PR  :        0
+  STORED PROC    0.000000    0.000000    DRAIN LOCK                0.000000      0.00         N/C    #INCREMENT. BIND:        0
+  UDF            0.000000    0.000000    CLAIM RELEASE             0.000000      0.00         N/C    #COMMITS        :    85489
+  TRIGGER        0.000000    0.000000    PAGE LATCH                0.002867      2.56    0.001119    #ROLLBACKS      :        0
+                                         NOTIFY MSGS               0.000000      0.00    0.000194    #SVPT REQUESTS  :        0
+  PAR.TASKS      0.000000    0.000000    GLOBAL CONTENTION         0.002390      2.35    0.001017    #SVPT RELEASE   :        0
+                                         COMMIT PH1 WRITE I/O      0.000000      0.00         N/C    #SVPT ROLLBACK  :        0
+ SUSPEND TIME    0.000000    0.012131    ASYNCH CF REQUESTS        0.000157      4.92    0.000032    MAX SQL CASC LVL:        0
+  AGENT               N/A    0.012131    TCP/IP LOB XML            0.000000      0.00         N/C    UPDATE/COMMIT   :     3.00
+  PAR.TASKS           N/A    0.000000    ACCELERATOR               0.000000      0.00         N/C    SYNCH I/O AVG.  : 0.000994
+  STORED PROC    0.000000         N/A    AUTONOMOUS PROCEDURE      0.000000      0.00         N/C
+  UDF            0.000000         N/A    PQ SYNCHRONIZATION        0.000000      0.00         N/C
+                                         TOTAL CLASS 3             0.012131     17.66    0.000687
+ NOT ACCOUNT.         N/A    0.000210
+ DB2 ENT/EXIT         N/A       38.43
+ EN/EX-STPROC         N/A        0.00
+ EN/EX-UDF            N/A        0.00
+ DCAPT.DESCR.         N/A         N/A
+ LOG EXTRACT.         N/A         N/A
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-2
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ SQL DML   AVERAGE    TOTAL    SQL DCL           TOTAL    SQL DDL    CREATE   DROP  ALTER    DYNAMIC SQL STMT       AVERAGE     TOTAL
+ -------- -------- --------    -------------- --------    ---------- ------ ------ ------    --------------------  --------  --------
+ SELECT       0.00        0    LOCK TABLE            0    TABLE           0      0      0    REOPTIMIZATION            0.00         0
+ INSERT       2.49   213065    GRANT                 0    CRT TTABLE      0    N/A    N/A    NOT FOUND IN CACHE        0.00         0
+  ROWS        2.49   213065    REVOKE                0    DCL TTABLE      0    N/A    N/A    FOUND IN CACHE            3.51    299851
+ UPDATE       0.51    43393    SET CURR.SQLID   299854    AUX TABLE       0    N/A    N/A    IMPLICIT PREPARES         0.00         0
+  ROWS        0.51    43393    SET HOST VAR.    116679    INDEX           0      0      0    PREPARES AVOIDED          0.00         0
+ MERGE        0.00        0    SET CUR.DEGREE        0    TABLESPACE      0      0      0    CACHE_LIMIT_EXCEEDED      0.00         0
+ DELETE       0.00        0    SET RULES             0    DATABASE        0      0      0    PREP_STMT_PURGED          0.00         0
+  ROWS        0.00        0    SET CURR.PATH         0    STOGROUP        0      0      0    CSWL - STMTS PARSED       0.00         0
+                               SET CURR.PREC.        0    SYNONYM         0      0    N/A    CSWL - LITS REPLACED      0.00         0
+ DESCRIBE     2.42   207141    CONNECT TYPE 1        0    VIEW            0      0      0    CSWL - MATCHES FOUND      0.00         0
+ DESC.TBL     0.00        0    CONNECT TYPE 2        0    ALIAS           0      0    N/A    CSWL - DUPLS CREATED      0.00         0
+ PREPARE      4.51   385340    SET CONNECTION        0    PACKAGE       N/A      0    N/A
+ OPEN         0.51    43393    RELEASE               3    PROCEDURE       0      0      0
+ FETCH        0.56    47646    CALL                  0    FUNCTION        0      0      0
+  ROWS        0.51    43393    ASSOC LOCATORS        0    TRIGGER         0      0    N/A
+ CLOSE        0.35    29893    ALLOC CURSOR          0    DIST TYPE       0      0    N/A
+                               HOLD LOCATOR          0    SEQUENCE        0      0      0
+ DML-ALL     11.34   969871    FREE LOCATOR          0    TRUST. CTX      0      0      0
+                               DCL-ALL          416536    ROLE            0      0    N/A
+                                                          JAR           N/A    N/A      0
+                                                          MASK/PERM       0      0      0
+                                                          VARIABLE        0      0    N/A
+
+                                                          TOTAL           0      0      0
+                                                          TRUNC TBL       0
+                                                          RENAME TBL      0
+                                                          RENAME IX       0
+                                                          COMMENT ON      0
+                                                          LABEL ON        0
+
+ MEASURED/ELIG TIMES  APPL (CL1)   DB2 (CL2)    RID LIST                 AVERAGE     TOTAL    DATA CAPTURE        AVERAGE     TOTAL
+ -------------------  ----------  ----------    ----------------------  --------  --------    -----------------  --------  --------
+ ELAPSED TIME           0.255091    0.013701    USED                        0.00         0    IFI CALLS MADE          N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000                                                  RECORDS CAPTURED        N/P       N/P
+                                                FAIL-NO STORAGE             0.00         0    LOG RECORDS READ        N/P       N/P
+ CP CPU TIME            0.001917    0.000525    FAIL-LIMIT EXCEEDED         0.00         0    ROWS RETURNED           N/P       N/P
+  ELIGIBLE FOR SECP     0.000006         N/A                                                  RECORDS RETURNED        N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    INTERRUPTED-NO STORAGE      0.00         0    DATA DESC. RETURN       N/P       N/P
+                                                INTERRUPTED-LIMIT EXC.      0.00         0    TABLES RETURNED         N/P       N/P
+ SE CPU TIME            0.002084    0.000835                                                  DESCRIBES               N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    OVERFLOWED-NO STORAGE       0.00         0
+                                                OVERFLOWED-LIMIT EXC.       0.00         0
+
+                                                SKIPPED-INDEX KNOWN         0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-3
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ STORED PROCEDURES   AVERAGE     TOTAL    UDF         AVERAGE     TOTAL    TRIGGERS            AVERAGE     TOTAL
+ -----------------  --------  --------    ---------  --------  --------    -----------------  --------  --------
+ CALL STATEMENTS        0.00         0    EXECUTED       0.00         0    STATEMENT TRIGGER      0.00         0
+ ABENDED                0.00         0    ABENDED        0.00         0    ROW TRIGGER            0.00         0
+ TIMED OUT              0.00         0    TIMED OUT      0.00         0    SQL ERROR OCCUR        0.00         0
+ REJECTED               0.00         0    REJECTED       0.00         0
+
+ GLOBAL       CONTENTION       L-LOCKS  AVERAGE TIME  AV.EVENT    GLOBAL       CONTENTION       P-LOCKS  AVERAGE TIME  AV.EVENT
+ -------------------------------------  ------------  --------    -------------------------------------  ------------  --------
+ L-LOCKS                                    0.000103      0.02    P-LOCKS                                    0.002287      2.33
+  PARENT (DB,TS,TAB,PART)                   0.000001      0.01     PAGESET/PARTITION                         0.000000      0.00
+  CHILD  (PAGE,ROW)                         0.000000      0.00     PAGE                                      0.002256      2.30
+  OTHER                                     0.000102      0.01     OTHER                                     0.000030      0.03
+
+ LOCKING                AVERAGE    TOTAL    DATA SHARING          AVERAGE     TOTAL    QUERY PARALLELISM           AVERAGE     TOTAL
+ --------------------- -------- --------    -------------------  --------  --------    -------------------------  --------  --------
+ TIMEOUTS                  0.00        0    GLOBAL CONT RATE(%)      6.81       N/A    MAXIMUM DEGREE-ESTIMATED       0.00         0
+ DEADLOCKS                 0.00        0    FALSE CONT RATE(%)       0.25       N/A    MAXIMUM DEGREE-PLANNED         0.00         0
+ ESCAL.(SHARED)            0.00        0    P/L-LOCKS XES(%)        68.14       N/A    MAXIMUM DEGREE-EXECUTED         N/A         0
+ ESCAL.(EXCLUS)            0.00        0    LOCK REQ   - PLOCKS     12.14   1038343    MAXIMUM MEMBERS USED            N/A         0
+ MAX PG/ROW LOCKS HELD     4.34        7    UNLOCK REQ - PLOCKS      9.19    785388    PARALLEL GROUPS EXECUTED       0.00         0
+ LOCK REQUEST             14.56  1245263    CHANGE REQ - PLOCKS      0.02      1646     RAN AS PLANNED                0.00         0
+ UNLOCK REQUEST            3.86   330239    LOCK REQ   - XES        18.20   1556021     RAN REDUCED-STORAGE           0.00         0
+ QUERY REQUEST             0.00        0    UNLOCK REQ - XES        10.90    931542     RAN REDUCED-NEGOTIATION       0.00         0
+ CHANGE REQUEST            2.01   172275    CHANGE REQ - XES         0.57     49142     SEQ-CURSOR                    0.00         0
+ OTHER REQUEST             0.00        0    SUSPENDS   - IRLM        2.10    179741     SEQ-NO ESA SORT               0.00         0
+ TOTAL SUSPENSIONS         0.22    19154    SUSPENDS   - XES         0.00        11     SEQ-NO BUFFER                 0.00         0
+  LOCK SUSPENSIONS         0.00      109    CONVERSIONS- XES         0.17     14379     SEQ-ENCLAVE SERVICES           N/A       N/A
+  IRLM LATCH SUSPENS.      0.22    18892    FALSE CONTENTIONS        0.08      6770     SEQ-AUTONOMOUS PROC           0.00         0
+  OTHER SUSPENS.           0.00      153    INCOMPATIBLE LOCKS       0.00         0     SEQ-NEGOTIATION               0.00         0
+                                            NOTIFY MSGS SENT         0.00       153     ONE DB2-COORDINATOR = NO      0.00         0
+                                                                                        ONE DB2-ISOLATION LEVEL       0.00         0
+                                                                                        ONE DB2-DCL TTABLE            0.00         0
+                                                                                       MEMBER SKIPPED (%)              N/C       N/A
+                                                                                       DISABLED BY RLF                0.00         0
+                                                                                       REFORM PARAL-CONFIG            0.00         0
+                                                                                       REFORM PARAL-NO BUF            0.00         0
+
+ DRAIN/CLAIM      AVERAGE     TOTAL    NORMAL TERM.      AVERAGE     TOTAL    ABNORMAL TERM.        TOTAL    IN DOUBT           TOTAL
+ --------------  --------  --------    ---------------  --------  --------    -----------------  --------    --------------  --------
+ DRAIN REQUESTS      0.00         0    NEW USER             0.00         0    APPL.PROGR. ABEND         0    APPL.PGM ABEND         0
+ DRAIN FAILED        0.00         0    DEALLOCATION         0.00         3    END OF MEMORY             0    END OF MEMORY          0
+ CLAIM REQUESTS     17.88   1528951    APPL.PROGR. END      0.00         0    RESOL.IN DOUBT            0    END OF TASK            0
+ CLAIM FAILED        0.00         0    RESIGNON             1.00     85495    CANCEL FORCE              0    CANCEL FORCE           0
+                                       DBAT INACTIVE        0.00         0
+                                       TYPE2 INACTIVE       0.00         0
+                                       RRS COMMIT           0.00         0
+
+                                       END USER THRESH      0.00         0
+                                       BLOCK STOR THR       0.00         0
+                                       STALENESS THR        0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-4
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ ROWID           AVERAGE     TOTAL    LOGGING               AVERAGE     TOTAL    AVERAGE SU           CLASS 1         CLASS 2
+ -------------  --------  --------    -------------------  --------  --------    ------------  --------------  --------------
+ DIRECT ACCESS      0.00         0    LOG RECORDS WRITTEN     28.16   2407768    CP CPU                152.07           41.27
+ INDEX USED         0.00         0    TOT BYTES WRITTEN    28478.00  2434812K     AGENT                152.07           41.27
+ TS SCAN USED       0.00         0    LOG RECORD SIZE       1011.23       N/A      NONNESTED           152.07           41.27
+                                                                                   STORED PRC            0.00            0.00
+                                                                                   UDF                   0.00            0.00
+                                                                                   TRIGGER               0.00            0.00
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG SECP              0.36             N/A
+                                                                                  ELIG ACCEL              N/A            0.00
+
+                                                                                 SE CPU                165.90           66.47
+                                                                                  NONNESTED            165.90           66.47
+                                                                                  STORED PROC            0.00            0.00
+                                                                                  UDF                    0.00            0.00
+                                                                                  TRIGGER                0.00            0.00
+
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG ACCEL              N/A            0.00
+
+ MISCELLANEOUS          AVERAGE     TOTAL
+ --------------------  --------  --------
+ MAX STO LOB VAL (KB)      0.00         0
+ MAX STO XML VAL (KB)      0.00         0
+ ARRAY EXPANSIONS          0.00         0
+ SPARSE IX DISABLED        0.00         0
+ SPARSE IX BUILT WF        0.00         0
+
+ RESOURCE LIMIT TYPE               #OCCUR    AVERAGE CPU SECONDS    HIGHEST CPU SECONDS
+ ------------------------------    ------    -------------------    -------------------
+ INFINITE LIMIT                     85498               0.000000               0.000000
+
+ BP0    BPOOL ACTIVITY   AVERAGE     TOTAL    BP2    BPOOL ACTIVITY   AVERAGE     TOTAL    BP9    BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)      100.00       N/A    BPOOL HIT RATIO (%)       99.19       N/A    BPOOL HIT RATIO (%)      100.00       N/A
+ GETPAGES                   4.00    342139    GETPAGES                   6.26    535093    GETPAGES                  24.96   2134179
+ BUFFER UPDATES             0.00         0    BUFFER UPDATES             3.87    331271    BUFFER UPDATES             7.26    621041
+ SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.00         0    SYNCHRONOUS READ           0.05      4312    SYNCHRONOUS READ           0.00        12
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-5
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ BP12   BPOOL ACTIVITY   AVERAGE     TOTAL    TOT4K  BPOOL ACTIVITY   AVERAGE     TOTAL    BP32K4 BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       91.70       N/A    BPOOL HIT RATIO (%)       97.51       N/A    BPOOL HIT RATIO (%)       97.66       N/A
+ GETPAGES                  14.22   1216020    GETPAGES                  49.44   4227431    GETPAGES                   0.68     58425
+ BUFFER UPDATES            10.39    888132    BUFFER UPDATES            21.53   1840444    BUFFER UPDATES             0.47     39959
+ SYNCHRONOUS WRITE          1.22    104491    SYNCHRONOUS WRITE          1.22    104491    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.27     23464    SYNCHRONOUS READ           0.33     27788    SYNCHRONOUS READ           0.02      1366
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.35     29893    LIST PREFETCH REQS         0.35     29893    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.91     77488    PAGES READ ASYNCHR.        0.91     77488    PAGES READ ASYNCHR.        0.00         0
+
+ TOTAL  BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       97.51       N/A
+ GETPAGES                  50.13   4285856
+ BUFFER UPDATES            21.99   1880403
+ SYNCHRONOUS WRITE          1.22    104491
+ SYNCHRONOUS READ           0.34     29154
+ SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.35     29893
+ DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.91     77488
+
+ GROUP BP2               AVERAGE     TOTAL    GROUP BP9               AVERAGE     TOTAL    GROUP BP12              AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES        6.26    535093    GBP-DEPEND GETPAGES       24.96   2134179    GBP-DEPEND GETPAGES       14.22   1216020
+ READ(XI)-DATA RETUR        1.43    122604    READ(XI)-DATA RETUR        3.05    260763    READ(XI)-DATA RETUR        1.51    129087
+ READ(XI)-NO DATA RT        0.00         1    READ(XI)-NO DATA RT        0.00         0    READ(XI)-NO DATA RT        0.00         0
+ READ(NF)-DATA RETUR        0.09      7615    READ(NF)-DATA RETUR        0.08      7121    READ(NF)-DATA RETUR        0.03      2826
+ READ(NF)-NO DATA RT        0.05      4311    READ(NF)-NO DATA RT        0.00        12    READ(NF)-NO DATA RT        0.27     23464
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00        39    UNREGISTER PAGE            0.00         0    UNREGISTER PAGE            0.00       284
+ ASYNCH GBP REQUESTS        0.01       977    ASYNCH GBP REQUESTS        0.02      1616    ASYNCH GBP REQUESTS        0.15     12672
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ         2.68    229561    PG P-LOCK LOCK REQ         5.60    478642    PG P-LOCK LOCK REQ         3.12    266723
+  SPACE MAP PAGES           0.80     68092     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           3.10    265438
+  DATA PAGES                1.89    161469     DATA PAGES                0.00         0     DATA PAGES                0.02      1285
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.60    478642     INDEX LEAF PAGES          0.00         0
+ PG P-LOCK UNLOCK REQ       1.75    149994    PG P-LOCK UNLOCK REQ       5.13    438350    PG P-LOCK UNLOCK REQ       2.06    176090
+ PG P-LOCK LOCK SUSP        1.09     93066    PG P-LOCK LOCK SUSP        0.61     51790    PG P-LOCK LOCK SUSP        0.45     38222
+  SPACE MAP PAGES           0.35     30103     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           0.45     38222
+  DATA PAGES                0.74     62963     DATA PAGES                0.00         0     DATA PAGES                0.00         0
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.61     51790     INDEX LEAF PAGES          0.00         0
+ WRITE AND REGISTER         0.73     62735    WRITE AND REGISTER         4.61    394304    WRITE AND REGISTER         0.08      6564
+ WRITE & REGISTER MULT      0.38     32744    WRITE & REGISTER MULT      0.29     24745    WRITE & REGISTER MULT      0.84     71503
+ CHANGED PAGES WRITTEN      1.55    132725    CHANGED PAGES WRITTEN      4.58    391729    CHANGED PAGES WRITTEN      2.34    200042
+ COMPL CHECKS SUSPEND       0.77     66023    COMPL CHECKS SUSPEND       3.52    301104    COMPL CHECKS SUSPEND       0.37     31408
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-6
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ GROUP TOT4K             AVERAGE     TOTAL    GROUP BP32K4            AVERAGE     TOTAL    GROUP TOTAL             AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES       45.44   3885292    GBP-DEPEND GETPAGES        0.68     58425    GBP-DEPEND GETPAGES       46.13   3943717
+ READ(XI)-DATA RETUR        5.99    512454    READ(XI)-DATA RETUR        0.19     16449    READ(XI)-DATA RETUR        6.19    528903
+ READ(XI)-NO DATA RT        0.00         1    READ(XI)-NO DATA RT        0.00         1    READ(XI)-NO DATA RT        0.00         2
+ READ(NF)-DATA RETUR        0.21     17562    READ(NF)-DATA RETUR        0.03      2843    READ(NF)-DATA RETUR        0.24     20405
+ READ(NF)-NO DATA RT        0.33     27787    READ(NF)-NO DATA RT        0.02      1365    READ(NF)-NO DATA RT        0.34     29152
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00       323    UNREGISTER PAGE            0.00         4    UNREGISTER PAGE            0.00       327
+ ASYNCH GBP REQUESTS        0.18     15265    ASYNCH GBP REQUESTS        0.00         4    ASYNCH GBP REQUESTS        0.18     15269
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ        11.40    974926    PG P-LOCK LOCK REQ         0.26     22184    PG P-LOCK LOCK REQ        11.66    997110
+  SPACE MAP PAGES           3.90    333530     SPACE MAP PAGES           0.06      5137     SPACE MAP PAGES           3.96    338667
+  DATA PAGES                1.90    162754     DATA PAGES                0.20     17047     DATA PAGES                2.10    179801
+  INDEX LEAF PAGES          5.60    478642     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.60    478642
+ PG P-LOCK UNLOCK REQ       8.94    764434    PG P-LOCK UNLOCK REQ       0.11      9100    PG P-LOCK UNLOCK REQ       9.05    773534
+ PG P-LOCK LOCK SUSP        2.14    183078    PG P-LOCK LOCK SUSP        0.16     13505    PG P-LOCK LOCK SUSP        2.30    196583
+  SPACE MAP PAGES           0.80     68325     SPACE MAP PAGES           0.05      4047     SPACE MAP PAGES           0.85     72372
+  DATA PAGES                0.74     62963     DATA PAGES                0.11      9458     DATA PAGES                0.85     72421
+  INDEX LEAF PAGES          0.61     51790     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.61     51790
+ WRITE AND REGISTER         5.42    463603    WRITE AND REGISTER         0.10      8691    WRITE AND REGISTER         5.52    472294
+ WRITE & REGISTER MULT      1.51    128992    WRITE & REGISTER MULT      0.00         0    WRITE & REGISTER MULT      1.51    128992
+ CHANGED PAGES WRITTEN      8.47    724496    CHANGED PAGES WRITTEN      0.10      8691    CHANGED PAGES WRITTEN      8.58    733187
+ COMPL CHECKS SUSPEND       4.66    398535    COMPL CHECKS SUSPEND       0.08      6562    COMPL CHECKS SUSPEND       4.74    405097
+
+     -------------------------------------------------------------------------------
+     |PROGRAM NAME                     CLASS 7 ELAPSED TIME CONSUMERS              |
+     |DSNCLIC1            |                                                        |
+     |DSNCLIC2            |                                                        |
+     |DSNCLIF4            |                                                        |
+     |DSNCLIMS            |                                                        |
+     |DSNCLINF            |=================================================> 99%  |
+     -------------------------------------------------------------------------------
+
+     -------------------------------------------------------------------------------
+     |PROGRAM NAME                     CLASS 7 CP CPU TIME CONSUMERS               |
+     |DSNCLIC1            |                                                        |
+     |DSNCLIC2            |                                                        |
+     |DSNCLIF4            |                                                        |
+     |DSNCLIMS            |> 1%                                                    |
+     |DSNCLINF            |==========================================> 84%         |
+     -------------------------------------------------------------------------------
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-7
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ DSNCLIC1            VALUE                 DSNCLIC1                   TIMES    DSNCLIC1            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000029    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000028     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000028     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIC1              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000001    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          4.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          3    DB2 ENTRY/EXIT                12    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   3                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                   1.67    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     3      AGENT                     1.67    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     3      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00           N/C
+
+ DSNCLIC2            VALUE                 DSNCLIC2                   TIMES    DSNCLIC2            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000375    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000052     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000052     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIC2              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000325    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000325    SERV.TASK SWITCH        0.000325    1.00      0.000325
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED                N/C    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          2.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          3    DB2 ENTRY/EXIT                 6    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   3                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                   3.33    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     3      AGENT                     3.33    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     3      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000325    1.00      0.000325
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-8
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ DSNCLIF4            VALUE                 DSNCLIF4                   TIMES    DSNCLIF4            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000173    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000171     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000171     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIF4              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000002    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          2.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          3    DB2 ENTRY/EXIT                 6    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   3                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                  13.00    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     3      AGENT                    13.00    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     3      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00           N/C
+
+ DSNCLIMS            VALUE                 DSNCLIMS                   TIMES    DSNCLIMS            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000010    LOCK/LATCH              0.000000    0.00      0.000001
+                                           CP CPU TIME             0.000008     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000008     DB2 LATCH              0.000000    0.00      0.000001
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIMS              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000002    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          5.38    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                      43393    DB2 ENTRY/EXIT            233364    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS               43396                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                2.69    CP CPU SU                   0.01    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                116682      AGENT                     0.01    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                 43393      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00      0.000001
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-9
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ DSNCLINF            VALUE                 DSNCLINF                   TIMES    DSNCLINF            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.013555    LOCK/LATCH              0.000108    0.51      0.000212
+                                           CP CPU TIME             0.000441     IRLM LOCK+LATCH        0.000021    0.20      0.000103
+ LOCATION            DSNH                    AGENT                 0.000441     DB2 LATCH              0.000087    0.31      0.000285
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.004166    4.19      0.000994
+ PROGRAM NAME        DSNCLINF              SE CPU TIME             0.000792    OTHER READ I/O          0.000684    0.88      0.000779
+                                           SUSPENSION-CL8          0.011975    OTHER WRITE I/O         0.000641    1.25      0.000511
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.011975    SERV.TASK SWITCH        0.001119    1.00      0.001120
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000346    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT         33.71    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                      85486    DB2 ENTRY/EXIT           2881394    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS              128882                                        PAGE LATCH              0.002867    2.56      0.001119
+ SQL STMT - AVERAGE               15.36    CP CPU SU                  34.62    NOTIFY MESSAGES         0.000000    0.00      0.000194
+ SQL STMT - TOTAL               1313118      AGENT                    34.62    GLOBAL CONTENTION       0.002390    2.35      0.001017
+ NBR RLUP THREADS                 85486      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                  63.06    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.011975   12.74      0.000940
+
+ DSNCLIC1                   AVERAGE TIME  AV.EVENT    DSNCLIC1                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIC2                   AVERAGE TIME  AV.EVENT    DSNCLIC2                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIF4                   AVERAGE TIME  AV.EVENT    DSNCLIF4                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIMS                   AVERAGE TIME  AV.EVENT    DSNCLIMS                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-10
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ DSNCLINF                   AVERAGE TIME  AV.EVENT    DSNCLINF                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000103      0.02    GLOBAL CONTENTION P-LOCKS      0.002287      2.33
+  PARENT (DB,TS,TAB,PART)       0.000001      0.01     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.002257      2.30
+  OTHER                         0.000102      0.01     OTHER                         0.000030      0.03
+
+ DSNCLIC1             AVERAGE     TOTAL    DSNCLIC2             AVERAGE     TOTAL    DSNCLIF4             AVERAGE     TOTAL
+ ------------------  --------  --------    ------------------  --------  --------    ------------------  --------  --------
+ SELECT                  0.00         0    SELECT                  0.00         0    SELECT                  0.00         0
+ INSERT                  0.00         0    INSERT                  0.00         0    INSERT                  0.00         0
+ UPDATE                  0.00         0    UPDATE                  0.00         0    UPDATE                  0.00         0
+ DELETE                  0.00         0    DELETE                  0.00         0    DELETE                  0.00         0
+
+ DESCRIBE                0.00         0    DESCRIBE                0.00         0    DESCRIBE                0.00         0
+ PREPARE                 0.00         0    PREPARE                 0.00         0    PREPARE                 0.00         0
+ OPEN                    0.00         0    OPEN                    0.00         0    OPEN                    0.00         0
+ FETCH                   0.00         0    FETCH                   0.00         0    FETCH                   0.00         0
+ CLOSE                   0.00         0    CLOSE                   0.00         0    CLOSE                   0.00         0
+
+ LOCK TABLE              0.00         0    LOCK TABLE              0.00         0    LOCK TABLE              0.00         0
+ CALL                    0.00         0    CALL                    0.00         0    CALL                    0.00         0
+
+ DSNCLIMS             AVERAGE     TOTAL    DSNCLINF             AVERAGE     TOTAL
+ ------------------  --------  --------    ------------------  --------  --------
+ SELECT                  0.00         0    SELECT                  0.00         0
+ INSERT                  0.00         0    INSERT                  0.00         0
+ UPDATE                  0.00         0    UPDATE                  0.00         0
+ DELETE                  0.00         0    DELETE                  0.00         0
+
+ DESCRIBE                0.00         0    DESCRIBE                0.00         0
+ PREPARE                 0.00         0    PREPARE                 0.00         0
+ OPEN                    0.00         0    OPEN                    0.00         0
+ FETCH                   0.00         0    FETCH                   0.00         0
+ CLOSE                   0.00         0    CLOSE                   0.00         0
+
+ LOCK TABLE              0.00         0    LOCK TABLE              0.00         0
+ CALL                    0.00         0    CALL                    0.00         0
+
+ DSNCLIC1               AVERAGE      TOTAL    DSNCLIC2               AVERAGE      TOTAL    DSNCLIF4               AVERAGE      TOTAL
+ -------------------   --------   --------    -------------------   --------   --------    -------------------   --------   --------
+ BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A
+ GETPAGES                  0.00          0    GETPAGES                  0.00          0    GETPAGES                  0.00          0
+ BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0
+ SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0
+ SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0
+ SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0
+ LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0
+ DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0
+ PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-11
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH1
+
+ DSNCLIMS               AVERAGE      TOTAL    DSNCLINF               AVERAGE      TOTAL
+ -------------------   --------   --------    -------------------   --------   --------
+ BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A
+ GETPAGES                  0.00          0    GETPAGES                  0.00          0
+ BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0
+ SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0
+ SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0
+ SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0
+ LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0
+ DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0
+ PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0
+
+ DSNCLIC1                AVERAGE     TOTAL    DSNCLIC2                AVERAGE     TOTAL    DSNCLIF4                AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0
+ DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0
+ ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0
+ ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0
+ MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0
+ LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0
+ UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0
+ QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0
+ CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0
+ OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0
+ TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0
+  LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0
+  IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0
+  OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0
+
+ DSNCLIMS                AVERAGE     TOTAL    DSNCLINF                AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------
+ TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0
+ DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0
+ ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0
+ ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0
+ MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0
+ LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0
+ UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0
+ QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0
+ CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0
+ OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0
+ TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0
+  LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0
+  IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0
+  OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0
+
+ AVERAGE TIMES CL. 5  IFI (CL.5)
+ -------------------  ----------
+ ELAPSED TIME                N/P
+ CP CPU TIME                 N/P
+ DCAPT.DESCR.                N/P
+ LOG EXTRACT.                N/P
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-12
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ ELAPSED TIME DISTRIBUTION                                           CLASS 2 TIME DISTRIBUTION
+ ----------------------------------------------------------------    ----------------------------------------------------------------
+ APPL   |===============================================> 95%        CPU    |==> 4%
+ DB2    |> 1%                                                        SECPU  |===> 6%
+ SUSP   |==> 4%                                                      NOTACC |=> 2%
+                                                                     SUSP   |============================================> 88%
+
+ AVERAGE       APPL(CL.1)  DB2 (CL.2)    CLASS 3 SUSPENSIONS   AVERAGE TIME  AV.EVENT  TIME/EVENT    HIGHLIGHTS
+ ------------  ----------  ----------    --------------------  ------------  --------  ----------    --------------------------
+ ELAPSED TIME    0.266313    0.013345    LOCK/LATCH(DB2+IRLM)      0.000124      0.56    0.000220    #OCCURRENCES    :    82842
+  NONNESTED      0.266313    0.013345     IRLM LOCK+LATCH          0.000040      0.22    0.000178    #ALLIEDS        :    82842
+  STORED PROC    0.000000    0.000000     DB2 LATCH                0.000084      0.34    0.000247    #ALLIEDS DISTRIB:        0
+  UDF            0.000000    0.000000    SYNCHRON. I/O             0.004169      4.14    0.001008    #DBATS          :        0
+  TRIGGER        0.000000    0.000000     DATABASE I/O             0.000991      1.50    0.000661    #DBATS DISTRIB. :        0
+                                          LOG WRITE I/O            0.003178      2.64    0.001206    #NO PROGRAM DATA:       21
+ CP CPU TIME     0.001995    0.000535    OTHER READ I/O            0.000680      0.82    0.000832    #NORMAL TERMINAT:    82842
+  AGENT          0.001995    0.000535    OTHER WRTE I/O            0.000631      1.30    0.000487      #ROLLUP TRAN  :        0
+   NONNESTED     0.001995    0.000535    SER.TASK SWTCH            0.001119      1.00    0.001120    #DDFRRSAF ROLLUP:        0
+   STORED PRC    0.000000    0.000000     UPDATE COMMIT            0.001104      1.00    0.001105    #ABNORMAL TERMIN:        0
+   UDF           0.000000    0.000000     OPEN/CLOSE               0.000000      0.00         N/C    #CP/X PARALLEL. :        0
+   TRIGGER       0.000000    0.000000     SYSLGRNG REC             0.000000      0.00         N/C    #UTIL PARALLEL. :        0
+  PAR.TASKS      0.000000    0.000000     EXT/DEL/DEF              0.000015      0.00    0.065871    #IO PARALLELISM :        0
+                                          OTHER SERVICE            0.000000      0.00    0.000306    #PCA RUP COUNT  :        0
+ SE CPU TIME     0.002109    0.000850    ARC.LOG(QUIES)            0.000000      0.00         N/C    #RUP AUTONOM. PR:        0
+  NONNESTED      0.002109    0.000850    LOG READ                  0.000000      0.00         N/C    #AUTONOMOUS PR  :        0
+  STORED PROC    0.000000    0.000000    DRAIN LOCK                0.000000      0.00         N/C    #INCREMENT. BIND:        0
+  UDF            0.000000    0.000000    CLAIM RELEASE             0.000000      0.00         N/C    #COMMITS        :    82821
+  TRIGGER        0.000000    0.000000    PAGE LATCH                0.002665      2.64    0.001011    #ROLLBACKS      :        0
+                                         NOTIFY MSGS               0.000000      0.00    0.000164    #SVPT REQUESTS  :        0
+  PAR.TASKS      0.000000    0.000000    GLOBAL CONTENTION         0.002200      2.33    0.000945    #SVPT RELEASE   :        0
+                                         COMMIT PH1 WRITE I/O      0.000000      0.00         N/C    #SVPT ROLLBACK  :        0
+ SUSPEND TIME    0.000000    0.011745    ASYNCH CF REQUESTS        0.000157      5.07    0.000031    MAX SQL CASC LVL:        0
+  AGENT               N/A    0.011745    TCP/IP LOB XML            0.000000      0.00         N/C    UPDATE/COMMIT   :     3.00
+  PAR.TASKS           N/A    0.000000    ACCELERATOR               0.000000      0.00         N/C    SYNCH I/O AVG.  : 0.001008
+  STORED PROC    0.000000         N/A    AUTONOMOUS PROCEDURE      0.000000      0.00         N/C
+  UDF            0.000000         N/A    PQ SYNCHRONIZATION        0.000000      0.00         N/C
+                                         TOTAL CLASS 3             0.011745     17.85    0.000658
+ NOT ACCOUNT.         N/A    0.000214
+ DB2 ENT/EXIT         N/A       38.18
+ EN/EX-STPROC         N/A        0.00
+ EN/EX-UDF            N/A        0.00
+ DCAPT.DESCR.         N/A         N/A
+ LOG EXTRACT.         N/A         N/A
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-13
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ SQL DML   AVERAGE    TOTAL    SQL DCL           TOTAL    SQL DDL    CREATE   DROP  ALTER    DYNAMIC SQL STMT       AVERAGE     TOTAL
+ -------- -------- --------    -------------- --------    ---------- ------ ------ ------    --------------------  --------  --------
+ SELECT       0.00        0    LOCK TABLE            0    TABLE           0      0      0    REOPTIMIZATION            0.00         0
+ INSERT       2.51   207685    GRANT                 0    CRT TTABLE      0    N/A    N/A    NOT FOUND IN CACHE        0.00         0
+  ROWS        2.51   207685    REVOKE                0    DCL TTABLE      0    N/A    N/A    FOUND IN CACHE            3.49    289199
+ UPDATE       0.49    40757    SET CURR.SQLID   289206    AUX TABLE       0    N/A    N/A    IMPLICIT PREPARES         0.00         0
+  ROWS        0.49    40757    SET HOST VAR.    109327    INDEX           0      0      0    PREPARES AVOIDED          0.00         0
+ MERGE        0.00        0    SET CUR.DEGREE        0    TABLESPACE      0      0      0    CACHE_LIMIT_EXCEEDED      0.00         0
+ DELETE       0.00        0    SET RULES             0    DATABASE        0      0      0    PREP_STMT_PURGED          0.00         0
+  ROWS        0.00        0    SET CURR.PATH         0    STOGROUP        0      0      0    CSWL - STMTS PARSED       0.00         0
+                               SET CURR.PREC.        0    SYNONYM         0      0    N/A    CSWL - LITS REPLACED      0.00         0
+ DESCRIBE     2.42   200421    CONNECT TYPE 1        0    VIEW            0      0      0    CSWL - MATCHES FOUND      0.00         0
+ DESC.TBL     0.00        0    CONNECT TYPE 2        0    ALIAS           0      0    N/A    CSWL - DUPLS CREATED      0.00         0
+ PREPARE      4.49   372020    SET CONNECTION        0    PACKAGE       N/A      0    N/A
+ OPEN         0.49    40757    RELEASE               7    PROCEDURE       0      0      0
+ FETCH        0.54    44918    CALL                  0    FUNCTION        0      0      0
+  ROWS        0.49    40757    ASSOC LOCATORS        0    TRIGGER         0      0    N/A
+ CLOSE        0.34    27813    ALLOC CURSOR          0    DIST TYPE       0      0    N/A
+                               HOLD LOCATOR          0    SEQUENCE        0      0      0
+ DML-ALL     11.28   934371    FREE LOCATOR          0    TRUST. CTX      0      0      0
+                               DCL-ALL          398540    ROLE            0      0    N/A
+                                                          JAR           N/A    N/A      0
+                                                          MASK/PERM       0      0      0
+                                                          VARIABLE        0      0    N/A
+
+                                                          TOTAL           0      0      0
+                                                          TRUNC TBL       0
+                                                          RENAME TBL      0
+                                                          RENAME IX       0
+                                                          COMMENT ON      0
+                                                          LABEL ON        0
+
+ MEASURED/ELIG TIMES  APPL (CL1)   DB2 (CL2)    RID LIST                 AVERAGE     TOTAL    DATA CAPTURE        AVERAGE     TOTAL
+ -------------------  ----------  ----------    ----------------------  --------  --------    -----------------  --------  --------
+ ELAPSED TIME           0.266313    0.013345    USED                        0.00         0    IFI CALLS MADE          N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000                                                  RECORDS CAPTURED        N/P       N/P
+                                                FAIL-NO STORAGE             0.00         0    LOG RECORDS READ        N/P       N/P
+ CP CPU TIME            0.001995    0.000535    FAIL-LIMIT EXCEEDED         0.00         0    ROWS RETURNED           N/P       N/P
+  ELIGIBLE FOR SECP     0.000007         N/A                                                  RECORDS RETURNED        N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    INTERRUPTED-NO STORAGE      0.00         0    DATA DESC. RETURN       N/P       N/P
+                                                INTERRUPTED-LIMIT EXC.      0.00         0    TABLES RETURNED         N/P       N/P
+ SE CPU TIME            0.002109    0.000850                                                  DESCRIBES               N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    OVERFLOWED-NO STORAGE       0.00         0
+                                                OVERFLOWED-LIMIT EXC.       0.00         0
+
+                                                SKIPPED-INDEX KNOWN         0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-14
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ STORED PROCEDURES   AVERAGE     TOTAL    UDF         AVERAGE     TOTAL    TRIGGERS            AVERAGE     TOTAL
+ -----------------  --------  --------    ---------  --------  --------    -----------------  --------  --------
+ CALL STATEMENTS        0.00         0    EXECUTED       0.00         0    STATEMENT TRIGGER      0.00         0
+ ABENDED                0.00         0    ABENDED        0.00         0    ROW TRIGGER            0.00         0
+ TIMED OUT              0.00         0    TIMED OUT      0.00         0    SQL ERROR OCCUR        0.00         0
+ REJECTED               0.00         0    REJECTED       0.00         0
+
+ GLOBAL       CONTENTION       L-LOCKS  AVERAGE TIME  AV.EVENT    GLOBAL       CONTENTION       P-LOCKS  AVERAGE TIME  AV.EVENT
+ -------------------------------------  ------------  --------    -------------------------------------  ------------  --------
+ L-LOCKS                                    0.000131      0.02    P-LOCKS                                    0.002069      2.31
+  PARENT (DB,TS,TAB,PART)                   0.000001      0.01     PAGESET/PARTITION                         0.000000      0.00
+  CHILD  (PAGE,ROW)                         0.000000      0.00     PAGE                                      0.002041      2.28
+  OTHER                                     0.000130      0.01     OTHER                                     0.000028      0.03
+
+ LOCKING                AVERAGE    TOTAL    DATA SHARING          AVERAGE     TOTAL    QUERY PARALLELISM           AVERAGE     TOTAL
+ --------------------- -------- --------    -------------------  --------  --------    -------------------------  --------  --------
+ TIMEOUTS                  0.00        0    GLOBAL CONT RATE(%)      6.77       N/A    MAXIMUM DEGREE-ESTIMATED       0.00         0
+ DEADLOCKS                 0.00        0    FALSE CONT RATE(%)       0.22       N/A    MAXIMUM DEGREE-PLANNED         0.00         0
+ ESCAL.(SHARED)            0.00        0    P/L-LOCKS XES(%)        67.99       N/A    MAXIMUM DEGREE-EXECUTED         N/A         0
+ ESCAL.(EXCLUS)            0.00        0    LOCK REQ   - PLOCKS     12.07    999678    MAXIMUM MEMBERS USED            N/A         0
+ MAX PG/ROW LOCKS HELD     4.35        7    UNLOCK REQ - PLOCKS      9.21    762866    PARALLEL GROUPS EXECUTED       0.00         0
+ LOCK REQUEST             14.52  1203213    CHANGE REQ - PLOCKS      0.02      1700     RAN AS PLANNED                0.00         0
+ UNLOCK REQUEST            3.86   319704    LOCK REQ   - XES        18.08   1497724     RAN REDUCED-STORAGE           0.00         0
+ QUERY REQUEST             0.00        0    UNLOCK REQ - XES        10.87    900717     RAN REDUCED-NEGOTIATION       0.00         0
+ CHANGE REQUEST            1.98   164335    CHANGE REQ - XES         0.55     45891     SEQ-CURSOR                    0.00         0
+ OTHER REQUEST             0.00        0    SUSPENDS   - IRLM        2.09    172840     SEQ-NO ESA SORT               0.00         0
+ TOTAL SUSPENSIONS         0.24    20012    SUSPENDS   - XES         0.00        14     SEQ-NO BUFFER                 0.00         0
+  LOCK SUSPENSIONS         0.00      275    CONVERSIONS- XES         0.17     14336     SEQ-ENCLAVE SERVICES           N/A       N/A
+  IRLM LATCH SUSPENS.      0.23    19453    FALSE CONTENTIONS        0.07      5703     SEQ-AUTONOMOUS PROC           0.00         0
+  OTHER SUSPENS.           0.00      284    INCOMPATIBLE LOCKS       0.00         0     SEQ-NEGOTIATION               0.00         0
+                                            NOTIFY MSGS SENT         0.00       284     ONE DB2-COORDINATOR = NO      0.00         0
+                                                                                        ONE DB2-ISOLATION LEVEL       0.00         0
+                                                                                        ONE DB2-DCL TTABLE            0.00         0
+                                                                                       MEMBER SKIPPED (%)              N/C       N/A
+                                                                                       DISABLED BY RLF                0.00         0
+                                                                                       REFORM PARAL-CONFIG            0.00         0
+                                                                                       REFORM PARAL-NO BUF            0.00         0
+
+ DRAIN/CLAIM      AVERAGE     TOTAL    NORMAL TERM.      AVERAGE     TOTAL    ABNORMAL TERM.        TOTAL    IN DOUBT           TOTAL
+ --------------  --------  --------    ---------------  --------  --------    -----------------  --------    --------------  --------
+ DRAIN REQUESTS      0.00         0    NEW USER             0.00         0    APPL.PROGR. ABEND         0    APPL.PGM ABEND         0
+ DRAIN FAILED        0.00         0    DEALLOCATION         0.00         7    END OF MEMORY             0    END OF MEMORY          0
+ CLAIM REQUESTS     17.85   1479143    APPL.PROGR. END      0.00         0    RESOL.IN DOUBT            0    END OF TASK            0
+ CLAIM FAILED        0.00         0    RESIGNON             1.00     82835    CANCEL FORCE              0    CANCEL FORCE           0
+                                       DBAT INACTIVE        0.00         0
+                                       TYPE2 INACTIVE       0.00         0
+                                       RRS COMMIT           0.00         0
+
+                                       END USER THRESH      0.00         0
+                                       BLOCK STOR THR       0.00         0
+                                       STALENESS THR        0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-15
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ ROWID           AVERAGE     TOTAL    LOGGING               AVERAGE     TOTAL    AVERAGE SU           CLASS 1         CLASS 2
+ -------------  --------  --------    -------------------  --------  --------    ------------  --------------  --------------
+ DIRECT ACCESS      0.00         0    LOG RECORDS WRITTEN     28.06   2324928    CP CPU                158.28           42.08
+ INDEX USED         0.00         0    TOT BYTES WRITTEN    27950.46  2315472K     AGENT                158.28           42.08
+ TS SCAN USED       0.00         0    LOG RECORD SIZE        995.93       N/A      NONNESTED           158.28           42.08
+                                                                                   STORED PRC            0.00            0.00
+                                                                                   UDF                   0.00            0.00
+                                                                                   TRIGGER               0.00            0.00
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG SECP              0.44             N/A
+                                                                                  ELIG ACCEL              N/A            0.00
+
+                                                                                 SE CPU                167.91           67.68
+                                                                                  NONNESTED            167.91           67.68
+                                                                                  STORED PROC            0.00            0.00
+                                                                                  UDF                    0.00            0.00
+                                                                                  TRIGGER                0.00            0.00
+
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG ACCEL              N/A            0.00
+
+ MISCELLANEOUS          AVERAGE     TOTAL
+ --------------------  --------  --------
+ MAX STO LOB VAL (KB)      0.00         0
+ MAX STO XML VAL (KB)      0.00         0
+ ARRAY EXPANSIONS          0.00         0
+ SPARSE IX DISABLED        0.00         0
+ SPARSE IX BUILT WF        0.00         0
+
+ RESOURCE LIMIT TYPE               #OCCUR    AVERAGE CPU SECONDS    HIGHEST CPU SECONDS
+ ------------------------------    ------    -------------------    -------------------
+ INFINITE LIMIT                     82842               0.000000               0.000000
+
+ BP0    BPOOL ACTIVITY   AVERAGE     TOTAL    BP2    BPOOL ACTIVITY   AVERAGE     TOTAL    BP9    BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)      100.00       N/A    BPOOL HIT RATIO (%)       99.13       N/A    BPOOL HIT RATIO (%)      100.00       N/A
+ GETPAGES                   4.00    331391    GETPAGES                   6.26    518979    GETPAGES                  24.87   2060658
+ BUFFER UPDATES             0.00         0    BUFFER UPDATES             3.87    320709    BUFFER UPDATES             7.28    603370
+ SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.00         0    SYNCHRONOUS READ           0.05      4491    SYNCHRONOUS READ           0.00        12
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-16
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ BP12   BPOOL ACTIVITY   AVERAGE     TOTAL    TOT4K  BPOOL ACTIVITY   AVERAGE     TOTAL    BP32K4 BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       94.06       N/A    BPOOL HIT RATIO (%)       98.19       N/A    BPOOL HIT RATIO (%)       97.76       N/A
+ GETPAGES                  14.12   1169764    GETPAGES                  49.26   4080792    GETPAGES                   0.69     57338
+ BUFFER UPDATES            10.30    853290    BUFFER UPDATES            21.45   1777369    BUFFER UPDATES             0.48     39513
+ SYNCHRONOUS WRITE          1.23    101915    SYNCHRONOUS WRITE          1.23    101915    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.20     16478    SYNCHRONOUS READ           0.25     20981    SYNCHRONOUS READ           0.02      1284
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.34     27813    LIST PREFETCH REQS         0.34     27813    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.64     52989    PAGES READ ASYNCHR.        0.64     52989    PAGES READ ASYNCHR.        0.00         0
+
+ TOTAL  BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       98.18       N/A
+ GETPAGES                  49.95   4138130
+ BUFFER UPDATES            21.93   1816882
+ SYNCHRONOUS WRITE          1.23    101915
+ SYNCHRONOUS READ           0.27     22265
+ SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.34     27813
+ DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.64     52989
+
+ GROUP BP2               AVERAGE     TOTAL    GROUP BP9               AVERAGE     TOTAL    GROUP BP12              AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES        6.26    518979    GBP-DEPEND GETPAGES       24.87   2060658    GBP-DEPEND GETPAGES       14.12   1169764
+ READ(XI)-DATA RETUR        1.45    120364    READ(XI)-DATA RETUR        2.80    231784    READ(XI)-DATA RETUR        1.55    128457
+ READ(XI)-NO DATA RT        0.00         2    READ(XI)-NO DATA RT        0.00         0    READ(XI)-NO DATA RT        0.00         0
+ READ(NF)-DATA RETUR        0.09      7335    READ(NF)-DATA RETUR        0.08      6523    READ(NF)-DATA RETUR        0.03      2574
+ READ(NF)-NO DATA RT        0.05      4489    READ(NF)-NO DATA RT        0.00        12    READ(NF)-NO DATA RT        0.20     16478
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00        37    UNREGISTER PAGE            0.00         0    UNREGISTER PAGE            0.00       245
+ ASYNCH GBP REQUESTS        0.01       645    ASYNCH GBP REQUESTS        0.01       686    ASYNCH GBP REQUESTS        0.14     11263
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ         2.67    221022    PG P-LOCK LOCK REQ         5.57    461369    PG P-LOCK LOCK REQ         3.08    254831
+  SPACE MAP PAGES           0.80     65916     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           3.06    253531
+  DATA PAGES                1.87    155106     DATA PAGES                0.00         0     DATA PAGES                0.02      1300
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.57    461369     INDEX LEAF PAGES          0.00         0
+ PG P-LOCK UNLOCK REQ       1.74    143751    PG P-LOCK UNLOCK REQ       5.16    427543    PG P-LOCK UNLOCK REQ       2.03    168374
+ PG P-LOCK LOCK SUSP        1.10     91211    PG P-LOCK LOCK SUSP        0.56     46694    PG P-LOCK LOCK SUSP        0.46     37789
+  SPACE MAP PAGES           0.36     29523     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           0.46     37789
+  DATA PAGES                0.74     61688     DATA PAGES                0.00         0     DATA PAGES                0.00         0
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.56     46694     INDEX LEAF PAGES          0.00         0
+ WRITE AND REGISTER         0.73     60231    WRITE AND REGISTER         4.63    383160    WRITE AND REGISTER         0.08      6568
+ WRITE & REGISTER MULT      0.39     32172    WRITE & REGISTER MULT      0.30     25082    WRITE & REGISTER MULT      0.84     69413
+ CHANGED PAGES WRITTEN      1.56    128842    CHANGED PAGES WRITTEN      4.61    382239    CHANGED PAGES WRITTEN      2.33    193038
+ COMPL CHECKS SUSPEND       0.78     64222    COMPL CHECKS SUSPEND       3.67    304225    COMPL CHECKS SUSPEND       0.39     32184
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-17
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ GROUP TOT4K             AVERAGE     TOTAL    GROUP BP32K4            AVERAGE     TOTAL    GROUP TOTAL             AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES       45.26   3749401    GBP-DEPEND GETPAGES        0.69     57338    GBP-DEPEND GETPAGES       45.95   3806739
+ READ(XI)-DATA RETUR        5.80    480605    READ(XI)-DATA RETUR        0.19     16072    READ(XI)-DATA RETUR        6.00    496677
+ READ(XI)-NO DATA RT        0.00         2    READ(XI)-NO DATA RT        0.00         0    READ(XI)-NO DATA RT        0.00         2
+ READ(NF)-DATA RETUR        0.20     16432    READ(NF)-DATA RETUR        0.02      2031    READ(NF)-DATA RETUR        0.22     18463
+ READ(NF)-NO DATA RT        0.25     20979    READ(NF)-NO DATA RT        0.02      1284    READ(NF)-NO DATA RT        0.27     22263
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00       282    UNREGISTER PAGE            0.00         7    UNREGISTER PAGE            0.00       289
+ ASYNCH GBP REQUESTS        0.15     12594    ASYNCH GBP REQUESTS        0.00         0    ASYNCH GBP REQUESTS        0.15     12594
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ        11.31    937222    PG P-LOCK LOCK REQ         0.26     21521    PG P-LOCK LOCK REQ        11.57    958743
+  SPACE MAP PAGES           3.86    319447     SPACE MAP PAGES           0.06      5065     SPACE MAP PAGES           3.92    324512
+  DATA PAGES                1.89    156406     DATA PAGES                0.20     16456     DATA PAGES                2.09    172862
+  INDEX LEAF PAGES          5.57    461369     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.57    461369
+ PG P-LOCK UNLOCK REQ       8.93    739668    PG P-LOCK UNLOCK REQ       0.11      8786    PG P-LOCK UNLOCK REQ       9.03    748454
+ PG P-LOCK LOCK SUSP        2.12    175694    PG P-LOCK LOCK SUSP        0.16     13329    PG P-LOCK LOCK SUSP        2.28    189023
+  SPACE MAP PAGES           0.81     67312     SPACE MAP PAGES           0.05      4088     SPACE MAP PAGES           0.86     71400
+  DATA PAGES                0.74     61688     DATA PAGES                0.11      9241     DATA PAGES                0.86     70929
+  INDEX LEAF PAGES          0.56     46694     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.56     46694
+ WRITE AND REGISTER         5.43    449959    WRITE AND REGISTER         0.10      8410    WRITE AND REGISTER         5.53    458369
+ WRITE & REGISTER MULT      1.53    126667    WRITE & REGISTER MULT      0.00         0    WRITE & REGISTER MULT      1.53    126667
+ CHANGED PAGES WRITTEN      8.50    704119    CHANGED PAGES WRITTEN      0.10      8410    CHANGED PAGES WRITTEN      8.60    712529
+ COMPL CHECKS SUSPEND       4.84    400631    COMPL CHECKS SUSPEND       0.08      6472    COMPL CHECKS SUSPEND       4.91    407103
+
+     -------------------------------------------------------------------------------
+     |PROGRAM NAME                     CLASS 7 ELAPSED TIME CONSUMERS              |
+     |DSNCLIC1            |                                                        |
+     |DSNCLIC2            |                                                        |
+     |DSNCLIF4            |                                                        |
+     |DSNCLIMS            |                                                        |
+     |DSNCLINF            |=================================================> 99%  |
+     -------------------------------------------------------------------------------
+
+     -------------------------------------------------------------------------------
+     |PROGRAM NAME                     CLASS 7 CP CPU TIME CONSUMERS               |
+     |DSNCLIC1            |                                                        |
+     |DSNCLIC2            |                                                        |
+     |DSNCLIF4            |                                                        |
+     |DSNCLIMS            |> 1%                                                    |
+     |DSNCLINF            |=========================================> 83%          |
+     -------------------------------------------------------------------------------
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-18
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ DSNCLIC1            VALUE                 DSNCLIC1                   TIMES    DSNCLIC1            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000036    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000033     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000033     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIC1              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000002    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          4.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          7    DB2 ENTRY/EXIT                28    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   7                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                   2.00    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     7      AGENT                     2.00    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     7      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00           N/C
+
+ DSNCLIC2            VALUE                 DSNCLIC2                   TIMES    DSNCLIC2            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000352    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000046     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000046     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIC2              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000306    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000306    SERV.TASK SWITCH        0.000306    1.00      0.000306
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED                N/C    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          2.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          7    DB2 ENTRY/EXIT                14    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   7                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                   3.00    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     7      AGENT                     3.00    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     7      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000306    1.00      0.000306
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-19
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ DSNCLIF4            VALUE                 DSNCLIF4                   TIMES    DSNCLIF4            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000231    LOCK/LATCH              0.000000    0.00           N/C
+                                           CP CPU TIME             0.000204     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000204     DB2 LATCH              0.000000    0.00           N/C
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIF4              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000027    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          2.00    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                          7    DB2 ENTRY/EXIT                14    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS                   7                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                1.00    CP CPU SU                  15.71    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                     7      AGENT                    15.71    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                     7      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00           N/C
+
+ DSNCLIMS            VALUE                 DSNCLIMS                   TIMES    DSNCLIMS            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.000010    LOCK/LATCH              0.000000    0.00      0.000001
+                                           CP CPU TIME             0.000009     IRLM LOCK+LATCH        0.000000    0.00           N/C
+ LOCATION            DSNH                    AGENT                 0.000009     DB2 LATCH              0.000000    0.00      0.000001
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.000000    0.00           N/C
+ PROGRAM NAME        DSNCLIMS              SE CPU TIME             0.000000    OTHER READ I/O          0.000000    0.00           N/C
+                                           SUSPENSION-CL8          0.000000    OTHER WRITE I/O         0.000000    0.00           N/C
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.000000    SERV.TASK SWITCH        0.000000    0.00           N/C
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000001    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT          5.37    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                      40757    DB2 ENTRY/EXIT            218668    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS               40764                                        PAGE LATCH              0.000000    0.00           N/C
+ SQL STMT - AVERAGE                2.68    CP CPU SU                   0.02    NOTIFY MESSAGES         0.000000    0.00           N/C
+ SQL STMT - TOTAL                109334      AGENT                     0.02    GLOBAL CONTENTION       0.000000    0.00           N/C
+ NBR RLUP THREADS                 40757      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                   0.00    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.000000    0.00      0.000001
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-20
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ DSNCLINF            VALUE                 DSNCLINF                   TIMES    DSNCLINF            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.013190    LOCK/LATCH              0.000123    0.55      0.000222
+                                           CP CPU TIME             0.000445     IRLM LOCK+LATCH        0.000039    0.22      0.000179
+ LOCATION            DSNH                    AGENT                 0.000445     DB2 LATCH              0.000084    0.34      0.000250
+ COLLECTION ID       DSNAOCLI                PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.004171    4.14      0.001008
+ PROGRAM NAME        DSNCLINF              SE CPU TIME             0.000803    OTHER READ I/O          0.000680    0.82      0.000832
+                                           SUSPENSION-CL8          0.011592    OTHER WRITE I/O         0.000632    1.30      0.000487
+ ACTIVITY TYPE       NONNESTED               AGENT                 0.011592    SERV.TASK SWITCH        0.001119    1.00      0.001120
+ ACTIVITY NAME       'BLANK'                 PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000350    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT         33.55    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                      82814    DB2 ENTRY/EXIT           2778410    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS              123578                                        PAGE LATCH              0.002666    2.64      0.001011
+ SQL STMT - AVERAGE               15.27    CP CPU SU                  34.91    NOTIFY MESSAGES         0.000000    0.00      0.000164
+ SQL STMT - TOTAL               1264334      AGENT                    34.91    GLOBAL CONTENTION       0.002200    2.33      0.000945
+ NBR RLUP THREADS                 82814      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                  63.91    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.011592   12.78      0.000907
+
+ DSNCLIC1                   AVERAGE TIME  AV.EVENT    DSNCLIC1                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIC2                   AVERAGE TIME  AV.EVENT    DSNCLIC2                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIF4                   AVERAGE TIME  AV.EVENT    DSNCLIF4                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+ DSNCLIMS                   AVERAGE TIME  AV.EVENT    DSNCLIMS                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000000      0.00    GLOBAL CONTENTION P-LOCKS      0.000000      0.00
+  PARENT (DB,TS,TAB,PART)       0.000000      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.000000      0.00
+  OTHER                         0.000000      0.00     OTHER                         0.000000      0.00
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-21
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ DSNCLINF                   AVERAGE TIME  AV.EVENT    DSNCLINF                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000131      0.02    GLOBAL CONTENTION P-LOCKS      0.002069      2.31
+  PARENT (DB,TS,TAB,PART)       0.000001      0.01     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.002041      2.28
+  OTHER                         0.000130      0.01     OTHER                         0.000028      0.03
+
+ DSNCLIC1             AVERAGE     TOTAL    DSNCLIC2             AVERAGE     TOTAL    DSNCLIF4             AVERAGE     TOTAL
+ ------------------  --------  --------    ------------------  --------  --------    ------------------  --------  --------
+ SELECT                  0.00         0    SELECT                  0.00         0    SELECT                  0.00         0
+ INSERT                  0.00         0    INSERT                  0.00         0    INSERT                  0.00         0
+ UPDATE                  0.00         0    UPDATE                  0.00         0    UPDATE                  0.00         0
+ DELETE                  0.00         0    DELETE                  0.00         0    DELETE                  0.00         0
+
+ DESCRIBE                0.00         0    DESCRIBE                0.00         0    DESCRIBE                0.00         0
+ PREPARE                 0.00         0    PREPARE                 0.00         0    PREPARE                 0.00         0
+ OPEN                    0.00         0    OPEN                    0.00         0    OPEN                    0.00         0
+ FETCH                   0.00         0    FETCH                   0.00         0    FETCH                   0.00         0
+ CLOSE                   0.00         0    CLOSE                   0.00         0    CLOSE                   0.00         0
+
+ LOCK TABLE              0.00         0    LOCK TABLE              0.00         0    LOCK TABLE              0.00         0
+ CALL                    0.00         0    CALL                    0.00         0    CALL                    0.00         0
+
+ DSNCLIMS             AVERAGE     TOTAL    DSNCLINF             AVERAGE     TOTAL
+ ------------------  --------  --------    ------------------  --------  --------
+ SELECT                  0.00         0    SELECT                  0.00         0
+ INSERT                  0.00         0    INSERT                  0.00         0
+ UPDATE                  0.00         0    UPDATE                  0.00         0
+ DELETE                  0.00         0    DELETE                  0.00         0
+
+ DESCRIBE                0.00         0    DESCRIBE                0.00         0
+ PREPARE                 0.00         0    PREPARE                 0.00         0
+ OPEN                    0.00         0    OPEN                    0.00         0
+ FETCH                   0.00         0    FETCH                   0.00         0
+ CLOSE                   0.00         0    CLOSE                   0.00         0
+
+ LOCK TABLE              0.00         0    LOCK TABLE              0.00         0
+ CALL                    0.00         0    CALL                    0.00         0
+
+ DSNCLIC1               AVERAGE      TOTAL    DSNCLIC2               AVERAGE      TOTAL    DSNCLIF4               AVERAGE      TOTAL
+ -------------------   --------   --------    -------------------   --------   --------    -------------------   --------   --------
+ BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A
+ GETPAGES                  0.00          0    GETPAGES                  0.00          0    GETPAGES                  0.00          0
+ BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0
+ SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0
+ SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0
+ SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0
+ LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0
+ DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0
+ PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-22
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10  MEMBER: DBH2
+
+ DSNCLIMS               AVERAGE      TOTAL    DSNCLINF               AVERAGE      TOTAL
+ -------------------   --------   --------    -------------------   --------   --------
+ BPOOL HIT RATIO (%)        N/C        N/A    BPOOL HIT RATIO (%)        N/C        N/A
+ GETPAGES                  0.00          0    GETPAGES                  0.00          0
+ BUFFER UPDATES            0.00          0    BUFFER UPDATES            0.00          0
+ SYNCHRONOUS WRITE         0.00          0    SYNCHRONOUS WRITE         0.00          0
+ SYNCHRONOUS READ          0.00          0    SYNCHRONOUS READ          0.00          0
+ SEQ. PREFETCH REQS        0.00          0    SEQ. PREFETCH REQS        0.00          0
+ LIST PREFETCH REQS        0.00          0    LIST PREFETCH REQS        0.00          0
+ DYN. PREFETCH REQS        0.00          0    DYN. PREFETCH REQS        0.00          0
+ PAGES READ ASYNCHR.       0.00          0    PAGES READ ASYNCHR.       0.00          0
+
+ DSNCLIC1                AVERAGE     TOTAL    DSNCLIC2                AVERAGE     TOTAL    DSNCLIF4                AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0
+ DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0
+ ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0
+ ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0
+ MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0
+ LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0
+ UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0
+ QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0
+ CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0
+ OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0
+ TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0
+  LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0
+  IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0
+  OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0
+
+ DSNCLIMS                AVERAGE     TOTAL    DSNCLINF                AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------
+ TIMEOUTS                   0.00         0    TIMEOUTS                   0.00         0
+ DEADLOCKS                  0.00         0    DEADLOCKS                  0.00         0
+ ESCAL.(SHARED)             0.00         0    ESCAL.(SHARED)             0.00         0
+ ESCAL.(EXCLUS)             0.00         0    ESCAL.(EXCLUS)             0.00         0
+ MAX PG/ROW LOCKS HELD      0.00         0    MAX PG/ROW LOCKS HELD      0.00         0
+ LOCK REQUEST               0.00         0    LOCK REQUEST               0.00         0
+ UNLOCK REQUEST             0.00         0    UNLOCK REQUEST             0.00         0
+ QUERY REQUEST              0.00         0    QUERY REQUEST              0.00         0
+ CHANGE REQUEST             0.00         0    CHANGE REQUEST             0.00         0
+ OTHER REQUEST              0.00         0    OTHER REQUEST              0.00         0
+ TOTAL SUSPENSIONS          0.00         0    TOTAL SUSPENSIONS          0.00         0
+  LOCK SUSPENSIONS          0.00         0     LOCK SUSPENSIONS          0.00         0
+  IRLM LATCH SUSPENS.       0.00         0     IRLM LATCH SUSPENS.       0.00         0
+  OTHER SUSPENS.            0.00         0     OTHER SUSPENS.            0.00         0
+
+ AVERAGE TIMES CL. 5  IFI (CL.5)
+ -------------------  ----------
+ ELAPSED TIME                N/P
+ CP CPU TIME                 N/P
+ DCAPT.DESCR.                N/P
+ LOG EXTRACT.                N/P
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-23
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ ELAPSED TIME DISTRIBUTION                                           CLASS 2 TIME DISTRIBUTION
+ ----------------------------------------------------------------    ----------------------------------------------------------------
+ APPL   |===============================================> 95%        CPU    |==> 4%
+ DB2    |> 1%                                                        SECPU  |===> 6%
+ SUSP   |==> 5%                                                      NOTACC |=> 2%
+                                                                     SUSP   |============================================> 88%
+
+ AVERAGE       APPL(CL.1)  DB2 (CL.2)    CLASS 3 SUSPENSIONS   AVERAGE TIME  AV.EVENT  TIME/EVENT    HIGHLIGHTS
+ ------------  ----------  ----------    --------------------  ------------  --------  ----------    --------------------------
+ ELAPSED TIME    0.260613    0.013526    LOCK/LATCH(DB2+IRLM)      0.000116      0.54    0.000216    #OCCURRENCES    :   168340
+  NONNESTED      0.260613    0.013526     IRLM LOCK+LATCH          0.000030      0.21    0.000142    #ALLIEDS        :   168340
+  STORED PROC    0.000000    0.000000     DB2 LATCH                0.000086      0.32    0.000264    #ALLIEDS DISTRIB:        0
+  UDF            0.000000    0.000000    SYNCHRON. I/O             0.004167      4.16    0.001001    #DBATS          :        0
+  TRIGGER        0.000000    0.000000     DATABASE I/O             0.000996      1.53    0.000651    #DBATS DISTRIB. :        0
+                                          LOG WRITE I/O            0.003171      2.63    0.001205    #NO PROGRAM DATA:       30
+ CP CPU TIME     0.001955    0.000530    OTHER READ I/O            0.000682      0.85    0.000804    #NORMAL TERMINAT:   168340
+  AGENT          0.001955    0.000530    OTHER WRTE I/O            0.000636      1.28    0.000499      #ROLLUP TRAN  :        0
+   NONNESTED     0.001955    0.000530    SER.TASK SWTCH            0.001119      1.00    0.001120    #DDFRRSAF ROLLUP:        0
+   STORED PRC    0.000000    0.000000     UPDATE COMMIT            0.001098      1.00    0.001100    #ABNORMAL TERMIN:        0
+   UDF           0.000000    0.000000     OPEN/CLOSE               0.000000      0.00         N/C    #CP/X PARALLEL. :        0
+   TRIGGER       0.000000    0.000000     SYSLGRNG REC             0.000000      0.00         N/C    #UTIL PARALLEL. :        0
+  PAR.TASKS      0.000000    0.000000     EXT/DEL/DEF              0.000021      0.00    0.069100    #IO PARALLELISM :        0
+                                          OTHER SERVICE            0.000000      0.00    0.000312    #PCA RUP COUNT  :        0
+ SE CPU TIME     0.002097    0.000843    ARC.LOG(QUIES)            0.000000      0.00         N/C    #RUP AUTONOM. PR:        0
+  NONNESTED      0.002097    0.000843    LOG READ                  0.000000      0.00         N/C    #AUTONOMOUS PR  :        0
+  STORED PROC    0.000000    0.000000    DRAIN LOCK                0.000000      0.00         N/C    #INCREMENT. BIND:        0
+  UDF            0.000000    0.000000    CLAIM RELEASE             0.000000      0.00         N/C    #COMMITS        :   168310
+  TRIGGER        0.000000    0.000000    PAGE LATCH                0.002768      2.60    0.001065    #ROLLBACKS      :        0
+                                         NOTIFY MSGS               0.000000      0.00    0.000167    #SVPT REQUESTS  :        0
+  PAR.TASKS      0.000000    0.000000    GLOBAL CONTENTION         0.002296      2.34    0.000982    #SVPT RELEASE   :        0
+                                         COMMIT PH1 WRITE I/O      0.000000      0.00         N/C    #SVPT ROLLBACK  :        0
+ SUSPEND TIME    0.000000    0.011941    ASYNCH CF REQUESTS        0.000157      4.99    0.000031    MAX SQL CASC LVL:        0
+  AGENT               N/A    0.011941    TCP/IP LOB XML            0.000000      0.00         N/C    UPDATE/COMMIT   :     3.00
+  PAR.TASKS           N/A    0.000000    ACCELERATOR               0.000000      0.00         N/C    SYNCH I/O AVG.  : 0.001001
+  STORED PROC    0.000000         N/A    AUTONOMOUS PROCEDURE      0.000000      0.00         N/C
+  UDF            0.000000         N/A    PQ SYNCHRONIZATION        0.000000      0.00         N/C
+                                         TOTAL CLASS 3             0.011941     17.75    0.000673
+ NOT ACCOUNT.         N/A    0.000212
+ DB2 ENT/EXIT         N/A       38.31
+ EN/EX-STPROC         N/A        0.00
+ EN/EX-UDF            N/A        0.00
+ DCAPT.DESCR.         N/A         N/A
+ LOG EXTRACT.         N/A         N/A
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-24
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ SQL DML   AVERAGE    TOTAL    SQL DCL           TOTAL    SQL DDL    CREATE   DROP  ALTER    DYNAMIC SQL STMT       AVERAGE     TOTAL
+ -------- -------- --------    -------------- --------    ---------- ------ ------ ------    --------------------  --------  --------
+ SELECT       0.00        0    LOCK TABLE            0    TABLE           0      0      0    REOPTIMIZATION            0.00         0
+ INSERT       2.50   420750    GRANT                 0    CRT TTABLE      0    N/A    N/A    NOT FOUND IN CACHE        0.00         0
+  ROWS        2.50   420750    REVOKE                0    DCL TTABLE      0    N/A    N/A    FOUND IN CACHE            3.50    589050
+ UPDATE       0.50    84150    SET CURR.SQLID   589060    AUX TABLE       0    N/A    N/A    IMPLICIT PREPARES         0.00         0
+  ROWS        0.50    84150    SET HOST VAR.    226006    INDEX           0      0      0    PREPARES AVOIDED          0.00         0
+ MERGE        0.00        0    SET CUR.DEGREE        0    TABLESPACE      0      0      0    CACHE_LIMIT_EXCEEDED      0.00         0
+ DELETE       0.00        0    SET RULES             0    DATABASE        0      0      0    PREP_STMT_PURGED          0.00         0
+  ROWS        0.00        0    SET CURR.PATH         0    STOGROUP        0      0      0    CSWL - STMTS PARSED       0.00         0
+                               SET CURR.PREC.        0    SYNONYM         0      0    N/A    CSWL - LITS REPLACED      0.00         0
+ DESCRIBE     2.42   407562    CONNECT TYPE 1        0    VIEW            0      0      0    CSWL - MATCHES FOUND      0.00         0
+ DESC.TBL     0.00        0    CONNECT TYPE 2        0    ALIAS           0      0    N/A    CSWL - DUPLS CREATED      0.00         0
+ PREPARE      4.50   757360    SET CONNECTION        0    PACKAGE       N/A      0    N/A
+ OPEN         0.50    84150    RELEASE              10    PROCEDURE       0      0      0
+ FETCH        0.55    92564    CALL                  0    FUNCTION        0      0      0
+  ROWS        0.50    84150    ASSOC LOCATORS        0    TRIGGER         0      0    N/A
+ CLOSE        0.34    57706    ALLOC CURSOR          0    DIST TYPE       0      0    N/A
+                               HOLD LOCATOR          0    SEQUENCE        0      0      0
+ DML-ALL     11.31  1904242    FREE LOCATOR          0    TRUST. CTX      0      0      0
+                               DCL-ALL          815076    ROLE            0      0    N/A
+                                                          JAR           N/A    N/A      0
+                                                          MASK/PERM       0      0      0
+                                                          VARIABLE        0      0    N/A
+
+                                                          TOTAL           0      0      0
+                                                          TRUNC TBL       0
+                                                          RENAME TBL      0
+                                                          RENAME IX       0
+                                                          COMMENT ON      0
+                                                          LABEL ON        0
+
+ MEASURED/ELIG TIMES  APPL (CL1)   DB2 (CL2)    RID LIST                 AVERAGE     TOTAL    DATA CAPTURE        AVERAGE     TOTAL
+ -------------------  ----------  ----------    ----------------------  --------  --------    -----------------  --------  --------
+ ELAPSED TIME           0.260613    0.013526    USED                        0.00         0    IFI CALLS MADE          N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000                                                  RECORDS CAPTURED        N/P       N/P
+                                                FAIL-NO STORAGE             0.00         0    LOG RECORDS READ        N/P       N/P
+ CP CPU TIME            0.001955    0.000530    FAIL-LIMIT EXCEEDED         0.00         0    ROWS RETURNED           N/P       N/P
+  ELIGIBLE FOR SECP     0.000006         N/A                                                  RECORDS RETURNED        N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    INTERRUPTED-NO STORAGE      0.00         0    DATA DESC. RETURN       N/P       N/P
+                                                INTERRUPTED-LIMIT EXC.      0.00         0    TABLES RETURNED         N/P       N/P
+ SE CPU TIME            0.002097    0.000843                                                  DESCRIBES               N/P       N/P
+  ELIGIBLE FOR ACCEL         N/A    0.000000    OVERFLOWED-NO STORAGE       0.00         0
+                                                OVERFLOWED-LIMIT EXC.       0.00         0
+
+                                                SKIPPED-INDEX KNOWN         0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-25
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ STORED PROCEDURES   AVERAGE     TOTAL    UDF         AVERAGE     TOTAL    TRIGGERS            AVERAGE     TOTAL
+ -----------------  --------  --------    ---------  --------  --------    -----------------  --------  --------
+ CALL STATEMENTS        0.00         0    EXECUTED       0.00         0    STATEMENT TRIGGER      0.00         0
+ ABENDED                0.00         0    ABENDED        0.00         0    ROW TRIGGER            0.00         0
+ TIMED OUT              0.00         0    TIMED OUT      0.00         0    SQL ERROR OCCUR        0.00         0
+ REJECTED               0.00         0    REJECTED       0.00         0
+
+ GLOBAL       CONTENTION       L-LOCKS  AVERAGE TIME  AV.EVENT    GLOBAL       CONTENTION       P-LOCKS  AVERAGE TIME  AV.EVENT
+ -------------------------------------  ------------  --------    -------------------------------------  ------------  --------
+ L-LOCKS                                    0.000117      0.02    P-LOCKS                                    0.002179      2.32
+  PARENT (DB,TS,TAB,PART)                   0.000001      0.01     PAGESET/PARTITION                         0.000000      0.00
+  CHILD  (PAGE,ROW)                         0.000000      0.00     PAGE                                      0.002150      2.29
+  OTHER                                     0.000116      0.01     OTHER                                     0.000029      0.03
+
+ LOCKING                AVERAGE    TOTAL    DATA SHARING          AVERAGE     TOTAL    QUERY PARALLELISM           AVERAGE     TOTAL
+ --------------------- -------- --------    -------------------  --------  --------    -------------------------  --------  --------
+ TIMEOUTS                  0.00        0    GLOBAL CONT RATE(%)      6.79       N/A    MAXIMUM DEGREE-ESTIMATED       0.00         0
+ DEADLOCKS                 0.00        0    FALSE CONT RATE(%)       0.23       N/A    MAXIMUM DEGREE-PLANNED         0.00         0
+ ESCAL.(SHARED)            0.00        0    P/L-LOCKS XES(%)        68.07       N/A    MAXIMUM DEGREE-EXECUTED         N/A         0
+ ESCAL.(EXCLUS)            0.00        0    LOCK REQ   - PLOCKS     12.11   2038021    MAXIMUM MEMBERS USED            N/A         0
+ MAX PG/ROW LOCKS HELD     4.34        7    UNLOCK REQ - PLOCKS      9.20   1548254    PARALLEL GROUPS EXECUTED       0.00         0
+ LOCK REQUEST             14.54  2448476    CHANGE REQ - PLOCKS      0.02      3346     RAN AS PLANNED                0.00         0
+ UNLOCK REQUEST            3.86   649943    LOCK REQ   - XES        18.14   3053745     RAN REDUCED-STORAGE           0.00         0
+ QUERY REQUEST             0.00        0    UNLOCK REQ - XES        10.88   1832259     RAN REDUCED-NEGOTIATION       0.00         0
+ CHANGE REQUEST            2.00   336610    CHANGE REQ - XES         0.56     95033     SEQ-CURSOR                    0.00         0
+ OTHER REQUEST             0.00        0    SUSPENDS   - IRLM        2.09    352581     SEQ-NO ESA SORT               0.00         0
+ TOTAL SUSPENSIONS         0.23    39166    SUSPENDS   - XES         0.00        25     SEQ-NO BUFFER                 0.00         0
+  LOCK SUSPENSIONS         0.00      384    CONVERSIONS- XES         0.17     28715     SEQ-ENCLAVE SERVICES           N/A       N/A
+  IRLM LATCH SUSPENS.      0.23    38345    FALSE CONTENTIONS        0.07     12473     SEQ-AUTONOMOUS PROC           0.00         0
+  OTHER SUSPENS.           0.00      437    INCOMPATIBLE LOCKS       0.00         0     SEQ-NEGOTIATION               0.00         0
+                                            NOTIFY MSGS SENT         0.00       437     ONE DB2-COORDINATOR = NO      0.00         0
+                                                                                        ONE DB2-ISOLATION LEVEL       0.00         0
+                                                                                        ONE DB2-DCL TTABLE            0.00         0
+                                                                                       MEMBER SKIPPED (%)              N/C       N/A
+                                                                                       DISABLED BY RLF                0.00         0
+                                                                                       REFORM PARAL-CONFIG            0.00         0
+                                                                                       REFORM PARAL-NO BUF            0.00         0
+
+ DRAIN/CLAIM      AVERAGE     TOTAL    NORMAL TERM.      AVERAGE     TOTAL    ABNORMAL TERM.        TOTAL    IN DOUBT           TOTAL
+ --------------  --------  --------    ---------------  --------  --------    -----------------  --------    --------------  --------
+ DRAIN REQUESTS      0.00         0    NEW USER             0.00         0    APPL.PROGR. ABEND         0    APPL.PGM ABEND         0
+ DRAIN FAILED        0.00         0    DEALLOCATION         0.00        10    END OF MEMORY             0    END OF MEMORY          0
+ CLAIM REQUESTS     17.87   3008094    APPL.PROGR. END      0.00         0    RESOL.IN DOUBT            0    END OF TASK            0
+ CLAIM FAILED        0.00         0    RESIGNON             1.00    168330    CANCEL FORCE              0    CANCEL FORCE           0
+                                       DBAT INACTIVE        0.00         0
+                                       TYPE2 INACTIVE       0.00         0
+                                       RRS COMMIT           0.00         0
+
+                                       END USER THRESH      0.00         0
+                                       BLOCK STOR THR       0.00         0
+                                       STALENESS THR        0.00         0
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-26
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ ROWID           AVERAGE     TOTAL    LOGGING               AVERAGE     TOTAL    AVERAGE SU           CLASS 1         CLASS 2
+ -------------  --------  --------    -------------------  --------  --------    ------------  --------------  --------------
+ DIRECT ACCESS      0.00         0    LOG RECORDS WRITTEN     28.11   4732696    CP CPU                155.13           41.67
+ INDEX USED         0.00         0    TOT BYTES WRITTEN    28218.39  4750283K     AGENT                155.13           41.67
+ TS SCAN USED       0.00         0    LOG RECORD SIZE       1003.72       N/A      NONNESTED           155.13           41.67
+                                                                                   STORED PRC            0.00            0.00
+                                                                                   UDF                   0.00            0.00
+                                                                                   TRIGGER               0.00            0.00
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG SECP              0.40             N/A
+                                                                                  ELIG ACCEL              N/A            0.00
+
+                                                                                 SE CPU                166.89           67.06
+                                                                                  NONNESTED            166.89           67.06
+                                                                                  STORED PROC            0.00            0.00
+                                                                                  UDF                    0.00            0.00
+                                                                                  TRIGGER                0.00            0.00
+
+                                                                                  PAR.TASKS              0.00            0.00
+
+                                                                                  ELIG ACCEL              N/A            0.00
+
+ MISCELLANEOUS          AVERAGE     TOTAL
+ --------------------  --------  --------
+ MAX STO LOB VAL (KB)      0.00         0
+ MAX STO XML VAL (KB)      0.00         0
+ ARRAY EXPANSIONS          0.00         0
+ SPARSE IX DISABLED        0.00         0
+ SPARSE IX BUILT WF        0.00         0
+
+ RESOURCE LIMIT TYPE               #OCCUR    AVERAGE CPU SECONDS    HIGHEST CPU SECONDS
+ ------------------------------    ------    -------------------    -------------------
+ INFINITE LIMIT                    168340               0.000000               0.000000
+
+ BP0    BPOOL ACTIVITY   AVERAGE     TOTAL    BP2    BPOOL ACTIVITY   AVERAGE     TOTAL    BP9    BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)      100.00       N/A    BPOOL HIT RATIO (%)       99.16       N/A    BPOOL HIT RATIO (%)      100.00       N/A
+ GETPAGES                   4.00    673530    GETPAGES                   6.26   1054072    GETPAGES                  24.92   4194837
+ BUFFER UPDATES             0.00         0    BUFFER UPDATES             3.87    651980    BUFFER UPDATES             7.27   1224411
+ SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.00         0    SYNCHRONOUS READ           0.05      8803    SYNCHRONOUS READ           0.00        24
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0    PAGES READ ASYNCHR.        0.00         0
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-27
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ BP12   BPOOL ACTIVITY   AVERAGE     TOTAL    TOT4K  BPOOL ACTIVITY   AVERAGE     TOTAL    BP32K4 BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       92.86       N/A    BPOOL HIT RATIO (%)       97.84       N/A    BPOOL HIT RATIO (%)       97.71       N/A
+ GETPAGES                  14.17   2385784    GETPAGES                  49.35   8308223    GETPAGES                   0.69    115763
+ BUFFER UPDATES            10.34   1741422    BUFFER UPDATES            21.49   3617813    BUFFER UPDATES             0.47     79472
+ SYNCHRONOUS WRITE          1.23    206406    SYNCHRONOUS WRITE          1.23    206406    SYNCHRONOUS WRITE          0.00         0
+ SYNCHRONOUS READ           0.24     39942    SYNCHRONOUS READ           0.29     48769    SYNCHRONOUS READ           0.02      2650
+ SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0    SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.34     57706    LIST PREFETCH REQS         0.34     57706    LIST PREFETCH REQS         0.00         0
+ DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0    DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.78    130477    PAGES READ ASYNCHR.        0.78    130477    PAGES READ ASYNCHR.        0.00         0
+
+ TOTAL  BPOOL ACTIVITY   AVERAGE     TOTAL
+ ---------------------  --------  --------
+ BPOOL HIT RATIO (%)       97.84       N/A
+ GETPAGES                  50.04   8423986
+ BUFFER UPDATES            21.96   3697285
+ SYNCHRONOUS WRITE          1.23    206406
+ SYNCHRONOUS READ           0.31     51419
+ SEQ. PREFETCH REQS         0.00         0
+ LIST PREFETCH REQS         0.34     57706
+ DYN. PREFETCH REQS         0.00         0
+ PAGES READ ASYNCHR.        0.78    130477
+
+ GROUP BP2               AVERAGE     TOTAL    GROUP BP9               AVERAGE     TOTAL    GROUP BP12              AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES        6.26   1054072    GBP-DEPEND GETPAGES       24.92   4194837    GBP-DEPEND GETPAGES       14.17   2385784
+ READ(XI)-DATA RETUR        1.44    242968    READ(XI)-DATA RETUR        2.93    492547    READ(XI)-DATA RETUR        1.53    257544
+ READ(XI)-NO DATA RT        0.00         3    READ(XI)-NO DATA RT        0.00         0    READ(XI)-NO DATA RT        0.00         0
+ READ(NF)-DATA RETUR        0.09     14950    READ(NF)-DATA RETUR        0.08     13644    READ(NF)-DATA RETUR        0.03      5400
+ READ(NF)-NO DATA RT        0.05      8800    READ(NF)-NO DATA RT        0.00        24    READ(NF)-NO DATA RT        0.24     39942
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00        76    UNREGISTER PAGE            0.00         0    UNREGISTER PAGE            0.00       529
+ ASYNCH GBP REQUESTS        0.01      1622    ASYNCH GBP REQUESTS        0.01      2302    ASYNCH GBP REQUESTS        0.14     23935
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ         2.68    450583    PG P-LOCK LOCK REQ         5.58    940011    PG P-LOCK LOCK REQ         3.10    521554
+  SPACE MAP PAGES           0.80    134008     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           3.08    518969
+  DATA PAGES                1.88    316575     DATA PAGES                0.00         0     DATA PAGES                0.02      2585
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.58    940011     INDEX LEAF PAGES          0.00         0
+ PG P-LOCK UNLOCK REQ       1.74    293745    PG P-LOCK UNLOCK REQ       5.14    865893    PG P-LOCK UNLOCK REQ       2.05    344464
+ PG P-LOCK LOCK SUSP        1.09    184277    PG P-LOCK LOCK SUSP        0.59     98484    PG P-LOCK LOCK SUSP        0.45     76011
+  SPACE MAP PAGES           0.35     59626     SPACE MAP PAGES           0.00         0     SPACE MAP PAGES           0.45     76011
+  DATA PAGES                0.74    124651     DATA PAGES                0.00         0     DATA PAGES                0.00         0
+  INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.59     98484     INDEX LEAF PAGES          0.00         0
+ WRITE AND REGISTER         0.73    122966    WRITE AND REGISTER         4.62    777464    WRITE AND REGISTER         0.08     13132
+ WRITE & REGISTER MULT      0.39     64916    WRITE & REGISTER MULT      0.30     49827    WRITE & REGISTER MULT      0.84    140916
+ CHANGED PAGES WRITTEN      1.55    261567    CHANGED PAGES WRITTEN      4.60    773968    CHANGED PAGES WRITTEN      2.34    393080
+ COMPL CHECKS SUSPEND       0.77    130245    COMPL CHECKS SUSPEND       3.60    605329    COMPL CHECKS SUSPEND       0.38     63592
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-28
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ GROUP TOT4K             AVERAGE     TOTAL    GROUP BP32K4            AVERAGE     TOTAL    GROUP TOTAL             AVERAGE     TOTAL
+ ---------------------  --------  --------    ---------------------  --------  --------    ---------------------  --------  --------
+ GBP-DEPEND GETPAGES       45.35   7634693    GBP-DEPEND GETPAGES        0.69    115763    GBP-DEPEND GETPAGES       46.04   7750456
+ READ(XI)-DATA RETUR        5.90    993059    READ(XI)-DATA RETUR        0.19     32521    READ(XI)-DATA RETUR        6.09   1025580
+ READ(XI)-NO DATA RT        0.00         3    READ(XI)-NO DATA RT        0.00         1    READ(XI)-NO DATA RT        0.00         4
+ READ(NF)-DATA RETUR        0.20     33994    READ(NF)-DATA RETUR        0.03      4874    READ(NF)-DATA RETUR        0.23     38868
+ READ(NF)-NO DATA RT        0.29     48766    READ(NF)-NO DATA RT        0.02      2649    READ(NF)-NO DATA RT        0.31     51415
+ PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0    PREFETCH PAGES READ        0.00         0
+ CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0    CLEAN PAGES WRITTEN        0.00         0
+ UNREGISTER PAGE            0.00       605    UNREGISTER PAGE            0.00        11    UNREGISTER PAGE            0.00       616
+ ASYNCH GBP REQUESTS        0.17     27859    ASYNCH GBP REQUESTS        0.00         4    ASYNCH GBP REQUESTS        0.17     27863
+ EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0    EXPLICIT X-INVALID         0.00         0
+ ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0    ASYNCH SEC-GBP REQ         0.00         0
+ PG P-LOCK LOCK REQ        11.36   1912148    PG P-LOCK LOCK REQ         0.26     43705    PG P-LOCK LOCK REQ        11.62   1955853
+  SPACE MAP PAGES           3.88    652977     SPACE MAP PAGES           0.06     10202     SPACE MAP PAGES           3.94    663179
+  DATA PAGES                1.90    319160     DATA PAGES                0.20     33503     DATA PAGES                2.09    352663
+  INDEX LEAF PAGES          5.58    940011     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          5.58    940011
+ PG P-LOCK UNLOCK REQ       8.93   1504102    PG P-LOCK UNLOCK REQ       0.11     17886    PG P-LOCK UNLOCK REQ       9.04   1521988
+ PG P-LOCK LOCK SUSP        2.13    358772    PG P-LOCK LOCK SUSP        0.16     26834    PG P-LOCK LOCK SUSP        2.29    385606
+  SPACE MAP PAGES           0.81    135637     SPACE MAP PAGES           0.05      8135     SPACE MAP PAGES           0.85    143772
+  DATA PAGES                0.74    124651     DATA PAGES                0.11     18699     DATA PAGES                0.85    143350
+  INDEX LEAF PAGES          0.59     98484     INDEX LEAF PAGES          0.00         0     INDEX LEAF PAGES          0.59     98484
+ WRITE AND REGISTER         5.43    913562    WRITE AND REGISTER         0.10     17101    WRITE AND REGISTER         5.53    930663
+ WRITE & REGISTER MULT      1.52    255659    WRITE & REGISTER MULT      0.00         0    WRITE & REGISTER MULT      1.52    255659
+ CHANGED PAGES WRITTEN      8.49   1428615    CHANGED PAGES WRITTEN      0.10     17101    CHANGED PAGES WRITTEN      8.59   1445716
+ COMPL CHECKS SUSPEND       4.75    799166    COMPL CHECKS SUSPEND       0.08     13034    COMPL CHECKS SUSPEND       4.82    812200
+
+ ALL PROG            VALUE                 ALL PROG                   TIMES    ALL PROG            AVERAGE TIME  AVG.EV    TIME/EVENT
+ ------------------  ------------------    ------------------  ------------    ------------------  ------------  ------  ------------
+ TYPE                PACKAGE               ELAP-CL7 TIME-AVG       0.008919    LOCK/LATCH              0.000077    0.35      0.000217
+                                           CP CPU TIME             0.000298     IRLM LOCK+LATCH        0.000020    0.14      0.000142
+ LOCATION            'BLANK'                 AGENT                 0.000298     DB2 LATCH              0.000057    0.21      0.000267
+ COLLECTION ID       'BLANK'                 PAR.TASKS             0.000000    SYNCHRONOUS I/O         0.002779    2.78      0.001001
+ PROGRAM NAME        ALL PROG              SE CPU TIME             0.000532    OTHER READ I/O          0.000455    0.57      0.000804
+                                           SUSPENSION-CL8          0.007857    OTHER WRITE I/O         0.000424    0.85      0.000499
+ ACTIVITY TYPE       ALL TYPES               AGENT                 0.007857    SERV.TASK SWITCH        0.000746    0.67      0.001120
+ ACTIVITY NAME       ALL NAMES               PAR.TASKS             0.000000    ARCH.LOG(QUIESCE)       0.000000    0.00           N/C
+ SCHEMA NAME         'BLANK'               NOT ACCOUNTED           0.000233    ARCHIVE LOG READ        0.000000    0.00           N/C
+ SUCC AUTH CHECK                      0    AVG.DB2 ENTRY/EXIT         24.21    DRAIN LOCK              0.000000    0.00           N/C
+ OCCURRENCES                     252480    DB2 ENTRY/EXIT           6111916    CLAIM RELEASE           0.000000    0.00           N/C
+ NBR OF ALLOCATIONS              336650                                        PAGE LATCH              0.001845    1.73      0.001065
+ SQL STMT - AVERAGE               11.10    CP CPU SU                  23.18    NOTIFY MESSAGES         0.000000    0.00      0.000167
+ SQL STMT - TOTAL               2803498      AGENT                    23.18    GLOBAL CONTENTION       0.001531    1.56      0.000982
+ NBR RLUP THREADS                252480      PAR.TASKS                 0.00    TCP/IP LOB XML          0.000000    0.00           N/C
+                                           SE CPU SU                  42.31    ACCELERATOR             0.000000    0.00           N/C
+                                                                               PQ SYNCHRONIZATION      0.000000    0.00           N/C
+                                                                               TOTAL CL8 SUSPENS.      0.007857    8.51      0.000924
+
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-29
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ ALL PROG                   AVERAGE TIME  AV.EVENT    ALL PROG                   AVERAGE TIME  AV.EVENT
+ -------------------------  ------------  --------    -------------------------  ------------  --------
+ GLOBAL CONTENTION L-LOCKS      0.000078      0.01    GLOBAL CONTENTION P-LOCKS      0.001453      1.55
+  PARENT (DB,TS,TAB,PART)       0.000001      0.00     PAGESET/PARTITION             0.000000      0.00
+  CHILD  (PAGE,ROW)             0.000000      0.00     PAGE                          0.001434      1.53
+  OTHER                         0.000077      0.01     OTHER                         0.000019      0.02
+
+ ALL PROG             AVERAGE     TOTAL
+ ------------------  --------  --------
+ SELECT                  0.00         0
+ INSERT                  0.00         0
+ UPDATE                  0.00         0
+ DELETE                  0.00         0
+
+ DESCRIBE                0.00         0
+ PREPARE                 0.00         0
+ OPEN                    0.00         0
+ FETCH                   0.00         0
+ CLOSE                   0.00         0
+
+ LOCK TABLE              0.00         0
+ CALL                    0.00         0
+
+ ALL PROG               AVERAGE      TOTAL
+ -------------------   --------   --------
+ BPOOL HIT RATIO (%)        N/C        N/A
+ GETPAGES                  0.00          0
+ BUFFER UPDATES            0.00          0
+ SYNCHRONOUS WRITE         0.00          0
+ SYNCHRONOUS READ          0.00          0
+ SEQ. PREFETCH REQS        0.00          0
+ LIST PREFETCH REQS        0.00          0
+ DYN. PREFETCH REQS        0.00          0
+ PAGES READ ASYNCHR.       0.00          0
+
+ ALL PROG                AVERAGE     TOTAL
+ ---------------------  --------  --------
+ TIMEOUTS                   0.00         0
+ DEADLOCKS                  0.00         0
+ ESCAL.(SHARED)             0.00         0
+ ESCAL.(EXCLUS)             0.00         0
+ MAX PG/ROW LOCKS HELD      0.00         0
+ LOCK REQUEST               0.00         0
+ UNLOCK REQUEST             0.00         0
+ QUERY REQUEST              0.00         0
+ CHANGE REQUEST             0.00         0
+ OTHER REQUEST              0.00         0
+ TOTAL SUSPENSIONS          0.00         0
+  LOCK SUSPENSIONS          0.00         0
+  IRLM LATCH SUSPENS.       0.00         0
+  OTHER SUSPENS.            0.00         0
+1   LOCATION: DSNH                     OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 1-30
+       GROUP: DSNH                                ACCOUNTING REPORT - LONG                       REQUESTED FROM: ALL      17:39:00.00
+                                                                                                             TO: DATES    17:49:01.00
+                                                   ORDER: PRIMAUTH-PLANNAME                       INTERVAL FROM: 04/25/19 17:39:00.03
+ DB2 VERSION: V11                                      SCOPE: GROUP                                          TO: 04/25/19 17:49:00.98
+
+ ***  GROUP TOTAL  ***
+ PRIMAUTH: MBMQH0  PLANNAME: CLIEG10
+
+ AVERAGE TIMES CL. 5  IFI (CL.5)
+ -------------------  ----------
+ ELAPSED TIME                N/P
+ CP CPU TIME                 N/P
+ DCAPT.DESCR.                N/P
+ LOG EXTRACT.                N/P
+
+ ACCOUNTING REPORT COMPLETE

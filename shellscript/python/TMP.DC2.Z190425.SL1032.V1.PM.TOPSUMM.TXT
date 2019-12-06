@@ -1,0 +1,38 @@
+<< DB2 Accounting Report Summary >> 05/10/19 17:58:34
+ 
+Extracted conditios:
+ Class 2 Total     > 0.001000 sec OR Class 3 Total     > 0.001000 sec
+ Main Reason Ratio > 0.20
+ 
+Extracted output:
+ Records:    400 /    400 100.00%
+ 
+Suspend Reason        #Top3   Ratio     Accumulated   Ratio    Average    Maximum Date     Time        Member Appl    
+-------------------- ------ ------- --------------- ------- ---------- ---------- -------- ----------- ------ --------
+IRLM LOCK+LATCH                               5.000   6.30%      0.012                               
+DB2 LATCH                                     0.312   0.39%      0.001                               
+DATABASE I/O                                  5.817   7.33%      0.015                               
+LOG WRITE I/O                                 9.907  12.48%      0.025                               
+OTHER READ I/O                                1.074   1.35%      0.003                               
+OTHER WRTE I/O                                2.883   3.63%      0.007                               
+UPDATE COMMIT                                 0.666   0.84%      0.002                               
+OPEN/CLOSE                                    0.019   0.02%      0.000                               
+SYSLGRNG REC                                  0.003   0.00%      0.000                               
+EXT/DEL/DEF                                   1.467   1.85%      0.004                               
+OTHER SERVICE                                 0.003   0.00%      0.000                               
+ARC.LOG(QUIES)                                0.000   0.00%      0.000                               
+LOG READ                                      0.000   0.00%      0.000                               
+DRAIN LOCK                                    0.000   0.00%      0.000                               
+CLAIM RELEASE                                 0.000   0.00%      0.000                               
+PAGE LATCH                                   31.456  39.64%      0.079                               
+NOTIFY MSGS                                   0.004   0.01%      0.000                               
+GLOBAL CONTENTION                            20.520  25.86%      0.051                               
+COMMIT PH1 WRITE I/O                          0.000   0.00%      0.000                               
+ASYNCH CF REQUESTS                            0.228   0.29%      0.001                               
+TCP/IP LOB XML                                0.000   0.00%      0.000                               
+----------------------------------------------------------------------------------------------------------------------
+Total                                        79.360 100.00%      0.198
+ 
+No control card in DB2ACTL specified
+ 
+DB2 Accounting Report Summary Program completed RC=00

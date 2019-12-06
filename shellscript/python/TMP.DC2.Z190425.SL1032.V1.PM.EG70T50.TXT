@@ -1,0 +1,8 @@
+1   LOCATION: N/P                      OMEGAMON XE FOR DB2 PERFORMANCE EXPERT (V5R3M0)                     PAGE: 0-1
+       GROUP: N/P                                  ACCOUNTING TRACE - LONG                       REQUESTED FROM: ALL      17:39:00.00
+      MEMBER: N/P                                                                                            TO: DATES    17:49:01.00
+   SUBSYSTEM: N/P                                                                                   ACTUAL FROM: N/P
+ DB2 VERSION: N/P
+
+ NO DATA TO REPORT - NO ADEQUATE INPUT DATA OR TOO RESTRICTIVE FILTERS
+ ACCOUNTING TRACE COMPLETE
