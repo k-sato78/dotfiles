@@ -7,8 +7,8 @@ DOT_FILES=(.config  .zshenv  .zshrc)
 	ln -s $HOME/dotfiles/.config/nvim/init.vim $HOME/.init.vim
 
 
- sudo yum update
- sudo yum -y install build-essential curl git python-setuptools ruby
+ sudo apt-get update
+ sudo apt-get -y install build-essential curl git python-setuptools ruby
 
 sudo mkdir /home/linuxbrew/
 sudo chmod -R 777 /home/linuxbrew/

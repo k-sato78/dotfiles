@@ -1,5 +1,5 @@
-yum update -y nss curl libcurl
-sudo yum isntall git
+sudo yum update -y nss curl libcurl
+sudo yum install git
 git clone https://github.com/k-sato78/dotfiles
 cd dotfiles
-./install.sh
+./setup.sh
