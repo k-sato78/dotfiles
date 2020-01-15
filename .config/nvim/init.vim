@@ -583,3 +583,10 @@ map P <Plug>(miniyank-autoPut)
 " 下に空行の挿入
 noremap <Space><CR> o<ESC>
 
+
+" カーソルでの入力バグ対応
+imap ^[OA <Up>
+imap ^[OB <Down>
+imap ^[OC <Right>
+imap ^[OD <Left>
+
