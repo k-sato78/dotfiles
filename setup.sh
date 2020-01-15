@@ -27,4 +27,5 @@ sudo chsh -s "$(command -v zsh)" "${USER}"
 mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
 git clone https://github.com/Shougo/dein.vim.git \
 	~/.vim/dein/repos/github.com/Shougo/dein.vim
+sh -c " $（ curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh )"
 zsh
